@@ -118,7 +118,7 @@ export async function pixelRatio(userEl: HTMLElement, targetEl: HTMLElement): Pr
   const diff = pixelmatch(
     ctxA.data as unknown as Uint8Array,
     ctxB.data as unknown as Uint8Array,
-    null,
+    null as any,
     w,
     h,
     { threshold: 0.15 }
