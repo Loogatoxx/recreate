@@ -1,0 +1,196 @@
+{
+  "common": {
+    "all": "All",
+    "reset": "Reset",
+    "close": "Close"
+  },
+  "home": {
+    "tagline": "Learn to code by visually <hl>reverse-engineering</hl> components.",
+    "subtitle": "Look at the target. Rebuild it. The gauge tells you how close you are.",
+    "footer": "Built with Next 16 · React 19.2 · Tailwind 4",
+    "filtersCategory": "Category",
+    "filtersDifficulty": "Difficulty",
+    "noLevels": "No level matches these filters.",
+    "levelCount": "{count} level{count, plural, one {} other {s}}",
+    "aiButton": "AI-generated level",
+    "aiSubtitle": "Gemini crafts a custom challenge for you"
+  },
+  "generate": {
+    "title": "Generate a level",
+    "difficulty": "Difficulty",
+    "theme": "Theme (optional)",
+    "themePlaceholder": "e.g. weather card, notification badge, loader...",
+    "submit": "Generate",
+    "loading": "AI is crafting your challenge..."
+  },
+  "cockpit": {
+    "backToLevels": "Levels",
+    "restart": "Restart",
+    "livePreview": "Live Preview",
+    "target": "Target",
+    "inspectionDisabled": "inspection disabled",
+    "readOnly": "read-only"
+  },
+  "hud": {
+    "match": "Match",
+    "sos": "SOS AI",
+    "sosThinking": "AI is thinking...",
+    "sosHint": "Hint",
+    "sosError": "Hmm, the AI is sleeping. Try again in a moment.",
+    "ingredients": "Ingredients",
+    "notFound": "Not used in the target",
+    "andMore": "+{count} more"
+  },
+  "victory": {
+    "speedrun": "Speedrunner",
+    "wellPlayed": "Well played",
+    "win": "Victory",
+    "time": "Time",
+    "earned": "Earned",
+    "hints": "Hints",
+    "total": "Total:",
+    "points": "pts",
+    "replay": "Replay",
+    "menu": "Menu",
+    "backToCode": "Back to code"
+  },
+  "diff": {
+    "title": "Still to do",
+    "computing": "Computing...",
+    "allMatch": "All matching!",
+    "allMatchHint": "Every target declaration is applied. If the gauge isn't at 100%, check you don't have any extra styles.",
+    "hover": "Hover a row to see the matching element. Find the value in the Ingredients bar."
+  },
+  "manual": {
+    "title": "The Manual",
+    "intro": "Every CSS building block you need for the levels. Click to expand.",
+    "values": "Values",
+    "sections": {
+      "layout": "Layout",
+      "spacing": "Spacing",
+      "colors": "Colors & Backgrounds",
+      "borders": "Borders & Shadows",
+      "typography": "Typography",
+      "dimensions": "Dimensions"
+    },
+    "entries": {
+      "displayFlex": {
+        "summary": "Turns on flexbox mode. All children align in a row (by default) with powerful alignment tools."
+      },
+      "flexDirection": {
+        "summary": "Direction of flex children. `row` (default) = horizontal. `column` = vertical.",
+        "values": "row · column · row-reverse · column-reverse"
+      },
+      "justifyContent": {
+        "summary": "Aligns children on the main axis (horizontal in row, vertical in column).",
+        "values": "flex-start · center · flex-end · space-between · space-around · space-evenly"
+      },
+      "alignItems": {
+        "summary": "Aligns children on the cross axis. Combined with `justify-content: center`, centers everything.",
+        "values": "stretch · flex-start · center · flex-end · baseline"
+      },
+      "gap": {
+        "summary": "Space between flex/grid children. No more margin tricks."
+      },
+      "displayGrid": {
+        "summary": "2D grid mode. For strict rows/columns layouts."
+      },
+      "padding": {
+        "summary": "INSIDE space of the element. Pushes content toward the center.",
+        "values": "`12px` (all sides) · `12px 24px` (top/bottom, left/right) · `8px 16px 24px 32px` (top, right, bottom, left)"
+      },
+      "margin": {
+        "summary": "OUTSIDE space. Pushes neighbors away. Trick: `margin: 0 auto` centers horizontally."
+      },
+      "background": {
+        "summary": "Background color or image. Also supports gradients."
+      },
+      "color": {
+        "summary": "Color of the element's TEXT."
+      },
+      "borderRadius": {
+        "summary": "Rounds the corners. `50%` = perfect circle (if the element is square)."
+      },
+      "border": {
+        "summary": "Border around the element. Format: thickness, style, color."
+      },
+      "boxShadow": {
+        "summary": "Drop shadow. Format: `x y blur color`. Adds depth."
+      },
+      "fontSize": {
+        "summary": "Text size. Prefer `rem` or `px`."
+      },
+      "fontWeight": {
+        "summary": "Text weight. `400` = normal, `700` = bold, `800-900` = extra bold."
+      },
+      "textAlign": {
+        "summary": "Text alignment inside its container.",
+        "values": "left · center · right · justify"
+      },
+      "widthHeight": {
+        "summary": "Box size. Accepts `px`, `%`, `vh`/`vw`, or `auto`."
+      }
+    }
+  },
+  "tabs": {
+    "tabsMode": "Tabs",
+    "sideBySide": "Side by side",
+    "topBottom": "Top / bottom",
+    "diff": "Diff",
+    "manual": "Manual"
+  },
+  "categories": {
+    "layout": "Layout",
+    "card": "Card",
+    "button": "Button",
+    "badge": "Badge",
+    "form": "Form",
+    "navigation": "Navigation"
+  },
+  "difficulty": {
+    "trivial": "trivial",
+    "easy": "easy",
+    "medium": "medium",
+    "hard": "hard",
+    "die-and-retry": "die & retry"
+  },
+  "levels": {
+    "01-center-div": {
+      "title": "Center a div (lol)",
+      "brief": "The ultimate myth. Center the purple square in the middle, vertically and horizontally."
+    },
+    "02-card": {
+      "title": "Profile card",
+      "brief": "Recreate a card with a round avatar, bold name, and a gray subtitle."
+    },
+    "03-button-row": {
+      "title": "Trio of buttons",
+      "brief": "Three buttons side by side with even gap and distinct colors."
+    },
+    "04-pricing-card": {
+      "title": "Pricing card",
+      "brief": "A pricing box with title, big number, and a \"Choose\" button at the bottom."
+    },
+    "05-notification-badge": {
+      "title": "Notification badge",
+      "brief": "A bell with a small red badge in the top-right showing '3'."
+    },
+    "06-search-bar": {
+      "title": "Search bar",
+      "brief": "An input with a magnifier icon on the left, light gray background, rounded corners."
+    },
+    "07-tab-bar": {
+      "title": "Tab bar",
+      "brief": "Three inline tabs, 'Home' active (indigo underline, dark text)."
+    },
+    "08-stat-card": {
+      "title": "Stat card",
+      "brief": "A card with a subtle label on top, a large value, and a green '+12 %' delta."
+    }
+  },
+  "aiLevel": {
+    "noLevel": "No AI level in session. Go back home to generate one.",
+    "loadError": "Couldn't load the AI level.",
+    "backHome": "Back home"
+  }
+}

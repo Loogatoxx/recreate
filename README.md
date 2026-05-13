@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# recreate
 
-## Getting Started
+Apprends le code en faisant du **reverse engineering** visuel.
+Regarde la cible. Recrée-la. La jauge te dit à quel point tu te rapproches.
 
-First, run the development server:
+🇫🇷 Français · 🇬🇧 English · 🇵🇹 Português · 🇪🇸 Español
+
+## Stack
+
+- Next.js 16 (App Router, Turbopack)
+- React 19.2
+- Tailwind CSS v4
+- TypeScript
+- next-intl (i18n)
+- Monaco Editor (éditeur de code dans le navigateur)
+- Framer Motion + canvas-confetti
+- Zustand (état de jeu)
+- Gemini 2.5 Flash (génération de niveaux par IA + indices)
+- `pixelmatch` + `html2canvas-pro` (moteur de diff visuel)
+
+## Démarrer en local
 
 ```bash
+npm install
+cp .env.example .env.local
+# Édite .env.local et ajoute ta clé Gemini (https://aistudio.google.com/apikey)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variables d'environnement
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Nom | Description |
+|-----|-------------|
+| `GEMINI_API_KEY` | Clé API Google AI Studio. Active la génération de niveaux par IA et les indices contextuels. |
 
-## Learn More
+Si la clé est absente, l'app fonctionne avec des indices statiques par niveau.
 
-To learn more about Next.js, take a look at the following resources:
+## Comment ça marche
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+L'écran principal est divisé en trois zones :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Éditeur** (HTML + CSS), avec onglets, vue côte à côte, et autocomplétion Monaco
+2. **Live Preview** : le rendu de ton code en temps réel
+3. **Target** : le composant à reproduire
 
-## Deploy on Vercel
+Le moteur de comparaison parse le CSS du target et, pour chaque déclaration `(sélecteur, propriété)`, vérifie via `getComputedStyle` si ton rendu produit la même valeur. Le score est calculé relativement au starter (point de départ = 0 %, cible parfaite = 100 %).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Le 100% est verrouillé seulement si **toutes les déclarations matchent** ET que la diff pixel-à-pixel est < 1 %.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+
+- **Mode HTML/CSS séparés** avec onglets et vue split
+- **Diff panel** : liste des déclarations encore manquantes, avec hover qui highlight l'élément concerné
+- **Manuel** : référence CSS pédagogique intégrée
+- **Ingrédients** : palette de couleurs / tailles / fonts du target, copiables au clic
+- **SOS AI** : indice contextuel via Gemini (coûte des points)
+- **Génération IA** : Gemini crée un niveau sur mesure (difficulté, thème)
+- **Internationalisation** : FR / EN / PT / ES via `next-intl`
+
+## Licence
+
+MIT

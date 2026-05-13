@@ -1,0 +1,196 @@
+{
+  "common": {
+    "all": "Toutes",
+    "reset": "Réinitialiser",
+    "close": "Fermer"
+  },
+  "home": {
+    "tagline": "Apprends le code en faisant du <hl>reverse engineering</hl> visuel.",
+    "subtitle": "Regarde la cible. Recrée-la. La jauge te dit à quel point tu te rapproches.",
+    "footer": "Built with Next 16 · React 19.2 · Tailwind 4",
+    "filtersCategory": "Catégorie",
+    "filtersDifficulty": "Difficulté",
+    "noLevels": "Aucun niveau ne correspond à ces filtres.",
+    "levelCount": "{count} niveau{count, plural, one {} other {x}}",
+    "aiButton": "Niveau généré par IA",
+    "aiSubtitle": "Gemini te crée un défi sur mesure"
+  },
+  "generate": {
+    "title": "Générer un niveau",
+    "difficulty": "Difficulté",
+    "theme": "Thème (optionnel)",
+    "themePlaceholder": "ex : carte de météo, badge de notification, loader...",
+    "submit": "Générer",
+    "loading": "L'IA invente ton défi..."
+  },
+  "cockpit": {
+    "backToLevels": "Niveaux",
+    "restart": "Recommencer",
+    "livePreview": "Live Preview",
+    "target": "Target",
+    "inspectionDisabled": "inspection désactivée",
+    "readOnly": "read-only"
+  },
+  "hud": {
+    "match": "Match",
+    "sos": "SOS AI",
+    "sosThinking": "L'IA réfléchit...",
+    "sosHint": "Indice",
+    "sosError": "Hmm, l'IA dort. Réessaye dans un instant.",
+    "ingredients": "Ingrédients",
+    "notFound": "Pas trouvé dans la cible",
+    "andMore": "+{count} autre(s)"
+  },
+  "victory": {
+    "speedrun": "Speedrunner",
+    "wellPlayed": "Bien joué",
+    "win": "Victoire",
+    "time": "Temps",
+    "earned": "Gagné",
+    "hints": "Indices",
+    "total": "Total :",
+    "points": "pts",
+    "replay": "Rejouer",
+    "menu": "Menu",
+    "backToCode": "Retourner au code"
+  },
+  "diff": {
+    "title": "À faire encore",
+    "computing": "Calcul en cours...",
+    "allMatch": "Tout matche !",
+    "allMatchHint": "Toutes les déclarations du target sont appliquées. Si la jauge n'est pas à 100 %, vérifie que tu n'as pas de styles en trop.",
+    "hover": "Survole une ligne pour voir l'élément concerné. Trouve la valeur dans les Ingrédients."
+  },
+  "manual": {
+    "title": "Le Manuel",
+    "intro": "Toutes les briques CSS dont tu as besoin pour les niveaux. Clique pour déplier.",
+    "values": "Valeurs",
+    "sections": {
+      "layout": "Layout",
+      "spacing": "Espacement",
+      "colors": "Couleurs & Fonds",
+      "borders": "Bordures & Ombres",
+      "typography": "Typo",
+      "dimensions": "Dimensions"
+    },
+    "entries": {
+      "displayFlex": {
+        "summary": "Active le mode flexbox. Tous les enfants se mettent en ligne (par défaut), avec des super-pouvoirs d'alignement."
+      },
+      "flexDirection": {
+        "summary": "Direction des enfants en flex. `row` (par défaut) = horizontal. `column` = vertical.",
+        "values": "row · column · row-reverse · column-reverse"
+      },
+      "justifyContent": {
+        "summary": "Aligne les enfants sur l'axe principal (horizontal en row, vertical en column).",
+        "values": "flex-start · center · flex-end · space-between · space-around · space-evenly"
+      },
+      "alignItems": {
+        "summary": "Aligne les enfants sur l'axe transverse. Combiné à `justify-content: center`, ça centre.",
+        "values": "stretch · flex-start · center · flex-end · baseline"
+      },
+      "gap": {
+        "summary": "L'espace entre les enfants flex/grid. Pas besoin de margin compliquée."
+      },
+      "displayGrid": {
+        "summary": "Mode grille 2D. Pour les layouts en colonnes/rangées strictes."
+      },
+      "padding": {
+        "summary": "Espace INTÉRIEUR de l'élément. Pousse le contenu vers le centre.",
+        "values": "`12px` (partout) · `12px 24px` (haut/bas, gauche/droite) · `8px 16px 24px 32px` (top, right, bottom, left)"
+      },
+      "margin": {
+        "summary": "Espace EXTÉRIEUR. Pousse les voisins. Astuce : `margin: 0 auto` centre horizontalement."
+      },
+      "background": {
+        "summary": "La couleur ou l'image de fond. Supporte les gradients aussi."
+      },
+      "color": {
+        "summary": "La couleur du TEXTE de l'élément."
+      },
+      "borderRadius": {
+        "summary": "Arrondit les coins. `50%` = cercle parfait (si l'élément est carré)."
+      },
+      "border": {
+        "summary": "Bordure autour de l'élément. Format : épaisseur, style, couleur."
+      },
+      "boxShadow": {
+        "summary": "Ombre portée. Format : `x y blur color`. Donne du relief."
+      },
+      "fontSize": {
+        "summary": "Taille du texte. Préférer `rem` ou `px`."
+      },
+      "fontWeight": {
+        "summary": "Graisse du texte. `400` = normal, `700` = bold, `800-900` = extra bold."
+      },
+      "textAlign": {
+        "summary": "Alignement du texte dans son conteneur.",
+        "values": "left · center · right · justify"
+      },
+      "widthHeight": {
+        "summary": "Taille de la boîte. Accepte `px`, `%`, `vh`/`vw`, ou `auto`."
+      }
+    }
+  },
+  "tabs": {
+    "tabsMode": "Onglets",
+    "sideBySide": "Côte à côte",
+    "topBottom": "Haut / bas",
+    "diff": "Diff",
+    "manual": "Manuel"
+  },
+  "categories": {
+    "layout": "Layout",
+    "card": "Carte",
+    "button": "Bouton",
+    "badge": "Badge",
+    "form": "Formulaire",
+    "navigation": "Navigation"
+  },
+  "difficulty": {
+    "trivial": "trivial",
+    "easy": "facile",
+    "medium": "moyen",
+    "hard": "difficile",
+    "die-and-retry": "die & retry"
+  },
+  "levels": {
+    "01-center-div": {
+      "title": "Centrer une div (lol)",
+      "brief": "Le mythe ultime. Centre le carré violet au milieu de la zone, vertical et horizontal."
+    },
+    "02-card": {
+      "title": "La carte de profil",
+      "brief": "Recrée une carte avec avatar rond, nom en gras, et un sous-titre gris."
+    },
+    "03-button-row": {
+      "title": "Trio de boutons",
+      "brief": "Trois boutons côte à côte avec un gap régulier et des couleurs distinctes."
+    },
+    "04-pricing-card": {
+      "title": "Carte de pricing",
+      "brief": "Un encart de prix avec titre, gros chiffre, et un bouton \"Choisir\" en bas."
+    },
+    "05-notification-badge": {
+      "title": "Badge de notification",
+      "brief": "Une cloche avec un petit badge rouge en haut à droite qui affiche '3'."
+    },
+    "06-search-bar": {
+      "title": "Barre de recherche",
+      "brief": "Un input avec une icône loupe à gauche, fond gris clair et coins arrondis."
+    },
+    "07-tab-bar": {
+      "title": "Barre d'onglets",
+      "brief": "Trois onglets en ligne, l'onglet 'Accueil' actif (souligné indigo, texte foncé)."
+    },
+    "08-stat-card": {
+      "title": "Carte stat",
+      "brief": "Une carte avec un label discret en haut, une grosse valeur, et un delta '+12 %' en vert."
+    }
+  },
+  "aiLevel": {
+    "noLevel": "Aucun niveau IA en session. Retourne à l'accueil pour en générer un.",
+    "loadError": "Impossible de charger le niveau IA.",
+    "backHome": "Retour à l'accueil"
+  }
+}

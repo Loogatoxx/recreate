@@ -1,0 +1,196 @@
+{
+  "common": {
+    "all": "Todos",
+    "reset": "Limpar",
+    "close": "Fechar"
+  },
+  "home": {
+    "tagline": "Aprende código fazendo <hl>engenharia reversa</hl> visual.",
+    "subtitle": "Olha para o alvo. Recria-o. O medidor diz-te quão perto estás.",
+    "footer": "Built with Next 16 · React 19.2 · Tailwind 4",
+    "filtersCategory": "Categoria",
+    "filtersDifficulty": "Dificuldade",
+    "noLevels": "Nenhum nível corresponde a estes filtros.",
+    "levelCount": "{count} níve{count, plural, one {l} other {is}}",
+    "aiButton": "Nível gerado por IA",
+    "aiSubtitle": "O Gemini cria um desafio à tua medida"
+  },
+  "generate": {
+    "title": "Gerar um nível",
+    "difficulty": "Dificuldade",
+    "theme": "Tema (opcional)",
+    "themePlaceholder": "ex.: cartão de meteorologia, badge de notificação, loader...",
+    "submit": "Gerar",
+    "loading": "A IA está a inventar o teu desafio..."
+  },
+  "cockpit": {
+    "backToLevels": "Níveis",
+    "restart": "Recomeçar",
+    "livePreview": "Live Preview",
+    "target": "Target",
+    "inspectionDisabled": "inspeção desativada",
+    "readOnly": "read-only"
+  },
+  "hud": {
+    "match": "Match",
+    "sos": "SOS AI",
+    "sosThinking": "A IA está a pensar...",
+    "sosHint": "Pista",
+    "sosError": "Hmm, a IA está a dormir. Tenta outra vez daqui a pouco.",
+    "ingredients": "Ingredientes",
+    "notFound": "Não usado no alvo",
+    "andMore": "+{count} outro(s)"
+  },
+  "victory": {
+    "speedrun": "Speedrunner",
+    "wellPlayed": "Bem jogado",
+    "win": "Vitória",
+    "time": "Tempo",
+    "earned": "Ganho",
+    "hints": "Pistas",
+    "total": "Total:",
+    "points": "pts",
+    "replay": "Repetir",
+    "menu": "Menu",
+    "backToCode": "Voltar ao código"
+  },
+  "diff": {
+    "title": "Ainda por fazer",
+    "computing": "A calcular...",
+    "allMatch": "Tudo combina!",
+    "allMatchHint": "Todas as declarações do alvo estão aplicadas. Se o medidor não estiver a 100 %, verifica se não tens estilos a mais.",
+    "hover": "Passa o rato numa linha para ver o elemento correspondente. Encontra o valor nos Ingredientes."
+  },
+  "manual": {
+    "title": "O Manual",
+    "intro": "Todos os blocos CSS de que precisas para os níveis. Clica para expandir.",
+    "values": "Valores",
+    "sections": {
+      "layout": "Layout",
+      "spacing": "Espaçamento",
+      "colors": "Cores & Fundos",
+      "borders": "Bordas & Sombras",
+      "typography": "Tipografia",
+      "dimensions": "Dimensões"
+    },
+    "entries": {
+      "displayFlex": {
+        "summary": "Ativa o modo flexbox. Todos os filhos alinham-se em linha (por defeito) com superpoderes de alinhamento."
+      },
+      "flexDirection": {
+        "summary": "Direção dos filhos em flex. `row` (por defeito) = horizontal. `column` = vertical.",
+        "values": "row · column · row-reverse · column-reverse"
+      },
+      "justifyContent": {
+        "summary": "Alinha os filhos no eixo principal (horizontal em row, vertical em column).",
+        "values": "flex-start · center · flex-end · space-between · space-around · space-evenly"
+      },
+      "alignItems": {
+        "summary": "Alinha os filhos no eixo transversal. Combinado com `justify-content: center`, centra tudo.",
+        "values": "stretch · flex-start · center · flex-end · baseline"
+      },
+      "gap": {
+        "summary": "Espaço entre filhos flex/grid. Sem truques de margin."
+      },
+      "displayGrid": {
+        "summary": "Modo grelha 2D. Para layouts em colunas/linhas estritas."
+      },
+      "padding": {
+        "summary": "Espaço INTERIOR do elemento. Empurra o conteúdo para o centro.",
+        "values": "`12px` (em todo o lado) · `12px 24px` (cima/baixo, esquerda/direita) · `8px 16px 24px 32px` (top, right, bottom, left)"
+      },
+      "margin": {
+        "summary": "Espaço EXTERIOR. Empurra os vizinhos. Truque: `margin: 0 auto` centra horizontalmente."
+      },
+      "background": {
+        "summary": "Cor ou imagem de fundo. Também suporta gradientes."
+      },
+      "color": {
+        "summary": "Cor do TEXTO do elemento."
+      },
+      "borderRadius": {
+        "summary": "Arredonda os cantos. `50%` = círculo perfeito (se o elemento for quadrado)."
+      },
+      "border": {
+        "summary": "Borda à volta do elemento. Formato: espessura, estilo, cor."
+      },
+      "boxShadow": {
+        "summary": "Sombra projetada. Formato: `x y blur color`. Dá profundidade."
+      },
+      "fontSize": {
+        "summary": "Tamanho do texto. Prefere `rem` ou `px`."
+      },
+      "fontWeight": {
+        "summary": "Espessura do texto. `400` = normal, `700` = bold, `800-900` = extra bold."
+      },
+      "textAlign": {
+        "summary": "Alinhamento do texto dentro do contentor.",
+        "values": "left · center · right · justify"
+      },
+      "widthHeight": {
+        "summary": "Tamanho da caixa. Aceita `px`, `%`, `vh`/`vw`, ou `auto`."
+      }
+    }
+  },
+  "tabs": {
+    "tabsMode": "Separadores",
+    "sideBySide": "Lado a lado",
+    "topBottom": "Cima / baixo",
+    "diff": "Diff",
+    "manual": "Manual"
+  },
+  "categories": {
+    "layout": "Layout",
+    "card": "Cartão",
+    "button": "Botão",
+    "badge": "Badge",
+    "form": "Formulário",
+    "navigation": "Navegação"
+  },
+  "difficulty": {
+    "trivial": "trivial",
+    "easy": "fácil",
+    "medium": "médio",
+    "hard": "difícil",
+    "die-and-retry": "die & retry"
+  },
+  "levels": {
+    "01-center-div": {
+      "title": "Centrar uma div (lol)",
+      "brief": "O mito definitivo. Centra o quadrado roxo no meio da zona, vertical e horizontalmente."
+    },
+    "02-card": {
+      "title": "Cartão de perfil",
+      "brief": "Recria um cartão com avatar redondo, nome a bold, e um subtítulo cinzento."
+    },
+    "03-button-row": {
+      "title": "Trio de botões",
+      "brief": "Três botões lado a lado, com gap regular e cores distintas."
+    },
+    "04-pricing-card": {
+      "title": "Cartão de pricing",
+      "brief": "Um cartão de preço com título, número grande, e um botão \"Escolher\" em baixo."
+    },
+    "05-notification-badge": {
+      "title": "Badge de notificação",
+      "brief": "Um sino com um pequeno badge vermelho no canto superior direito a mostrar '3'."
+    },
+    "06-search-bar": {
+      "title": "Barra de pesquisa",
+      "brief": "Um input com uma lupa à esquerda, fundo cinzento claro e cantos arredondados."
+    },
+    "07-tab-bar": {
+      "title": "Barra de separadores",
+      "brief": "Três separadores em linha, 'Início' ativo (sublinhado indigo, texto escuro)."
+    },
+    "08-stat-card": {
+      "title": "Cartão de stat",
+      "brief": "Um cartão com uma label discreta em cima, um valor grande, e um delta '+12 %' a verde."
+    }
+  },
+  "aiLevel": {
+    "noLevel": "Nenhum nível IA na sessão. Volta ao início para gerar um.",
+    "loadError": "Não foi possível carregar o nível IA.",
+    "backHome": "Voltar ao início"
+  }
+}
