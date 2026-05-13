@@ -23,6 +23,7 @@ import {
 } from '@/lib/visual-diff';
 import { selectorsForValue } from '@/lib/find-css-context';
 import { useGameStore } from '@/lib/store';
+import { useProgressStore } from '@/lib/progress-store';
 import type { Level } from '@/lib/levels';
 
 const HIGHLIGHT_STYLE_ID = 'recreate-hover-highlight';
@@ -133,6 +134,15 @@ export function Cockpit({ level }: Props) {
           const elapsedMs = Date.now() - startedAt;
           const pointsEarned = state.points - pointsAtStartRef.current;
           const hintsUsedAtWin = state.hintsUsed;
+
+          // Persist this completion to cross-session progress + topic mastery.
+          useProgressStore.getState().recordLevelAttempt(level.id, {
+            score: 100,
+            timeMs: elapsedMs,
+            topics: level.topics,
+          });
+          useProgressStore.getState().recordSession();
+
           victoryTimerRef.current = setTimeout(() => {
             setVictory({ open: true, elapsedMs, pointsEarned, hintsUsedAtWin });
           }, VICTORY_DELAY_MS);

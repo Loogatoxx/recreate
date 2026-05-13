@@ -1,8 +1,12 @@
+import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { ListChecks } from 'lucide-react';
 import { CATEGORIES, DIFFICULTIES, LEVELS } from '@/lib/levels';
 import { GenerateButton } from '@/components/home/GenerateButton';
 import { LevelGrid } from '@/components/home/LevelGrid';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { WeeklyGoals } from '@/components/home/WeeklyGoals';
+import { MasteryMap } from '@/components/home/MasteryMap';
 
 export default async function Home() {
   const t = await getTranslations('home');
@@ -27,8 +31,20 @@ export default async function Home() {
           <p className="mt-1 text-sm text-slate-500">{t('subtitle')}</p>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-8 grid gap-4 md:grid-cols-2">
+          <WeeklyGoals />
+          <MasteryMap />
+        </div>
+
+        <div className="mb-6 grid gap-3 sm:grid-cols-[1fr_auto]">
           <GenerateButton />
+          <Link
+            href="/quiz"
+            className="flex items-center justify-center gap-2 rounded-xl border border-indigo-500/40 bg-indigo-500/10 px-5 py-5 text-sm font-semibold text-indigo-100 transition hover:bg-indigo-500/20 sm:px-6"
+          >
+            <ListChecks size={16} />
+            Quiz
+          </Link>
         </div>
 
         <LevelGrid

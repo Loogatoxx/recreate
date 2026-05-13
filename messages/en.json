@@ -71,7 +71,12 @@
       "colors": "Colors & Backgrounds",
       "borders": "Borders & Shadows",
       "typography": "Typography",
-      "dimensions": "Dimensions"
+      "dimensions": "Dimensions",
+      "selectors": "Selectors",
+      "positioning": "Positioning",
+      "animation": "Animation",
+      "adaptive": "Responsive",
+      "cssVariables": "CSS variables"
     },
     "entries": {
       "displayFlex": {
@@ -129,6 +134,106 @@
       },
       "widthHeight": {
         "summary": "Box size. Accepts `px`, `%`, `vh`/`vw`, or `auto`."
+      },
+      "marginAuto": {
+        "summary": "Centers an element horizontally when its width is set. `auto` splits left/right space equally."
+      },
+      "opacity": {
+        "summary": "Controls transparency (0 = invisible, 1 = opaque). `0.5` = semi-transparent. Different from `visibility: hidden` which keeps the space."
+      },
+      "selectorClass": {
+        "summary": "Targets every tag with the matching `class=\"...\"`. A class can be applied to multiple tags."
+      },
+      "selectorId": {
+        "summary": "Targets ONE specific tag by its `id`. An id must be unique on the page. Higher specificity than classes."
+      },
+      "selectorUniversal": {
+        "summary": "The asterisk targets ALL tags. Useful for a reset or `box-sizing`."
+      },
+      "combinatorDescendant": {
+        "summary": "Descendant selector: `A B` matches every `B` inside an `A`, at any nesting level."
+      },
+      "combinatorChild": {
+        "summary": "Direct child selector: `A > B` matches only `B`s that are IMMEDIATE children of `A` (not deeper)."
+      },
+      "combinatorAdjacent": {
+        "summary": "Adjacent sibling: `A + B` matches only the `B` directly following an `A` at the same level."
+      },
+      "combinatorSibling": {
+        "summary": "General sibling: `A ~ B` matches every `B` following an `A` at the same level (not necessarily adjacent)."
+      },
+      "attrSelector": {
+        "summary": "Targets by attribute. `[attr]` = presence, `[attr=val]` = equal, `[attr^=val]` = starts with, `[attr$=val]` = ends with, `[attr~=val]` = contains word.",
+        "values": "[attr] · [attr=val] · [attr^=...] · [attr$=...] · [attr~=...]"
+      },
+      "pseudoHover": {
+        "summary": "Style applied when the cursor is over the element. For links: `:link`, `:visited`, `:hover`, `:active`."
+      },
+      "pseudoFirstChild": {
+        "summary": "Targets the FIRST child tag of a parent. Variants: `:last-child`, `:first-of-type`."
+      },
+      "pseudoNthChild": {
+        "summary": "Targets the Nth child tag. Accepts a number, keyword (`odd`, `even`) or formula (`2n+1`, `3n`).",
+        "values": "1, 2, 3... · odd · even · 2n+1 · 3n"
+      },
+      "pseudoFirstLetter": {
+        "summary": "Pseudo-ELEMENT (`::`): targets the first letter of the tag's content. Useful for drop caps."
+      },
+      "pseudoBefore": {
+        "summary": "Pseudo-elements that INJECT content before/after. `content` is mandatory, even empty (`content: \"\"`)."
+      },
+      "specificity": {
+        "summary": "When two rules conflict, the highest specificity wins. Score: id (100) > class (10) > tag (1). Inline (`style=\"...\"`) beats everything except `!important`."
+      },
+      "positionStatic": {
+        "summary": "Default position. The element follows the document flow. Ignores `top`, `left`, `right`, `bottom`, `z-index`."
+      },
+      "positionRelative": {
+        "summary": "Stays in the flow but can be offset via `top`/`left`/`right`/`bottom`. Often used as a REFERENCE POINT for an `absolute` child."
+      },
+      "positionAbsolute": {
+        "summary": "Out of normal flow. Positioned relative to the nearest positioned parent (relative/absolute/fixed). No positioned parent → relative to `<html>`."
+      },
+      "positionFixed": {
+        "summary": "Out of flow. Position relative to the VIEWPORT — stays visible while scrolling. Used for fixed headers/menus."
+      },
+      "zIndex": {
+        "summary": "Controls the stacking order. Higher number = in front. Only works when `position` is not `static`."
+      },
+      "floatLeft": {
+        "summary": "Floats the element left or right. Neighbors wrap around the float. Classic use: image with surrounding text."
+      },
+      "clearBoth": {
+        "summary": "Prevents an element from wrapping next to a floated sibling. `clear: left | right | both` per side to skip."
+      },
+      "displayBlock": {
+        "summary": "`block` (default for div/p/h1) takes full width with breaks. `inline` (span/a) flows with text. `inline-block` mixes both.",
+        "values": "block · inline · inline-block · flex · grid · none"
+      },
+      "displayNone": {
+        "summary": "Removes the element from the visual DOM AND from the flow (space is freed). Unlike `visibility: hidden` which keeps the space."
+      },
+      "visibilityHidden": {
+        "summary": "Hides the element BUT keeps its place in the flow. The user sees nothing there, but the layout isn't affected."
+      },
+      "transition": {
+        "summary": "Animates a property change on a trigger (typically `:hover`). Format: `transition: <prop> <duration> <function>`."
+      },
+      "transitionTiming": {
+        "summary": "Acceleration curve of the transition. Affects the feel of motion.",
+        "values": "ease (default) · linear · ease-in · ease-out · ease-in-out · cubic-bezier(...)"
+      },
+      "keyframes": {
+        "summary": "Continuous/cyclic animation via defined steps. `@keyframes` declares the sequence; `animation-name`, `-duration`, `-iteration-count`, `-direction` apply it."
+      },
+      "mediaQuery": {
+        "summary": "Applies CSS rules under conditions (width, height, orientation, color, resolution). Operators: `and`, `not`, `only`, comma for OR."
+      },
+      "viewport": {
+        "summary": "The viewport meta tells the mobile browser the size to use. WITHOUT it, mobile renders the page like a desktop screen and zooms out."
+      },
+      "cssVar": {
+        "summary": "CSS variables defined with `--name: value` (often in `:root`) and used with `var(--name)`. Centralizes colors/sizes/themes."
       }
     }
   },
@@ -186,11 +291,664 @@
     "08-stat-card": {
       "title": "Stat card",
       "brief": "A card with a subtle label on top, a large value, and a green '+12 %' delta."
+    },
+    "09-positioned-tag": {
+      "title": "Absolute tag on a card",
+      "brief": "A card with a \"NEW\" tag pinned to the top-right via position: absolute."
+    },
+    "10-pseudo-quote": {
+      "title": "Pseudo-elements in action",
+      "brief": "A quote with opening/closing quotation marks via ::before and ::after."
+    },
+    "11-css-variables": {
+      "title": "Theme via CSS variables",
+      "brief": "Define a palette in :root and reuse it via var() — warning alert."
+    },
+    "12-keyframes-spinner": {
+      "title": "Animated spinner (@keyframes)",
+      "brief": "A circle spinning forever via @keyframes + animation infinite linear."
     }
   },
   "aiLevel": {
     "noLevel": "No AI level in session. Go back home to generate one.",
     "loadError": "Couldn't load the AI level.",
     "backHome": "Back home"
+  },
+  "quiz": {
+    "title": "Quiz",
+    "subtitle": "Review CSS concepts in short cards. Correct answer = the card waits longer before coming back.",
+    "backToHome": "Home",
+    "backToTopics": "Topics",
+    "byTopic": "By topic",
+    "seedNotice": "25 starter cards. Full course coverage coming after the PDF is parsed.",
+    "cards": {
+      "css-001": {
+        "prompt": "Which CSS declaration turns on flexbox on an element?",
+        "explanation": "`display: flex` makes the container a flex container; its children become flex items."
+      },
+      "css-002": {
+        "prompt": "Which property aligns flex children on the cross axis?",
+        "explanation": "`align-items` acts on the axis perpendicular to `flex-direction`."
+      },
+      "css-003": {
+        "prompt": "Which property aligns flex children on the main axis?",
+        "explanation": "`justify-content` acts on the main axis (horizontal in `row`, vertical in `column`)."
+      },
+      "css-004": {
+        "prompt": "Fill in: to stack flex children vertically, write `flex-direction: ___;`",
+        "explanation": "`column` flips the main axis to vertical."
+      },
+      "css-005": {
+        "prompt": "Which property sets the space BETWEEN flex or grid children?",
+        "explanation": "`gap` replaces margin hacks for flex and grid containers."
+      },
+      "css-006": {
+        "prompt": "Which property creates INSIDE space (between content and border)?",
+        "explanation": "`padding` is inside. `margin` pushes neighbors, outside the border."
+      },
+      "css-007": {
+        "prompt": "Which property pushes neighbors away (OUTSIDE space)?",
+        "explanation": "`margin` is outside the border; `padding` is inside."
+      },
+      "css-008": {
+        "prompt": "How do you target the class `card`?",
+        "explanation": "Prefix `.` for a class, `#` for an id, no prefix for a tag."
+      },
+      "css-009": {
+        "prompt": "How do you target the element with `id=\"menu\"`?",
+        "explanation": "Prefix `#` for an id. An id should appear only once per page."
+      },
+      "css-010": {
+        "prompt": "How do you style a button on HOVER?",
+        "explanation": "Pseudo-class `:hover` with a SINGLE `:`. Pseudo-elements (like `::before`) use `::`."
+      },
+      "css-011": {
+        "prompt": "Which of these rules has the HIGHEST specificity?",
+        "explanation": "Specificity: id (100) > class (10) > tag (1). `#box` beats everything else."
+      },
+      "css-012": {
+        "prompt": "Which unit is relative to the root (`<html>`) font size?",
+        "explanation": "`rem` = root em. `em` is relative to the parent element."
+      },
+      "css-013": {
+        "prompt": "Fill in: 100% of the viewport height is `100___`",
+        "explanation": "`vh` = viewport height. `vw` = viewport width."
+      },
+      "css-014": {
+        "prompt": "Which of these formats represents the color BLUE?",
+        "explanation": "`#0000ff` is the hex code for pure blue. Hex reads as `#RRGGBB`."
+      },
+      "css-015": {
+        "prompt": "Which syntax makes a color SEMI-transparent?",
+        "explanation": "`rgba(r, g, b, alpha)` or the modern `rgb(r g b / alpha)`."
+      },
+      "css-016": {
+        "prompt": "Which positioning removes the element from the flow AND places it relative to the nearest positioned parent?",
+        "explanation": "`absolute` positions relative to the nearest ancestor with `position: relative|absolute|fixed|sticky`."
+      },
+      "css-017": {
+        "prompt": "Which positioning pins the element to the VIEWPORT (not the scroll)?",
+        "explanation": "`fixed` sticks to the viewport. `sticky` sticks after a scroll threshold."
+      },
+      "css-018": {
+        "prompt": "Fill in: to turn a square into a perfect circle, `border-radius: ___;`",
+        "explanation": "`50%` rounds to half the width. On a square, it produces a circle."
+      },
+      "css-019": {
+        "prompt": "Which `box-shadow` gives a soft drop shadow downward?",
+        "explanation": "Format: `offset-x offset-y blur color`. Positive Y pushes the shadow down."
+      },
+      "css-020": {
+        "prompt": "Which declaration corresponds to a NORMAL-weight text?",
+        "explanation": "`400` = normal. `700` = bold. Numbers are preferred over keywords."
+      },
+      "css-021": {
+        "prompt": "Which property centers text HORIZONTALLY inside its container?",
+        "explanation": "`text-align: center` acts on text; `justify-content: center` acts on flex children."
+      },
+      "css-022": {
+        "prompt": "What is the DEFAULT `display` value for a `<div>`?",
+        "explanation": "`<div>`, `<p>`, `<h1>` etc. are `display: block` by default."
+      },
+      "css-023": {
+        "prompt": "How do you HIDE an element AND remove its space in the flow?",
+        "explanation": "`display: none` removes the element. `visibility: hidden` hides it but keeps its space."
+      },
+      "css-024": {
+        "prompt": "Which syntax applies CSS only on screens under 768px?",
+        "explanation": "CSS media queries use `@media (max-width: ...)` or `(min-width: ...)`."
+      },
+      "css-025": {
+        "prompt": "Which declaration animates all properties over 1 second on state change?",
+        "explanation": "`transition: all 1s` covers every animatable property. Prefer targeting a specific property for perf."
+      },
+      "css-058": {
+        "prompt": "How do you link an external stylesheet?",
+        "explanation": "Use `<link rel=\"stylesheet\" href=\"...\">` in the `<head>`."
+      },
+      "css-059": {
+        "prompt": "Which CSS application method is the LEAST recommended for maintenance?",
+        "explanation": "Inline (`style=\"...\"`) — you'd have to edit every tag in every document."
+      },
+      "css-060": {
+        "prompt": "A CSS rule is made of which two parts?",
+        "explanation": "`selector { declaration }`. The declaration contains properties and their values."
+      },
+      "css-061": {
+        "prompt": "Which is the correct CSS comment syntax?",
+        "explanation": "Always `/* ... */`. JS `//` does NOT work in CSS."
+      },
+      "css-062": {
+        "prompt": "Which operator selects ALL tags in the document?",
+        "explanation": "The asterisk `*` is the universal selector."
+      },
+      "css-063": {
+        "prompt": "What does `table td p { ... }` do?",
+        "explanation": "Descendant combinator: `p` inside a `td` inside a `table`, at any nesting level."
+      },
+      "css-064": {
+        "prompt": "Which selector targets ONLY direct child `<span>`s of `<p>` (not deeper)?",
+        "explanation": "The `>` operator means direct parent-child, not any descendant."
+      },
+      "css-065": {
+        "prompt": "What does `h1 + p { ... }` do?",
+        "explanation": "Adjacent sibling: only the `p` IMMEDIATELY after an `h1`."
+      },
+      "css-066": {
+        "prompt": "What does `h1 ~ p { ... }` do?",
+        "explanation": "General sibling: every `p` following an `h1` at the same level, not necessarily adjacent."
+      },
+      "css-067": {
+        "prompt": "Which syntax targets `<input>` with `type=\"text\"`?",
+        "explanation": "Attribute selector: `tag[attribute=value]`."
+      },
+      "css-068": {
+        "prompt": "Which syntax targets images whose alt STARTS with \"Figura\"?",
+        "explanation": "`^=` = starts with. `$=` = ends with. `~=` = contains the word."
+      },
+      "css-069": {
+        "prompt": "Which syntax targets images whose alt ENDS with \".png\"?",
+        "explanation": "`$=` = ends with. See also `^=` and `~=`."
+      },
+      "css-070": {
+        "prompt": "How do you target paragraphs WITHOUT a `lang` attribute?",
+        "explanation": "The `:not(...)` pseudo-class negates."
+      },
+      "css-071": {
+        "prompt": "Which syntax targets the FIRST `<p>` child of a parent?",
+        "explanation": "Pseudo-class `:first-child` with ONE colon. Targets a DOM position."
+      },
+      "css-072": {
+        "prompt": "How do you target the 5th `<p>` child?",
+        "explanation": "`:nth-child(N)` accepts an index, keyword (`odd`, `even`) or a formula (`2n+1`)."
+      },
+      "css-073": {
+        "prompt": "Which syntax targets the FIRST LETTER of a paragraph?",
+        "explanation": "Pseudo-ELEMENT with DOUBLE colons: `::first-letter`. Targets a PART of the content, not the box."
+      },
+      "css-074": {
+        "prompt": "What's the modern convention for pseudo-elements (vs pseudo-classes)?",
+        "explanation": "Pseudo-classes: `:hover`, `:first-child`. Pseudo-elements: `::before`, `::first-letter`. The double `::` distinguishes."
+      },
+      "css-075": {
+        "prompt": "Which declaration centers an element HORIZONTALLY via margin auto?",
+        "explanation": "`margin: 0 auto` splits left/right space evenly, centering the element."
+      },
+      "css-076": {
+        "prompt": "Which property caps an element's MAX width?",
+        "explanation": "`max-width` (and `min-width`, `max-height`, `min-height`). Useful for responsive."
+      },
+      "css-077": {
+        "prompt": "Which syntax is valid for `border`?",
+        "explanation": "The order `width style color` is flexible. CSS knows each value by its kind."
+      },
+      "css-078": {
+        "prompt": "What's the valid range for `opacity`?",
+        "explanation": "`opacity` goes from `0` (invisible) to `1` (opaque). No percentage form."
+      },
+      "css-079": {
+        "prompt": "Which element appears ON TOP of others in the stack?",
+        "explanation": "Higher `z-index` = higher in stack. Only works when `position` is not `static`."
+      },
+      "css-080": {
+        "prompt": "Under what condition does `z-index` work?",
+        "explanation": "Without a non-static position, `z-index` is ignored. You need `relative`, `absolute`, `fixed`, or `sticky`."
+      },
+      "css-081": {
+        "prompt": "Which is NOT a valid `float` value?",
+        "explanation": "`float` accepts `left`, `right`, and `none`. No `top`/`bottom`."
+      },
+      "css-082": {
+        "prompt": "Which property prevents an element from wrapping around a float?",
+        "explanation": "`clear: left | right | both` breaks the wrap behavior."
+      },
+      "css-083": {
+        "prompt": "Which is NOT a valid CSS media type?",
+        "explanation": "Valid types: `all`, `screen`, `print`, `braille`, `handheld`, `tv`. Not `mobile` — use media queries."
+      },
+      "css-084": {
+        "prompt": "Which operator is NOT valid in a media query?",
+        "explanation": "Media queries accept `and`, `not`, `only`. For OR, use a comma (`,`)."
+      },
+      "css-085": {
+        "prompt": "How do you target portrait screens?",
+        "explanation": "Media query with `orientation: portrait | landscape`."
+      },
+      "css-086": {
+        "prompt": "Which HTML tag declares the viewport for mobile responsive?",
+        "explanation": "Meta tag `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">` in `<head>`."
+      },
+      "css-087": {
+        "prompt": "Which property controls the ACCELERATION CURVE of a transition?",
+        "explanation": "`transition-timing-function` accepts `ease`, `ease-in`, `ease-out`, `linear`, `cubic-bezier(...)`."
+      },
+      "css-088": {
+        "prompt": "Which syntax declares a keyframe animation?",
+        "explanation": "`@keyframes name { 0% {...} 100% {...} }` or `from / to`. Combined with `animation-name`."
+      },
+      "css-089": {
+        "prompt": "Which keywords represent the START and END of a keyframe animation?",
+        "explanation": "`from` = 0%, `to` = 100%. Both notations are equivalent."
+      },
+      "css-090": {
+        "prompt": "How do you use a CSS variable declared in `:root`?",
+        "explanation": "`var(--variable-name)`. Variables are declared with `--name: value;` often in `:root`."
+      },
+      "css-091": {
+        "prompt": "What's the semantic difference between `<span>` and `<div>`?",
+        "explanation": "`<div>` = block (line break before/after). `<span>` = inline (flows with text)."
+      },
+      "js-001": {
+        "prompt": "Which keyword declares a constant (immutable value) in JS?",
+        "explanation": "`const` prevents reassignment. `let` and `var` allow it."
+      },
+      "js-002": {
+        "prompt": "Which statement about var/let/const is FALSE?",
+        "explanation": "They differ: `var` has function scope, `let` and `const` have block scope."
+      },
+      "js-003": {
+        "prompt": "Which is NOT a JS primitive type?",
+        "explanation": "Primitives: String, Number, Boolean, null, undefined, Symbol, BigInt. No separate `Integer` — all numbers are Number."
+      },
+      "js-004": {
+        "prompt": "What does `typeof []` return?",
+        "explanation": "Arrays are objects in JS. `typeof []` returns `\"object\"`. Use `Array.isArray()` to discriminate."
+      },
+      "js-005": {
+        "prompt": "What does `typeof null` return?",
+        "explanation": "Historical JS bug: `typeof null` returns `\"object\"` even though `null` is NOT an object."
+      },
+      "js-006": {
+        "prompt": "What does `5 == \"5\"` return?",
+        "explanation": "`==` does type coercion. `5 == \"5\"` is `true` because \"5\" is converted to 5."
+      },
+      "js-007": {
+        "prompt": "What does `5 === \"5\"` return?",
+        "explanation": "`===` does NOT coerce. Types differ (number vs string), so `false`."
+      },
+      "js-008": {
+        "prompt": "What does `true && false || true` return?",
+        "explanation": "Precedence: `&&` before `||`. So `(true && false) || true` = `false || true` = `true`."
+      },
+      "js-009": {
+        "prompt": "Fill in: increment a variable by 1 is `i ___`",
+        "explanation": "`i++` (post), `++i` (pre), or `i += 1`."
+      },
+      "js-010": {
+        "prompt": "Which syntax uses a template literal for concatenation?",
+        "explanation": "Backticks `` ` `` with `${expression}`. More readable than classic `+`."
+      },
+      "js-011": {
+        "prompt": "What's the syntax of a ternary operation?",
+        "explanation": "`condition ? valueIfTrue : valueIfFalse`. Shortcut for `if/else`."
+      },
+      "js-012": {
+        "prompt": "Which keyword prevents switch cases from cascading?",
+        "explanation": "`break;` exits the switch. Without break, execution falls through."
+      },
+      "js-013": {
+        "prompt": "What's the correct classic `for` loop syntax?",
+        "explanation": "`for (init; condition; increment)`. Three parts separated by `;`."
+      },
+      "js-014": {
+        "prompt": "Which loop is guaranteed to execute its block AT LEAST ONCE?",
+        "explanation": "`do { ... } while (cond)` tests AFTER the body, so at least one iteration."
+      },
+      "js-015": {
+        "prompt": "Which loop iterates over an object's KEYS?",
+        "explanation": "`for (let prop in obj)` gives property names. `for...of` doesn't work on plain objects (without helpers)."
+      },
+      "js-016": {
+        "prompt": "What's the argument order in `forEach(function(...)) `?",
+        "explanation": "`forEach((item, index, array) => ...)`. Item first, then index."
+      },
+      "js-017": {
+        "prompt": "What's the correct named function syntax in JS?",
+        "explanation": "`function name(args) { ... }`. Other syntaxes (`def`, `func`) are from other languages."
+      },
+      "js-018": {
+        "prompt": "What's the correct arrow function syntax?",
+        "explanation": "`(args) => expression` or `(args) => { block }`. The `=>` is mandatory."
+      },
+      "js-019": {
+        "prompt": "Which native function converts `\"3.14\"` to `3.14` (float)?",
+        "explanation": "`parseFloat()` for decimals, `parseInt()` for integers."
+      },
+      "js-020": {
+        "prompt": "What does `isNaN(\"abc\")` return?",
+        "explanation": "`\"abc\"` can't convert to number → `NaN` → `isNaN` is `true`."
+      },
+      "js-021": {
+        "prompt": "How do you access the `nom` property of an object `p`?",
+        "explanation": "`p.nom` (dot) or `p[\"nom\"]` (bracket). Bracket allows dynamic keys."
+      },
+      "js-022": {
+        "prompt": "How do you remove a property from an object?",
+        "explanation": "`delete p.nom` removes the property. `p.nom = null` keeps it but with null value."
+      },
+      "js-023": {
+        "prompt": "What does `const { cidade, rua } = morada;` do?",
+        "explanation": "Object destructuring: creates `cidade` and `rua` variables from `morada`'s same-named properties."
+      },
+      "js-024": {
+        "prompt": "How do you merge two objects `a` and `b`?",
+        "explanation": "Spread operator: `const c = { ...a, ...b }`. On conflict, `b` overwrites `a`."
+      },
+      "js-025": {
+        "prompt": "What does `this` refer to in an object method?",
+        "explanation": "`this` is the object on which the method is called. Different in arrow functions!"
+      },
+      "js-026": {
+        "prompt": "Which keyword initializes a class in JS?",
+        "explanation": "`constructor(args) { ... }` is the RESERVED name for the class init method."
+      },
+      "js-027": {
+        "prompt": "Which syntax makes `Professor` inherit from `Pessoa`?",
+        "explanation": "`class Professor extends Pessoa`. Use `super(args)` to call the parent."
+      },
+      "js-028": {
+        "prompt": "Which property gives an array's element count?",
+        "explanation": "`array.length` (not `.size`, `.count`, or `.length()`)."
+      },
+      "js-029": {
+        "prompt": "Which method adds an item to the END of an array?",
+        "explanation": "`push()` adds at the end. `unshift()` adds at the start. Both modify the original."
+      },
+      "js-030": {
+        "prompt": "Which method removes the FIRST element of an array?",
+        "explanation": "`shift()` removes the first. `pop()` removes the last. `unshift()` ADDS to the start."
+      },
+      "js-031": {
+        "prompt": "Which method adds an item to the START of an array?",
+        "explanation": "`unshift()` adds at the start. `push()` adds at the end."
+      },
+      "js-032": {
+        "prompt": "Which method creates a NEW array keeping only certain items?",
+        "explanation": "`filter(cb)` keeps items where `cb` returns `true`."
+      },
+      "js-033": {
+        "prompt": "Which method TRANSFORMS each item into a new one?",
+        "explanation": "`map(cb)` returns a new array where each item is the result of `cb`."
+      },
+      "js-034": {
+        "prompt": "Which method REDUCES an array to a single value?",
+        "explanation": "`reduce((acc, item) => ..., initial)` accumulates a single result."
+      },
+      "js-035": {
+        "prompt": "What does `\"John Doe\".split(\" \")` return?",
+        "explanation": "`split` cuts a string into an array by separator. Here: `[\"John\", \"Doe\"]`."
+      },
+      "js-036": {
+        "prompt": "What does `\"Ferrari\".charAt(0)` return?",
+        "explanation": "`charAt(n)` returns the char at index `n`. Index 0 is the first character."
+      },
+      "js-037": {
+        "prompt": "Which method finds the first occurrence of a substring?",
+        "explanation": "`indexOf(\"abc\")` returns the index of the first match, or -1 if not found."
+      },
+      "js-038": {
+        "prompt": "What does `\"FeRRaRi\".toLowerCase()` return?",
+        "explanation": "Converts the whole string to lowercase. Note: doesn't modify the original (strings are immutable)."
+      },
+      "js-039": {
+        "prompt": "Which method asks the user to TYPE an answer?",
+        "explanation": "`prompt(\"message\")` opens an input box. Returns the typed string, or null if cancelled."
+      },
+      "js-040": {
+        "prompt": "Which method asks a yes/no CONFIRMATION?",
+        "explanation": "`confirm(\"message\")` returns `true` (OK) or `false` (Cancel)."
+      },
+      "js-041": {
+        "prompt": "Which timer runs ONCE after a delay?",
+        "explanation": "`setTimeout(callback, ms)` runs after ms milliseconds. `setInterval` repeats."
+      },
+      "js-042": {
+        "prompt": "Which timer runs REPEATEDLY at intervals?",
+        "explanation": "`setInterval(callback, ms)` repeats every ms. Use `clearInterval` to stop."
+      },
+      "js-043": {
+        "prompt": "Which method generates a random number between 0 and 1?",
+        "explanation": "`Math.random()`. For an integer between 0 and N: `Math.floor(Math.random() * N)`."
+      },
+      "js-044": {
+        "prompt": "What does `Math.floor(8.78)` return?",
+        "explanation": "`floor` = round DOWN to integer. So 8."
+      },
+      "js-045": {
+        "prompt": "What does `Math.ceil(12.01)` return?",
+        "explanation": "`ceil` = round UP to integer. So 13."
+      },
+      "js-046": {
+        "prompt": "What's the range returned by `Date.getMonth()`?",
+        "explanation": "0 to 11 (0 = January, 11 = December). Classic bug: forgetting to add 1 for human display."
+      },
+      "js-047": {
+        "prompt": "What's the day-of-week convention for `Date.getDay()`?",
+        "explanation": "0 = Sunday, 1 = Monday, ..., 6 = Saturday."
+      },
+      "js-048": {
+        "prompt": "How do you select an element by its ID?",
+        "explanation": "`document.getElementById(\"teste\")` (no `#`). Fast method, returns an Element or null."
+      },
+      "js-049": {
+        "prompt": "What's the difference between `querySelector` and `querySelectorAll`?",
+        "explanation": "`querySelector` returns the FIRST match (or null). `querySelectorAll` returns a NodeList of all."
+      },
+      "js-050": {
+        "prompt": "What's the difference between `innerHTML` and `innerText`?",
+        "explanation": "`innerHTML` reads/writes HTML markup. `innerText` reads/writes only the text without tags."
+      },
+      "js-051": {
+        "prompt": "How do you set `background-color` via `.style` in JS?",
+        "explanation": "CSS properties with `-` become camelCase in JS. `background-color` → `backgroundColor`. Bracket notation accepts the original."
+      },
+      "js-052": {
+        "prompt": "How do you create a new `<p>` element in JS?",
+        "explanation": "`document.createElement(\"p\")` creates an unattached element. Use `appendChild` to insert it."
+      },
+      "js-053": {
+        "prompt": "Which event fires when the pointer enters an element?",
+        "explanation": "`onmouseover` (enter) and `onmouseout` (leave). Modern: `mouseenter` / `mouseleave`."
+      },
+      "js-054": {
+        "prompt": "Which event fires on form submission?",
+        "explanation": "`onsubmit` on the `<form>`. Ideal for validation. Return `false` to cancel."
+      },
+      "js-055": {
+        "prompt": "How do you prevent the default behavior of an event?",
+        "explanation": "`event.preventDefault()`. Example: prevent form submission or link navigation."
+      },
+      "js-056": {
+        "prompt": "In an inline handler, how do you cancel the default action?",
+        "explanation": "`return false` from the handler cancels the action. Equivalent to `event.preventDefault()` + `event.stopPropagation()`."
+      },
+      "js-057": {
+        "prompt": "Which property gives access to document cookies?",
+        "explanation": "`document.cookie` is a string (manual parsing). Note GDPR constraints for cookie usage."
+      }
+    },
+    "noDueCards": "No cards due today. Pick a topic below.",
+    "dueToday": "{count, plural, one {1 card due today} other {# cards due today}}",
+    "dueSession": "Due",
+    "mixedSession": "Mixed",
+    "submit": "Submit",
+    "next": "Next",
+    "correct": "Correct",
+    "incorrect": "Not quite",
+    "expected": "Expected",
+    "fillPlaceholder": "Your answer",
+    "sessionDone": "Session complete",
+    "correctLow": "correct",
+    "noCards": "No cards available for this selection.",
+    "pickTopic": "Pick a topic",
+    "cardKind": {
+      "mcq": "MCQ",
+      "fill-blank": "Fill in",
+      "predict-output": "Predict output"
+    },
+    "cardsLabel": "cards"
+  },
+  "topics": {
+    "css": {
+      "selectors-basic": "Selectors (basics)",
+      "selectors-advanced": "Advanced selectors",
+      "pseudo-classes": "Pseudo-classes",
+      "pseudo-elements": "Pseudo-elements",
+      "specificity": "Specificity",
+      "inheritance": "Inheritance & cascade",
+      "box-model": "Box model",
+      "display": "display",
+      "overflow": "overflow",
+      "flexbox": "Flexbox",
+      "grid": "Grid",
+      "positioning": "Positioning",
+      "float": "float & clear",
+      "units": "Units",
+      "colors": "Colors",
+      "variables": "CSS variables",
+      "typography": "Typography",
+      "backgrounds": "Backgrounds",
+      "borders-radius": "Borders & radius",
+      "shadows": "Shadows",
+      "transitions": "Transitions",
+      "transforms": "Transforms",
+      "animations": "Animations",
+      "responsive": "Responsive",
+      "applying": "Applying (External/Internal/Inline)",
+      "rules-anatomy": "Rule anatomy",
+      "universal": "Universal selector (*)",
+      "combinators": "Combinators (descendant, >, +, ~)",
+      "grouping": "Grouping (comma)",
+      "attribute-selectors": "Attribute selectors",
+      "margin": "margin",
+      "padding": "padding",
+      "border": "border",
+      "visibility-opacity": "visibility & opacity",
+      "z-index": "z-index",
+      "media-types": "Media types",
+      "media-queries": "Media queries (@media)",
+      "viewport": "Viewport meta",
+      "keyframes": "@keyframes animations",
+      "div-span": "div vs span"
+    },
+    "js": {
+      "var-let-const": "var / let / const",
+      "types": "Primitive types",
+      "typeof": "typeof",
+      "operators-assign": "Assignment operators",
+      "operators-compare": "Comparison (== vs ===)",
+      "operators-logic": "Logical (&&, ||, !)",
+      "template-literals": "Template literals",
+      "ternary": "Ternary (?:)",
+      "if-else": "if / else if / else",
+      "switch": "switch case",
+      "for": "for",
+      "while": "while / do-while",
+      "for-in": "for...in",
+      "foreach": "forEach",
+      "functions": "function & return",
+      "arrow-functions": "Arrow functions",
+      "native-functions": "parseInt / parseFloat / isNaN",
+      "objects": "Objects",
+      "destructuring": "Destructuring",
+      "spread": "Spread (...)",
+      "this": "this",
+      "constructors": "Constructors",
+      "classes": "class / extends",
+      "arrays": "Arrays",
+      "array-mutators": "push / pop / shift / unshift",
+      "array-iteration": "map / filter / reduce",
+      "array-join-split": "join / split",
+      "string-methods": "String methods",
+      "window-dialogs": "alert / prompt / confirm",
+      "timers": "setTimeout / setInterval",
+      "math": "Math",
+      "date": "Date",
+      "location-navigator": "location / navigator",
+      "dom-selection": "DOM selection",
+      "dom-traversing": "DOM traversing",
+      "dom-content": "innerHTML / innerText",
+      "dom-attributes": "getAttribute / className",
+      "dom-style": "element.style",
+      "dom-create-remove": "createElement / appendChild / remove",
+      "events-classic": "Events (onclick, onsubmit...)",
+      "events-handlers": "Event handlers",
+      "events-prevent": "preventDefault / return false",
+      "cookies": "document.cookie"
+    }
+  },
+  "topicGroups": {
+    "css": {
+      "selectors": "Selectors",
+      "cascade": "Cascade & inheritance",
+      "box": "Box model",
+      "layout": "Layout",
+      "values": "Values",
+      "styling": "Visual styling",
+      "motion": "Motion",
+      "adaptive": "Responsive",
+      "fundamentals": "Fundamentals",
+      "semantics": "Semantics"
+    },
+    "js": {
+      "basics": "Basics",
+      "control": "Control flow",
+      "functions": "Functions",
+      "oop": "Objects & classes",
+      "arrays": "Arrays",
+      "strings": "Strings",
+      "bom": "BOM (Browser Object Model)",
+      "dom": "DOM (Document)",
+      "events": "Events",
+      "storage": "Storage"
+    }
+  },
+  "dashboard": {
+    "thisWeek": "This week",
+    "noGoals": "No goals set for this week.",
+    "setGoals": "Suggest goals",
+    "goalsHint": "Concrete goals, no streak, no guilt.",
+    "abandon": "Abandon",
+    "completed": "Done",
+    "active": "Active",
+    "abandoned": "Abandoned",
+    "mastery": "Mastery by topic",
+    "noMasteryYet": "Play a few levels or review cards to start seeing your mastery here.",
+    "viewQuiz": "Open quiz"
+  },
+  "goals": {
+    "levels": {
+      "label": "Finish {count} level{count, plural, one {} other {s}}",
+      "labelTopic": "Finish {count} {topic} level{count, plural, one {} other {s}}"
+    },
+    "cards": {
+      "label": "Review {count} quiz card{count, plural, one {} other {s}}"
+    },
+    "topicMastery": {
+      "label": "Reach {percent}% on {topic}"
+    },
+    "sessionCount": {
+      "label": "Practice {count} day{count, plural, one {} other {s}} this week"
+    }
   }
 }
