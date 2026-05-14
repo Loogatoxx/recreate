@@ -817,7 +817,7 @@
       },
       "css-063": {
         "a": "Todas as table, td e p em bold",
-        "b": "Todos os p que estão dentro de um td, dentro de uma table (qualquer nível)",
+        "b": "Todos os p dentro de um td, dentro de uma table (qualquer nível)",
         "c": "Apenas os p que são filhos diretos de td"
       },
       "css-065": {
@@ -848,13 +848,16 @@
       "css-080": {
         "a": "O elemento deve ter um pai flex",
         "b": "O elemento deve ter display: block",
-        "c": "O elemento deve ter position diferente de static"
+        "c": "O elemento deve ter position diferente de static",
+        "d": "Nenhuma condição, o z-index funciona sempre"
       },
       "css-089": {
         "d": "a e b são equivalentes"
       },
       "css-091": {
+        "a": "span é inline, div é block",
         "b": "span pode conter divs",
+        "c": "div é inline, span é block",
         "d": "Nenhuma diferença"
       },
       "js-002": {

@@ -823,7 +823,7 @@
       "css-065": {
         "a": "Tous les paragraphes",
         "b": "Le paragraphe immédiatement après un h1",
-        "c": "Tous les paragraphes après un h1 (pas forcément adjacent)",
+        "c": "Tous les paragraphes après un h1 (pas forcément adjacents)",
         "d": "Le paragraphe parent du h1"
       },
       "css-066": {
@@ -848,13 +848,16 @@
       "css-080": {
         "a": "L'élément doit avoir un parent flex",
         "b": "L'élément doit avoir display: block",
-        "c": "L'élément doit avoir position différent de static"
+        "c": "L'élément doit avoir position différent de static",
+        "d": "Aucune condition, le z-index fonctionne toujours"
       },
       "css-089": {
         "d": "a et b sont équivalents"
       },
       "css-091": {
+        "a": "span est inline, div est block",
         "b": "span peut contenir des div",
+        "c": "div est inline, span est block",
         "d": "Aucune différence"
       },
       "js-002": {

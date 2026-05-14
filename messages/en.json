@@ -848,13 +848,16 @@
       "css-080": {
         "a": "The element must have a flex parent",
         "b": "The element must have display: block",
-        "c": "The element's position must be different from static"
+        "c": "The element's position must be different from static",
+        "d": "No condition, z-index always works"
       },
       "css-089": {
         "d": "a and b are equivalent"
       },
       "css-091": {
+        "a": "span is inline, div is block",
         "b": "span can contain divs",
+        "c": "div is inline, span is block",
         "d": "No difference"
       },
       "js-002": {

@@ -3,20 +3,20 @@
  * Hélder Pestana (3.css.pdf).
  *
  * Coverage map (versus the PDF sections):
- *   - "Como aplicar CSS" → css.applying (002, 058-059)
- *   - "Regras / anatomia" → css.rules-anatomy (060-061)
- *   - "Tipos de seletores" (tag/class/id/universal) → css.selectors-basic (008-009, 062)
- *   - "Combinações" (descendant / > / + / ~ / vírgula) → css.combinators (063-066)
- *   - "Atributos" ([attr], =, ~=, ^=, $=) → css.attribute-selectors (067-070)
- *   - "Pseudo" → css.pseudo-classes, css.pseudo-elements (010, 071-074)
- *   - "Especificidade" → css.specificity (011)
- *   - "Box model" (margin/padding/border/auto) → css.box-model, .margin, .padding (006-007, 075-077)
- *   - "display + visibility + opacity" → css.display, .visibility-opacity (022-023, 078)
- *   - "Posicionamento" (static/relative/abs/fixed) + z-index + float → css.positioning, .z-index, .float (016-017, 079-082)
- *   - "Media types & queries + viewport" → css.media-types, .media-queries, .viewport (024, 083-086)
- *   - "Animações" (transition + @keyframes) → css.transitions, .keyframes (025, 087-089)
- *   - "Variáveis" (:root + var()) → css.variables (090)
- *   - "div vs span" → css.div-span (091)
+ * - "Como aplicar CSS" → css.applying (002, 058-059)
+ * - "Regras / anatomia" → css.rules-anatomy (060-061)
+ * - "Tipos de seletores" (tag/class/id/universal) → css.selectors-basic (008-009, 062)
+ * - "Combinações" (descendant / > / + / ~ / vírgula) → css.combinators (063-066)
+ * - "Atributos" ([attr], =, ~=, ^=, $=) → css.attribute-selectors (067-070)
+ * - "Pseudo" → css.pseudo-classes, css.pseudo-elements (010, 071-074)
+ * - "Especificidade" → css.specificity (011)
+ * - "Box model" (margin/padding/border/auto) → css.box-model, .margin, .padding (006-007, 075-077)
+ * - "display + visibility + opacity" → css.display, .visibility-opacity (022-023, 078)
+ * - "Posicionamento" (static/relative/abs/fixed) + z-index + float → css.positioning, .z-index, .float (016-017, 079-082)
+ * - "Media types & queries + viewport" → css.media-types, .media-queries, .viewport (024, 083-086)
+ * - "Animações" (transition + @keyframes) → css.transitions, .keyframes (025, 087-089)
+ * - "Variáveis" (:root + var()) → css.variables (090)
+ * - "div vs span" → css.div-span (091)
  */
 
 import type { Card } from '../types';
@@ -265,7 +265,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
     id: 'css-061', kind: 'mcq', topic: 'css.rules-anatomy', promptKey: 'quiz.cards.css-061.prompt',
     options: [
       { id: 'a', label: '// commentaire' },
-      { id: 'b', label: '<!-- commentaire -->' },
+      { id: 'b', label: '' },
       { id: 'c', label: '/* commentaire */' },
       { id: 'd', label: '# commentaire' },
     ],
@@ -288,7 +288,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
     context: 'table td p { font-weight: bold; }',
     options: [
       { id: 'a', label: 'Toutes les table, td et p en bold', i18nKey: 'quiz.options.css-063.a' },
-      { id: 'b', label: 'Tous les p qui sont à l\'intérieur d\'un td, qui est dans une table (n\'importe quel niveau)' },
+      { id: 'b', label: 'Tous les p qui sont à l\'intérieur d\'un td, qui est dans une table', i18nKey: 'quiz.options.css-063.b' },
       { id: 'c', label: 'Seulement les p qui sont enfants directs de td', i18nKey: 'quiz.options.css-063.c' },
       { id: 'd', label: 'Erreur de syntaxe' },
     ],
@@ -297,7 +297,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
   {
     id: 'css-064', kind: 'mcq', topic: 'css.combinators', promptKey: 'quiz.cards.css-064.prompt',
     options: [
-      { id: 'a', label: 'p > span' }, { id: 'b', label: 'p span', i18nKey: 'quiz.options.css-063.b' },
+      { id: 'a', label: 'p > span' }, { id: 'b', label: 'p span' },
       { id: 'c', label: 'p + span' }, { id: 'd', label: 'p ~ span' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-064.explanation',
@@ -308,7 +308,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
     options: [
       { id: 'a', label: 'Tous les paragraphes', i18nKey: 'quiz.options.css-065.a' },
       { id: 'b', label: 'Le paragraphe immédiatement après un h1', i18nKey: 'quiz.options.css-065.b' },
-      { id: 'c', label: 'Tous les paragraphes après un h1 (pas forcément adjacent)', i18nKey: 'quiz.options.css-065.c' },
+      { id: 'c', label: 'Tous les paragraphes après un h1', i18nKey: 'quiz.options.css-065.c' },
       { id: 'd', label: 'Le paragraphe parent du h1', i18nKey: 'quiz.options.css-065.d' },
     ],
     answer: 'b', explanationKey: 'quiz.cards.css-065.explanation',
@@ -433,36 +433,36 @@ export const CSS_QUIZ_CARDS: Card[] = [
   {
     id: 'css-079', kind: 'mcq', topic: 'css.z-index', promptKey: 'quiz.cards.css-079.prompt',
     options: [
-      { id: 'a', label: 'L\'élément avec le z-index LE PLUS BAS' },
-      { id: 'b', label: 'L\'élément avec le z-index LE PLUS HAUT' },
-      { id: 'c', label: 'Le dernier dans l\'ordre HTML' },
-      { id: 'd', label: 'Le premier dans l\'ordre HTML' },
+      { id: 'a', label: 'L\'élément avec le z-index LE PLUS BAS', i18nKey: 'quiz.options.css-079.a' },
+      { id: 'b', label: 'L\'élément avec le z-index LE PLUS HAUT', i18nKey: 'quiz.options.css-079.b' },
+      { id: 'c', label: 'Le dernier dans l\'ordre HTML', i18nKey: 'quiz.options.css-079.c' },
+      { id: 'd', label: 'Le premier dans l\'ordre HTML', i18nKey: 'quiz.options.css-079.d' },
     ],
     answer: 'b', explanationKey: 'quiz.cards.css-079.explanation',
   },
   {
     id: 'css-080', kind: 'mcq', topic: 'css.z-index', promptKey: 'quiz.cards.css-080.prompt',
     options: [
-      { id: 'a', label: 'L\'élément doit avoir un parent flex' },
-      { id: 'b', label: 'L\'élément doit avoir display: block' },
-      { id: 'c', label: 'L\'élément doit avoir position différent de static' },
-      { id: 'd', label: 'Aucune condition, z-index fonctionne toujours', i18nKey: 'quiz.options.css-079.d' },
+      { id: 'a', label: 'L\'élément doit avoir um parent flex', i18nKey: 'quiz.options.css-080.a' },
+      { id: 'b', label: 'L\'élément doit avoir display: block', i18nKey: 'quiz.options.css-080.b' },
+      { id: 'c', label: 'L\'élément doit avoir position différent de static', i18nKey: 'quiz.options.css-080.c' },
+      { id: 'd', label: 'Aucune condition, z-index fonctionne toujours', i18nKey: 'quiz.options.css-080.d' },
     ],
     answer: 'c', explanationKey: 'quiz.cards.css-080.explanation',
   },
   {
     id: 'css-081', kind: 'mcq', topic: 'css.float', promptKey: 'quiz.cards.css-081.prompt',
     options: [
-      { id: 'a', label: 'left', i18nKey: 'quiz.options.css-079.a' }, { id: 'b', label: 'right', i18nKey: 'quiz.options.css-079.b' },
-      { id: 'c', label: 'top', i18nKey: 'quiz.options.css-079.c' }, { id: 'd', label: 'none' },
+      { id: 'a', label: 'left' }, { id: 'b', label: 'right' },
+      { id: 'c', label: 'top' }, { id: 'd', label: 'none' },
     ],
     answer: 'c', explanationKey: 'quiz.cards.css-081.explanation',
   },
   {
     id: 'css-082', kind: 'mcq', topic: 'css.float', promptKey: 'quiz.cards.css-082.prompt',
     options: [
-      { id: 'a', label: 'clear', i18nKey: 'quiz.options.css-080.a' }, { id: 'b', label: 'reset-float', i18nKey: 'quiz.options.css-080.b' },
-      { id: 'c', label: 'float-stop', i18nKey: 'quiz.options.css-080.c' }, { id: 'd', label: 'no-wrap' },
+      { id: 'a', label: 'clear' }, { id: 'b', label: 'reset-float' },
+      { id: 'c', label: 'float-stop' }, { id: 'd', label: 'no-wrap' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-082.explanation',
   },
@@ -546,9 +546,9 @@ export const CSS_QUIZ_CARDS: Card[] = [
   {
     id: 'css-091', kind: 'mcq', topic: 'css.div-span', promptKey: 'quiz.cards.css-091.prompt',
     options: [
-      { id: 'a', label: 'span est inline, div est block' },
+      { id: 'a', label: 'span est inline, div est block', i18nKey: 'quiz.options.css-091.a' },
       { id: 'b', label: 'span peut contenir des div', i18nKey: 'quiz.options.css-091.b' },
-      { id: 'c', label: 'div est inline, span est block' },
+      { id: 'c', label: 'div est inline, span est block', i18nKey: 'quiz.options.css-091.c' },
       { id: 'd', label: 'Aucune différence', i18nKey: 'quiz.options.css-091.d' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-091.explanation',
