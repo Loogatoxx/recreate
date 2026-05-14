@@ -72,9 +72,9 @@
       "borders": "Bordes y Sombras",
       "typography": "Tipografía",
       "dimensions": "Dimensiones",
-      "selectors": "Sélecteurs",
-      "positioning": "Positionnement",
-      "animation": "Animations",
+      "selectors": "Selectores",
+      "positioning": "Posicionamiento",
+      "animation": "Animaciones",
       "adaptive": "Responsive",
       "cssVariables": "Variables CSS"
     },
@@ -136,104 +136,104 @@
         "summary": "Tamaño de la caja. Acepta `px`, `%`, `vh`/`vw`, o `auto`."
       },
       "marginAuto": {
-        "summary": "Centre un élément horizontalement quand sa largeur est définie. `auto` répartit l'espace gauche/droite à parts égales."
+        "summary": "Centra un elemento horizontalmente cuando su ancho está definido. `auto` reparte el espacio izquierdo/derecho a partes iguales."
       },
       "opacity": {
-        "summary": "Contrôle la transparence (0 = invisible, 1 = opaque). `0.5` = semi-transparent. Différent de `visibility: hidden` qui garde la place."
+        "summary": "Controla la transparencia (0 = invisible, 1 = opaco). `0.5` = semi-transparente. Diferente de `visibility: hidden` que mantiene el espacio."
       },
       "selectorClass": {
-        "summary": "Cible toutes les tags qui contiennent l'attribut `class=\"...\"` correspondant. Une class peut être appliquée à plusieurs tags."
+        "summary": "Apunta a todas las etiquetas que contienen el atributo `class=\"...\"` correspondiente. Una clase puede aplicarse a varias etiquetas."
       },
       "selectorId": {
-        "summary": "Cible UNE tag spécifique par son `id`. Un id doit être unique dans la page. Spécificité plus élevée que les classes."
+        "summary": "Apunta a UNA etiqueta específica por su `id`. Un id debe ser único en la página. Mayor especificidad que las clases."
       },
       "selectorUniversal": {
-        "summary": "L'astérisque cible TOUTES les tags. Utile pour appliquer un reset ou box-sizing."
+        "summary": "El asterisco apunta a TODAS las etiquetas. Útil para aplicar un reset o box-sizing."
       },
       "combinatorDescendant": {
-        "summary": "Sélecteur descendant : `A B` cible tous les `B` à l'intérieur d'un `A`, à n'importe quel niveau d'imbrication."
+        "summary": "Selector descendiente: `A B` apunta a todos los `B` dentro de un `A`, en cualquier nivel de anidamiento."
       },
       "combinatorChild": {
-        "summary": "Sélecteur enfant direct : `A > B` ne cible que les `B` qui sont enfants IMMÉDIATS de `A` (pas plus profond)."
+        "summary": "Selector hijo directo: `A > B` solo apunta a los `B` que son hijos INMEDIATOS de `A` (no más profundo)."
       },
       "combinatorAdjacent": {
-        "summary": "Sélecteur adjacent : `A + B` cible uniquement le `B` qui suit DIRECTEMENT un `A` au même niveau."
+        "summary": "Selector adyacente: `A + B` apunta solo al `B` que sigue DIRECTAMENTE a un `A` en el mismo nivel."
       },
       "combinatorSibling": {
-        "summary": "Sélecteur frère général : `A ~ B` cible tous les `B` qui suivent un `A` au même niveau (pas forcément adjacents)."
+        "summary": "Selector hermano general: `A ~ B` apunta a todos los `B` que siguen a un `A` en el mismo nivel (no necesariamente adyacentes)."
       },
       "attrSelector": {
-        "summary": "Cible selon un attribut. `[attr]` = présence, `[attr=val]` = égal, `[attr^=val]` = commence par, `[attr$=val]` = se termine par, `[attr~=val]` = contient le mot.",
+        "summary": "Apunta según un atributo. `[attr]` = presencia, `[attr=val]` = igual, `[attr^=val]` = empieza por, `[attr$=val]` = termina por, `[attr~=val]` = contiene la palabra.",
         "values": "[attr] · [attr=val] · [attr^=...] · [attr$=...] · [attr~=...]"
       },
       "pseudoHover": {
-        "summary": "Style appliqué quand le curseur passe sur l'élément. Pour les hyperliens : `:link`, `:visited`, `:hover`, `:active`."
+        "summary": "Estilo aplicado cuando el cursor pasa sobre el elemento. Para hipervínculos: `:link`, `:visited`, `:hover`, `:active`."
       },
       "pseudoFirstChild": {
-        "summary": "Cible la PREMIÈRE balise enfant d'un parent. Variantes : `:last-child`, `:first-of-type`."
+        "summary": "Apunta a la PRIMERA etiqueta hija de un padre. Variantes: `:last-child`, `:first-of-type`."
       },
       "pseudoNthChild": {
-        "summary": "Cible la N-ième balise enfant. Accepte un nombre, un mot-clé (`odd`, `even`) ou une formule (`2n+1`, `3n`).",
+        "summary": "Apunta a la N-ésima etiqueta hija. Acepta un número, una palabra clave (`odd`, `even`) o una fórmula (`2n+1`, `3n`).",
         "values": "1, 2, 3... · odd · even · 2n+1 · 3n"
       },
       "pseudoFirstLetter": {
-        "summary": "Pseudo-ÉLÉMENT (`::`) : cible la première lettre du contenu de la tag. Utile pour les capitales d'ornement."
+        "summary": "Pseudo-ELEMENTO (`::`): apunta a la primera letra del contenido de la etiqueta. Útil para letras capitulares."
       },
       "pseudoBefore": {
-        "summary": "Pseudo-éléments qui INJECTENT du contenu avant/après. Le `content` est obligatoire, même vide (`content: \"\"`)."
+        "summary": "Pseudo-elementos que INYECTAN contenido antes/después. El `content` es obligatorio, incluso vacío (`content: \"\"`)."
       },
       "specificity": {
-        "summary": "Quand deux règles entrent en conflit, celle de spécificité la plus haute gagne. Score : id (100) > class (10) > tag (1). Inline (style=\"...\") bat tout sauf !important."
+        "summary": "Cuando dos reglas entran en conflicto, gana la de mayor especificidad. Puntuación: id (100) > clase (10) > etiqueta (1). Inline (`style=\"...\"`) supera a todo excepto a `!important`."
       },
       "positionStatic": {
-        "summary": "Position par défaut. L'élément suit le flux normal du document. Ignore `top`, `left`, `right`, `bottom`, `z-index`."
+        "summary": "Posición por defecto. El elemento sigue el flujo normal del documento. Ignora `top`, `left`, `right`, `bottom`, `z-index`."
       },
       "positionRelative": {
-        "summary": "L'élément reste dans le flux mais peut être décalé via `top`/`left`/`right`/`bottom`. Sert souvent de POINT DE RÉFÉRENCE à un enfant `absolute`."
+        "summary": "El elemento permanece en el flujo pero puede desplazarse mediante `top`/`left`/`right`/`bottom`. Suele servir como PUNTO DE REFERENCIA para un hijo `absolute`."
       },
       "positionAbsolute": {
-        "summary": "Sorti du flux normal. Se positionne par rapport au plus proche parent positionné (relative/absolute/fixed). Pas de parent positionné → par rapport à `'<html>'`."
+        "summary": "Fuera del flujo normal. Se posiciona respecto al padre posicionado más cercano (relative/absolute/fixed). Sin padre posicionado → respecto a `'<html>'`."
       },
       "positionFixed": {
-        "summary": "Sorti du flux. Position relative à la FENÊTRE (viewport) — reste visible même au scroll. Utilisé pour les headers/menus fixes."
+        "summary": "Fuera del flujo. Posición relativa a la VENTANA (viewport) — permanece visible al hacer scroll. Usado para headers/menús fijos."
       },
       "zIndex": {
-        "summary": "Contrôle l'ordre d'empilement (pile). Plus le nombre est grand, plus l'élément est devant. Ne fonctionne QUE si `position` est différent de `static`."
+        "summary": "Controla el orden de apilamiento (capas). Mayor número = más al frente. SOLO funciona si `position` es distinto de `static`."
       },
       "floatLeft": {
-        "summary": "Fait flotter l'élément à gauche ou à droite. Les voisins enveloppent (wrap) le float. Usage classique : image avec texte qui l'entoure."
+        "summary": "Hace flotar el elemento a la izquierda o derecha. Los vecinos envuelven (wrap) el float. Uso clásico: imagen con texto alrededor."
       },
       "clearBoth": {
-        "summary": "Empêche un élément d'envelopper un float voisin. `clear: left | right | both` selon le côté à éviter."
+        "summary": "Impide que un elemento envuelva a un float vecino. `clear: left | right | both` según el lado a evitar."
       },
       "displayBlock": {
-        "summary": "`block` (default des div/p/h1) prend toute la largeur, saut de ligne avant/après. `inline` (span/a) s'intègre dans le texte. `inline-block` mixe les deux.",
+        "summary": "`block` (por defecto en div/p/h1) ocupa todo el ancho, salto de línea antes/después. `inline` (span/a) se integra en el texto. `inline-block` mezcla ambos.",
         "values": "block · inline · inline-block · flex · grid · none"
       },
       "displayNone": {
-        "summary": "Retire l'élément du DOM visuel ET du flux (l'espace est libéré). Différent de `visibility: hidden` qui garde l'espace."
+        "summary": "Retira el elemento del DOM visual Y del flujo (el espacio se libera). Diferente a `visibility: hidden` que mantiene el espacio."
       },
       "visibilityHidden": {
-        "summary": "Cache l'élément MAIS conserve sa place dans le flux. L'utilisateur ne voit rien à cet endroit, mais le layout n'est pas affecté."
+        "summary": "Oculta el elemento PERO conserva su lugar en el flujo. El usuario no ve nada ahí, pero el layout no se ve afectado."
       },
       "transition": {
-        "summary": "Anime un changement de propriété au déclenchement d'un événement (typiquement `:hover`). Format : `transition: '<propriété>' '<durée>' '<fonction>'`."
+        "summary": "Anima un cambio de propiedad al dispararse un evento (típicamente `:hover`). Formato: `transition: '<propiedad>' '<duración>' '<función>'`."
       },
       "transitionTiming": {
-        "summary": "Courbe d'accélération de la transition. Influence la sensation de mouvement.",
-        "values": "ease (défaut) · linear · ease-in · ease-out · ease-in-out · cubic-bezier(...)"
+        "summary": "Curva de aceleración de la transición. Influye en la sensación de movimiento.",
+        "values": "ease (defecto) · linear · ease-in · ease-out · ease-in-out · cubic-bezier(...)"
       },
       "keyframes": {
-        "summary": "Animation continue/cyclique via étapes définies. `@keyframes` déclare la séquence ; `animation-name`, `-duration`, `-iteration-count`, `-direction` l'appliquent."
+        "summary": "Animación continua/cíclica mediante pasos definidos. `@keyframes` declara la secuencia; `animation-name`, `-duration`, `-iteration-count`, `-direction` la aplican."
       },
       "mediaQuery": {
-        "summary": "Applique des règles CSS sous conditions (largeur, hauteur, orientation, couleur, résolution). Opérateurs : `and`, `not`, `only`, virgule pour OR."
+        "summary": "Aplica reglas CSS bajo condiciones (ancho, alto, orientación, color, resolución). Operadores: `and`, `not`, `only`, coma para OR."
       },
       "viewport": {
-        "summary": "La meta viewport informe le browser mobile de la dimension à utiliser. SANS elle, le mobile affichera la page comme un écran desktop puis zoomera."
+        "summary": "La etiqueta meta viewport informa al navegador móvil de la dimensión a usar. SIN ella, el móvil mostrará la página como una pantalla de escritorio y luego hará zoom."
       },
       "cssVar": {
-        "summary": "Variables CSS définies avec `--nom: valeur` (souvent dans `:root`) et utilisées avec `var(--nom)`. Permet de centraliser couleurs/tailles/thèmes."
+        "summary": "Variables CSS definidas con `--nombre: valor` (a menudo en `:root`) y usadas con `var(--nombre)`. Permite centralizar colores/tamaños/temas."
       }
     }
   },
@@ -423,140 +423,140 @@
         "explanation": "`transition: all 1s` cubre todas las propiedades animables. Mejor apunta a una propiedad específica por rendimiento."
       },
       "css-058": {
-        "prompt": "Comment lier une feuille de style externe à un document HTML ?",
-        "explanation": "On utilise `'<link rel=\"stylesheet\" href=\"...\">'` dans le `'<head>'`."
+        "prompt": "¿Cómo enlazar una hoja de estilo externa a un documento HTML?",
+        "explanation": "Se usa `'<link rel=\"stylesheet\" href=\"...\">'` en el `'<head>'`."
       },
       "css-059": {
-        "prompt": "Quelle méthode d'application CSS est la MOINS recommandée pour la maintenance ?",
-        "explanation": "L'inline (`style=\"...\"`) car il faut éditer tag par tag, document par document."
+        "prompt": "¿Qué método de aplicación CSS es el MENOS recomendado para el mantenimiento?",
+        "explanation": "El inline (`style=\"...\"`) porque hay que editar etiqueta por etiqueta, documento por documento."
       },
       "css-060": {
-        "prompt": "Une règle CSS est composée de quelles deux parties ?",
-        "explanation": "`sélecteur { déclaration }`. La déclaration contient des propriétés et leurs valeurs."
+        "prompt": "Una regla CSS está compuesta por ¿qué dos partes?",
+        "explanation": "`selector { declaración }`. La declaración contiene propiedades y sus valores."
       },
       "css-061": {
-        "prompt": "Quelle est la syntaxe correcte d'un commentaire CSS ?",
-        "explanation": "Toujours `/* ... */`. Les `//` du JS ne marchent pas en CSS."
+        "prompt": "¿Cuál es la sintaxis correcta de un comentario CSS?",
+        "explanation": "Siempre `/* ... */`. Los `//` de JS NO funcionan en CSS."
       },
       "css-062": {
-        "prompt": "Quel opérateur cible TOUTES les tags du document ?",
-        "explanation": "L'astérisque `*` est le sélecteur universel."
+        "prompt": "¿Qué operador apunta a TODAS las etiquetas del documento?",
+        "explanation": "El asterisco `*` es el selector universal."
       },
       "css-063": {
-        "prompt": "Que fait ce sélecteur : `table td p { ... }` ?",
-        "explanation": "Combinateur descendant : `p` à l'intérieur d'un `td` à l'intérieur d'une `table`, à n'importe quel niveau."
+        "prompt": "¿Qué hace este selector: `table td p { ... }`?",
+        "explanation": "Combinador descendiente: `p` dentro de un `td` dentro de una `table`, en cualquier nivel."
       },
       "css-064": {
-        "prompt": "Quel sélecteur cible UNIQUEMENT les `'<span>'` qui sont enfants DIRECTS d'un `'<p>'` (pas plus loin) ?",
-        "explanation": "L'opérateur `>` désigne un parent-enfant direct, pas n'importe quel descendant."
+        "prompt": "¿Qué selector apunta ÚNICAMENTE a los `'<span>'` que son hijos DIRECTOS de un `'<p>'` (no más adentro)?",
+        "explanation": "El operador `>` designa un padre-hijo directo, no cualquier descendiente."
       },
       "css-065": {
-        "prompt": "Que fait `h1 + p { ... }` ?",
-        "explanation": "Sélecteur adjacent : seulement le `p` qui suit IMMÉDIATEMENT un `h1`."
+        "prompt": "¿Qué hace `h1 + p { ... }`?",
+        "explanation": "Selector adyacente: solo el `p` que sigue INMEDIATAMENTE a un `h1`."
       },
       "css-066": {
-        "prompt": "Que fait `h1 ~ p { ... }` ?",
-        "explanation": "Sélecteur sibling général : tous les `p` qui suivent un `h1` au même niveau, pas forcément adjacents."
+        "prompt": "¿Qué hace `h1 ~ p { ... }`?",
+        "explanation": "Selector hermano general: todos los `p` que siguen a un `h1` al mismo nivel, no necesariamente adyacentes."
       },
       "css-067": {
-        "prompt": "Quelle syntaxe cible les `'<input>'` avec `type=\"text\"` ?",
-        "explanation": "Sélecteur d'attribut : `tag[attribut=valeur]`."
+        "prompt": "¿Qué sintaxis apunta a los `'<input>'` con `type=\"text\"`?",
+        "explanation": "Selector de atributo: `tag[atributo=valor]`."
       },
       "css-068": {
-        "prompt": "Quelle syntaxe cible les images dont l'alt COMMENCE par \"Figura\" ?",
-        "explanation": "`^=` = commence par. `$=` = se termine par. `~=` = contient le mot."
+        "prompt": "¿Qué sintaxis apunta a las imágenes cuyo alt EMPIEZA por \"Figura\"?",
+        "explanation": "`^=` = empieza por. `$=` = termina por. `~=` = contiene la palabra."
       },
       "css-069": {
-        "prompt": "Quelle syntaxe cible les images dont l'alt SE TERMINE par \".png\" ?",
-        "explanation": "`$=` = se termine par. Voir aussi `^=` et `~=`."
+        "prompt": "¿Qué sintaxis apunta a las imágenes cuyo alt TERMINA por \".png\"?",
+        "explanation": "`$=` = termina por. Ver también `^=` y `~=`."
       },
       "css-070": {
-        "prompt": "Comment cibler les paragraphes qui n'ont PAS d'attribut `lang` ?",
-        "explanation": "La pseudo-classe `:not(...)` négativise."
+        "prompt": "¿Cómo apuntar a los párrafos que NO tienen atributo `lang`?",
+        "explanation": "La pseudo-clase `:not(...)` sirve para negar."
       },
       "css-071": {
-        "prompt": "Quelle syntaxe cible le PREMIER enfant `'<p>'` d'un parent ?",
-        "explanation": "Pseudo-classe `:first-child` avec UN seul `:`. Sert à cibler la position dans le DOM."
+        "prompt": "¿Qué sintaxis apunta al PRIMER hijo `'<p>'` de un padre?",
+        "explanation": "Pseudo-clase `:first-child` con UN solo `:`. Sirve para apuntar a la posición en el DOM."
       },
       "css-072": {
-        "prompt": "Comment cibler le 5e `'<p>'` enfant ?",
-        "explanation": "`:nth-child(N)` accepte un index, un mot-clé (`odd`, `even`) ou une formule (`2n+1`)."
+        "prompt": "¿Cómo apuntar al 5º hijo `'<p>'`?",
+        "explanation": "`:nth-child(N)` acepta un índice, una palabra clave (`odd`, `even`) o una fórmula (`2n+1`)."
       },
       "css-073": {
-        "prompt": "Quelle syntaxe cible la PREMIÈRE LETTRE d'un paragraphe ?",
-        "explanation": "Pseudo-ÉLÉMENT avec DOUBLE deux-points : `::first-letter`. Cible une PARTIE du contenu, pas la boîte."
+        "prompt": "¿Qué sintaxis apunta a la PRIMERA LETRA de un párrafo?",
+        "explanation": "Pseudo-ELEMENTO con DOBLE dos puntos: `::first-letter`. Apunta a una PARTE del contenido, no a la caja."
       },
       "css-074": {
-        "prompt": "Quelle est la convention moderne pour les pseudo-éléments (vs pseudo-classes) ?",
-        "explanation": "Pseudo-classes : `:hover`, `:first-child`. Pseudo-éléments : `::before`, `::first-letter`. Le double `::` les distingue."
+        "prompt": "¿Cuál es la convención moderna para los pseudo-elementos (vs pseudo-clases)?",
+        "explanation": "Pseudo-clases: `:hover`, `:first-child`. Pseudo-elementos: `::before`, `::first-letter`. El doble `::` los distingue."
       },
       "css-075": {
-        "prompt": "Quelle déclaration centre un élément HORIZONTALEMENT par margin auto ?",
-        "explanation": "`margin: 0 auto` répartit l'espace gauche/droite équitablement, ce qui centre l'élément."
+        "prompt": "¿Qué declaración centra un elemento HORIZONTALMENTE por margin auto?",
+        "explanation": "`margin: 0 auto` reparte el espacio izquierdo/derecho equitativamente, lo que centra el elemento."
       },
       "css-076": {
-        "prompt": "Quelle propriété limite la largeur MAXIMALE d'un élément ?",
-        "explanation": "`max-width` (et `min-width`, `max-height`, `min-height`). Utiles pour le responsive."
+        "prompt": "¿Qué propiedad limita la anchura MÁXIMA de un elemento?",
+        "explanation": "`max-width` (y `min-width`, `max-height`, `min-height`). Útiles para el responsive."
       },
       "css-077": {
-        "prompt": "Quelle syntaxe est valide pour `border` ?",
-        "explanation": "L'ordre `largeur style couleur` est libre. CSS reconnaît la propriété par sa valeur."
+        "prompt": "¿Qué sintaxis es válida para `border`?",
+        "explanation": "El orden `ancho estilo color` es libre. CSS reconoce la propiedad por su valor."
       },
       "css-078": {
-        "prompt": "Quelle est la plage de valeurs pour `opacity` ?",
-        "explanation": "`opacity` va de `0` (invisible) à `1` (opaque). Pas de pourcentage."
+        "prompt": "¿Cuál es el rango de valores para `opacity`?",
+        "explanation": "`opacity` va de `0` (invisible) a `1` (opaco). Sin porcentaje."
       },
       "css-079": {
-        "prompt": "Quel élément apparaît AU-DESSUS des autres dans la pile ?",
-        "explanation": "`z-index` plus élevé = plus haut dans la pile. Ne fonctionne QUE si `position` est différent de `static`."
+        "prompt": "¿Qué elemento aparece POR ENCIMA de los demás en la pila?",
+        "explanation": "`z-index` más alto = más arriba en la pila. SOLO funciona si `position` es distinto de `static`."
       },
       "css-080": {
-        "prompt": "Sous quelle condition `z-index` fonctionne-t-il ?",
-        "explanation": "Sans position, `z-index` est ignoré. Il faut `relative`, `absolute`, `fixed` ou `sticky`."
+        "prompt": "¿Bajo qué condición funciona `z-index`?",
+        "explanation": "Sin position, `z-index` es ignorado. Debe tener `relative`, `absolute`, `fixed` o `sticky`."
       },
       "css-081": {
-        "prompt": "Lequel n'est PAS une valeur valide de `float` ?",
-        "explanation": "`float` accepte `left`, `right` et `none`. Pas de `top`/`bottom`."
+        "prompt": "¿Cuál NO es un valor válido de `float`?",
+        "explanation": "`float` acepta `left`, `right` y `none`. No `top`/`bottom`."
       },
       "css-082": {
-        "prompt": "Quelle propriété empêche un élément d'envelopper un float ?",
-        "explanation": "`clear: left | right | both` casse le wrap d'un voisin float."
+        "prompt": "¿Qué propiedad impide a un elemento envolver a un float?",
+        "explanation": "`clear: left | right | both` rompe el wrap de un vecino float."
       },
       "css-083": {
-        "prompt": "Lequel n'est PAS un type de media CSS valide ?",
-        "explanation": "Types valides : `all`, `screen`, `print`, `braille`, `handheld`, `tv`. Pas `mobile` — on utilise des media queries."
+        "prompt": "¿Cuál NO es un tipo de media CSS válido?",
+        "explanation": "Tipos válidos: `all`, `screen`, `print`, `braille`, `handheld`, `tv`. No `mobile` — se usan media queries."
       },
       "css-084": {
-        "prompt": "Quel opérateur n'est PAS valide dans une media query ?",
-        "explanation": "Les media queries acceptent `and`, `not`, `only`. Pour OR, on utilise une virgule (`,`)."
+        "prompt": "¿Qué operador NO es válido en una media query?",
+        "explanation": "Las media queries aceptan `and`, `not`, `only`. Para OR, se usa una coma (`,`)."
       },
       "css-085": {
-        "prompt": "Comment cibler les écrans en mode portrait ?",
-        "explanation": "Media query avec la feature `orientation: portrait | landscape`."
+        "prompt": "¿Cómo apuntar a las pantallas en modo retrato?",
+        "explanation": "Media query con la feature `orientation: portrait | landscape`."
       },
       "css-086": {
-        "prompt": "Quelle balise HTML déclare la viewport pour le responsive mobile ?",
-        "explanation": "Meta tag `'<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">'` dans `'<head>'`."
+        "prompt": "¿Qué etiqueta HTML declara el viewport para el responsive móvil?",
+        "explanation": "Etiqueta meta `'<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">'` en el `'<head>'`."
       },
       "css-087": {
-        "prompt": "Quelle propriété contrôle la COURBE D'ACCÉLÉRATION d'une transition ?",
-        "explanation": "`transition-timing-function` accepte `ease`, `ease-in`, `ease-out`, `linear`, `cubic-bezier(...)`."
+        "prompt": "¿Qué propiedad controla la CURVA DE ACELERACIÓN de una transición?",
+        "explanation": "`transition-timing-function` acepta `ease`, `ease-in`, `ease-out`, `linear`, `cubic-bezier(...)`."
       },
       "css-088": {
-        "prompt": "Quelle syntaxe déclare une animation par étapes ?",
-        "explanation": "`@keyframes nom { 0% {...} 100% {...} }` ou `from / to`. Utilisée avec `animation-name`."
+        "prompt": "¿Qué sintaxis declara una animación por pasos?",
+        "explanation": "`@keyframes nombre { 0% {...} 100% {...} }` o `from / to`. Se usa con `animation-name`."
       },
       "css-089": {
-        "prompt": "Quels mots-clés représentent le DÉBUT et la FIN d'une animation par keyframes ?",
-        "explanation": "`from` = 0%, `to` = 100%. Les deux notations sont équivalentes."
+        "prompt": "¿Qué palabras clave representan el INICIO y el FIN de una animación por keyframes?",
+        "explanation": "`from` = 0%, `to` = 100%. Ambas notaciones son equivalentes."
       },
       "css-090": {
-        "prompt": "Comment utiliser la variable CSS déclarée dans `:root` ?",
-        "explanation": "`var(--nom-variable)`. Les variables sont déclarées avec `--nom: valeur;` souvent dans `:root`."
+        "prompt": "¿Cómo usar la variable CSS declarada en `:root`?",
+        "explanation": "`var(--nombre-variable)`. Las variables se declaran con `--nombre: valor;` frecuentemente en `:root`."
       },
       "css-091": {
-        "prompt": "Quelle est la différence sémantique entre `'<span>'` et `'<div>'` ?",
-        "explanation": "`'<div>'` = block (saut de ligne avant/après). `'<span>'` = inline (s'intègre dans le flux du texte)."
+        "prompt": "¿Cuál es la diferencia semántica entre `'<span>'` y `'<div>'`?",
+        "explanation": "`'<div>'` = block (salto de línea antes/después). `'<span>'` = inline (se integra en el flujo del texto)."
       },
       "css-092": {
         "prompt": "¿Qué operador permite agrupar varios selectores que comparten el mismo estilo?",
@@ -607,232 +607,232 @@
         "explanation": "`rotate(45deg)` gira el elemento 45 grados en sentido horario alrededor de su centro."
       },
       "js-001": {
-        "prompt": "Quel mot-clé déclare une constante (valeur immuable) en JS ?",
-        "explanation": "`const` empêche la réaffectation. `let` et `var` permettent la réaffectation."
+        "prompt": "¿Qué palabra clave declara una constante (valor inmutable) en JS?",
+        "explanation": "`const` impide la reasignación. `let` y `var` permiten la reasignación."
       },
       "js-002": {
-        "prompt": "Laquelle de ces affirmations sur var/let/const est FAUSSE ?",
-        "explanation": "Ils diffèrent : `var` a un scope de fonction, `let` et `const` ont un scope de bloc."
+        "prompt": "¿Cuál de estas afirmaciones sobre var/let/const es FALSA?",
+        "explanation": "Difieren: `var` tiene scope de función, `let` y `const` tienen scope de bloque."
       },
       "js-003": {
-        "prompt": "Lequel n'est PAS un type primitif en JS ?",
-        "explanation": "Les primitifs : String, Number, Boolean, null, undefined, Symbol, BigInt. Pas d'`Integer` distinct — tout nombre est Number."
+        "prompt": "¿Cuál NO es un tipo primitivo en JS?",
+        "explanation": "Primitivos: String, Number, Boolean, null, undefined, Symbol, BigInt. No hay `Integer` distinto — todo número es Number."
       },
       "js-004": {
-        "prompt": "Que retourne `typeof []` ?",
-        "explanation": "Les tableaux sont des objets en JS. `typeof []` retourne `\"object\"`. Pour distinguer, utiliser `Array.isArray()`."
+        "prompt": "¿Qué devuelve `typeof []`?",
+        "explanation": "Los arrays son objetos en JS. `typeof []` devuelve `\"object\"`. Para distinguir, usar `Array.isArray()`."
       },
       "js-005": {
-        "prompt": "Que retourne `typeof null` ?",
-        "explanation": "Bug historique de JS : `typeof null` retourne `\"object\"` alors que `null` n'est PAS un objet."
+        "prompt": "¿Qué devuelve `typeof null`?",
+        "explanation": "Bug histórico de JS: `typeof null` devuelve `\"object\"` aunque `null` NO es un objeto."
       },
       "js-006": {
-        "prompt": "Que retourne `5 == \"5\"` ?",
-        "explanation": "`==` compare avec coercition de type. `5 == \"5\"` est `true` car \"5\" est converti en 5."
+        "prompt": "¿Qué devuelve `5 == \"5\"`?",
+        "explanation": "`==` compara con coerción de tipo. `5 == \"5\"` es `true` porque \"5\" se convierte a 5."
       },
       "js-007": {
-        "prompt": "Que retourne `5 === \"5\"` ?",
-        "explanation": "`===` compare SANS coercition. Les types diffèrent (number vs string), donc `false`."
+        "prompt": "¿Qué devuelve `5 === \"5\"`?",
+        "explanation": "`===` compara SIN coerción. Los tipos difieren (number vs string), así que `false`."
       },
       "js-008": {
-        "prompt": "Que retourne `true && false || true` ?",
-        "explanation": "Précédence : `&&` avant `||`. Donc `(true && false) || true` = `false || true` = `true`."
+        "prompt": "¿Qué devuelve `true && false || true`?",
+        "explanation": "Precedencia: `&&` antes que `||`. Así que `(true && false) || true` = `false || true` = `true`."
       },
       "js-009": {
-        "prompt": "Complète : incrémenter une variable de 1, c'est `i ___`",
-        "explanation": "`i++` (post-incrément), `++i` (pré-incrément), ou `i += 1`."
+        "prompt": "Completa: incrementar una variable en 1 es `i ___`",
+        "explanation": "`i++` (post-incremento), `++i` (pre-incremento), o `i += 1`."
       },
       "js-010": {
-        "prompt": "Quelle syntaxe utilise une template literal pour concaténer ?",
-        "explanation": "Backticks `` ` `` avec `${expression}`. Plus lisible que le `+` classique."
+        "prompt": "¿Qué sintaxis usa un template literal para concatenar?",
+        "explanation": "Backticks `` ` `` con `${expresion}`. Más legible que el clásico `+`."
       },
       "js-011": {
-        "prompt": "Quelle est la syntaxe d'une opération ternaire ?",
-        "explanation": "`condition ? valeurSiVrai : valeurSiFaux`. C'est un raccourci pour `if/else`."
+        "prompt": "¿Cuál es la sintaxis de una operación ternaria?",
+        "explanation": "`condicion ? valorSiVerdadero : valorSiFalso`. Es un atajo para `if/else`."
       },
       "js-012": {
-        "prompt": "Quel mot-clé évite que les cas d'un `switch` se cumulent ?",
-        "explanation": "`break;` sort du switch après le cas. Sans break, l'exécution continue (\"fall-through\")."
+        "prompt": "¿Qué palabra clave evita que los casos de un `switch` se acumulen?",
+        "explanation": "`break;` sale del switch después del caso. Sin break, la ejecución continúa (\"fall-through\")."
       },
       "js-013": {
-        "prompt": "Quelle est la syntaxe correcte d'une boucle `for` classique ?",
-        "explanation": "`for (init; condition; increment)`. Les 3 parties sont séparées par des `;`."
+        "prompt": "¿Cuál es la sintaxis correcta de un bucle `for` clásico?",
+        "explanation": "`for (init; condicion; incremento)`. Las 3 partes se separan por `;`."
       },
       "js-014": {
-        "prompt": "Quelle boucle est garantie d'exécuter au moins UNE fois son bloc ?",
-        "explanation": "`do { ... } while (condition)` teste la condition APRÈS l'exécution, donc au moins une fois."
+        "prompt": "¿Qué bucle garantiza ejecutar al menos UNA vez su bloque?",
+        "explanation": "`do { ... } while (condicion)` evalúa la condición DESPUÉS de la ejecución, así que mínimo una vez."
       },
       "js-015": {
-        "prompt": "Quelle boucle itère sur les CLÉS d'un objet ?",
-        "explanation": "`for (let prop in obj)` donne les noms de propriétés. `for...of` n'est pas pour les objets (sans helpers)."
+        "prompt": "¿Qué bucle itera sobre las CLAVES de un objeto?",
+        "explanation": "`for (let prop in obj)` da los nombres de las propiedades. `for...of` no es para objetos."
       },
       "js-016": {
-        "prompt": "Quel est l'ordre des arguments dans `forEach(function(...)) ` ?",
-        "explanation": "`forEach((item, index, array) => ...)`. L'item d'abord, puis l'index."
+        "prompt": "¿Cuál es el orden de los argumentos en `forEach(function(...))`?",
+        "explanation": "`forEach((item, index, array) => ...)`. El item primero, luego el índice."
       },
       "js-017": {
-        "prompt": "Quelle est la syntaxe correcte d'une fonction nommée en JS ?",
-        "explanation": "`function nom(args) { ... }`. Les autres syntaxes (`def`, `func`, `def`) sont d'autres langages."
+        "prompt": "¿Cuál es la sintaxis correcta de una función con nombre en JS?",
+        "explanation": "`function nombre(args) { ... }`. Otras sintaxis (`def`, `func`) son de otros lenguajes."
       },
       "js-018": {
-        "prompt": "Quelle est la syntaxe correcte d'une arrow function ?",
-        "explanation": "`(args) => expression` ou `(args) => { block }`. Les `=>` sont obligatoires."
+        "prompt": "¿Cuál es la sintaxis correcta de una arrow function?",
+        "explanation": "`(args) => expresion` o `(args) => { bloque }`. El `=>` es obligatorio."
       },
       "js-019": {
-        "prompt": "Quelle fonction native convertit `\"3.14\"` en `3.14` (float) ?",
-        "explanation": "`parseFloat()` pour les décimaux, `parseInt()` pour les entiers."
+        "prompt": "¿Qué función nativa convierte `\"3.14\"` en `3.14` (float)?",
+        "explanation": "`parseFloat()` para decimales, `parseInt()` para enteros."
       },
       "js-020": {
-        "prompt": "Que retourne `isNaN(\"abc\")` ?",
-        "explanation": "`\"abc\"` n'est pas convertible en nombre → `NaN` → `isNaN` est `true`."
+        "prompt": "¿Qué devuelve `isNaN(\"abc\")`?",
+        "explanation": "`\"abc\"` no se puede convertir a número → `NaN` → `isNaN` es `true`."
       },
       "js-021": {
-        "prompt": "Comment accéder à la propriété `nom` d'un objet `p` ?",
-        "explanation": "`p.nom` (dot notation) OU `p[\"nom\"]` (bracket notation). Le bracket permet une clé dynamique."
+        "prompt": "¿Cómo acceder a la propiedad `nom` de un objeto `p`?",
+        "explanation": "`p.nom` (dot notation) O `p[\"nom\"]` (bracket notation). Los corchetes permiten una clave dinámica."
       },
       "js-022": {
-        "prompt": "Comment supprimer une propriété d'un objet ?",
-        "explanation": "`delete p.nom` retire la propriété. `p.nom = null` la garde mais avec valeur null."
+        "prompt": "¿Cómo eliminar una propiedad de un objeto?",
+        "explanation": "`delete p.nom` elimina la propiedad. `p.nom = null` la conserva pero con valor null."
       },
       "js-023": {
-        "prompt": "Que fait `const { cidade, rua } = morada;` ?",
-        "explanation": "Destructuring d'objet : crée les variables `cidade` et `rua` à partir des propriétés homonymes de `morada`."
+        "prompt": "¿Qué hace `const { ciudad, calle } = direccion;`?",
+        "explanation": "Destructuring de objeto: crea las variables `ciudad` y `calle` a partir de las propiedades homónimas de `direccion`."
       },
       "js-024": {
-        "prompt": "Comment fusionner deux objets `a` et `b` ?",
-        "explanation": "Spread operator : `const c = { ...a, ...b }`. Si conflit, `b` écrase `a`."
+        "prompt": "¿Cómo fusionar dos objetos `a` y `b`?",
+        "explanation": "Spread operator: `const c = { ...a, ...b }`. Si hay conflicto, `b` sobrescribe `a`."
       },
       "js-025": {
-        "prompt": "À quoi se réfère `this` dans une méthode d'objet ?",
-        "explanation": "`this` représente l'objet sur lequel la méthode est appelée. Différent dans les arrow functions !"
+        "prompt": "¿A qué se refiere `this` en un método de objeto?",
+        "explanation": "`this` representa el objeto sobre el que se llama el método. ¡Diferente en arrow functions!"
       },
       "js-026": {
-        "prompt": "Quel mot-clé sert à initialiser une classe en JS ?",
-        "explanation": "`constructor(args) { ... }` est le nom RÉSERVÉ pour la méthode d'initialisation d'une classe."
+        "prompt": "¿Qué palabra clave sirve para inicializar una clase en JS?",
+        "explanation": "`constructor(args) { ... }` es el nombre RESERVADO para el método de inicialización de una clase."
       },
       "js-027": {
-        "prompt": "Quelle syntaxe fait hériter `Professor` de `Pessoa` ?",
-        "explanation": "`class Professor extends Pessoa`. Pour appeler le parent : `super(args)`."
+        "prompt": "¿Qué sintaxis hace que `Profesor` herede de `Persona`?",
+        "explanation": "`class Profesor extends Persona`. Para llamar al padre: `super(args)`."
       },
       "js-028": {
-        "prompt": "Quelle propriété donne le nombre d'éléments d'un array ?",
-        "explanation": "`array.length` (pas `.size`, `.count` ou `.length()`)."
+        "prompt": "¿Qué propiedad da el número de elementos de un array?",
+        "explanation": "`array.length` (no `.size`, `.count` o `.length()`)."
       },
       "js-029": {
-        "prompt": "Quelle méthode ajoute un élément à la FIN d'un array ?",
-        "explanation": "`push()` ajoute à la fin. `unshift()` ajoute au début. Les deux modifient l'array original."
+        "prompt": "¿Qué método añade un elemento al FINAL de un array?",
+        "explanation": "`push()` añade al final. `unshift()` añade al inicio. Ambos modifican el array original."
       },
       "js-030": {
-        "prompt": "Quelle méthode retire le PREMIER élément d'un array ?",
-        "explanation": "`shift()` retire le premier. `pop()` retire le dernier. `unshift()` AJOUTE au début."
+        "prompt": "¿Qué método retira el PRIMER elemento de un array?",
+        "explanation": "`shift()` retira el primero. `pop()` retira el último. `unshift()` AÑADE al inicio."
       },
       "js-031": {
-        "prompt": "Quelle méthode ajoute un élément au DÉBUT d'un array ?",
-        "explanation": "`unshift()` ajoute au début. `push()` ajoute à la fin."
+        "prompt": "¿Qué método añade un elemento al INICIO de un array?",
+        "explanation": "`unshift()` añade al inicio. `push()` añade al final."
       },
       "js-032": {
-        "prompt": "Quelle méthode crée un NOUVEAU array en ne gardant que certains éléments ?",
-        "explanation": "`filter(cb)` ne garde que les items pour lesquels `cb` retourne `true`."
+        "prompt": "¿Qué método crea un NUEVO array conservando solo ciertos elementos?",
+        "explanation": "`filter(cb)` solo conserva los elementos para los que `cb` devuelve `true`."
       },
       "js-033": {
-        "prompt": "Quelle méthode TRANSFORME chaque élément en un nouveau ?",
-        "explanation": "`map(cb)` retourne un nouveau array où chaque item est le résultat de `cb`."
+        "prompt": "¿Qué método TRANSFORMA cada elemento en uno nuevo?",
+        "explanation": "`map(cb)` devuelve un nuevo array donde cada elemento es el resultado de `cb`."
       },
       "js-034": {
-        "prompt": "Quelle méthode RÉDUIT un array à une seule valeur ?",
-        "explanation": "`reduce((acc, item) => ..., initial)` accumule un résultat unique."
+        "prompt": "¿Qué método REDUCE un array a un único valor?",
+        "explanation": "`reduce((acc, item) => ..., inicial)` acumula un resultado único."
       },
       "js-035": {
-        "prompt": "Que retourne `\"John Doe\".split(\" \")` ?",
-        "explanation": "`split` découpe une string en array selon le séparateur. Ici : `[\"John\", \"Doe\"]`."
+        "prompt": "¿Qué devuelve `\"John Doe\".split(\" \")`?",
+        "explanation": "`split` divide un string en array según el separador. Aquí: `[\"John\", \"Doe\"]`."
       },
       "js-036": {
-        "prompt": "Que retourne `\"Ferrari\".charAt(0)` ?",
-        "explanation": "`charAt(n)` retourne le caractère à l'index `n`. L'index 0 est le premier caractère."
+        "prompt": "¿Qué devuelve `\"Ferrari\".charAt(0)`?",
+        "explanation": "`charAt(n)` devuelve el carácter en el índice `n`. El índice 0 es el primer carácter."
       },
       "js-037": {
-        "prompt": "Quelle méthode recherche la première occurrence d'une sous-chaîne ?",
-        "explanation": "`indexOf(\"abc\")` retourne l'index de la première occurrence, ou -1 si absente."
+        "prompt": "¿Qué método busca la primera aparición de una subcadena?",
+        "explanation": "`indexOf(\"abc\")` devuelve el índice de la primera aparición, o -1 si no está."
       },
       "js-038": {
-        "prompt": "Que retourne `\"FeRRaRi\".toLowerCase()` ?",
-        "explanation": "Convertit toute la chaîne en minuscules. Note : ne modifie pas l'original (les strings sont immuables)."
+        "prompt": "¿Qué devuelve `\"FeRRaRi\".toLowerCase()`?",
+        "explanation": "Convierte toda la cadena a minúsculas. Nota: no modifica el original (los strings son inmutables)."
       },
       "js-039": {
-        "prompt": "Quelle méthode demande à l'utilisateur de TAPER une réponse ?",
-        "explanation": "`prompt(\"message\")` ouvre une boîte de saisie. Retourne la string entrée, ou null si annulé."
+        "prompt": "¿Qué método pide al usuario ESCRIBIR una respuesta?",
+        "explanation": "`prompt(\"mensaje\")` abre un cuadro de entrada. Devuelve el string introducido, o null si se cancela."
       },
       "js-040": {
-        "prompt": "Quelle méthode demande une CONFIRMATION oui/non ?",
-        "explanation": "`confirm(\"message\")` retourne `true` (OK) ou `false` (Annuler)."
+        "prompt": "¿Qué método pide una CONFIRMACIÓN sí/no?",
+        "explanation": "`confirm(\"mensaje\")` devuelve `true` (OK) o `false` (Cancelar)."
       },
       "js-041": {
-        "prompt": "Quel timer s'exécute UNE SEULE FOIS après un délai ?",
-        "explanation": "`setTimeout(callback, ms)` exécute après ms millisecondes. `setInterval` répète."
+        "prompt": "¿Qué temporizador se ejecuta UNA SOLA VEZ tras un retraso?",
+        "explanation": "`setTimeout(callback, ms)` se ejecuta tras ms milisegundos. `setInterval` se repite."
       },
       "js-042": {
-        "prompt": "Quel timer s'exécute en BOUCLE à intervalles réguliers ?",
-        "explanation": "`setInterval(callback, ms)` répète tous les ms. Penser à `clearInterval` pour arrêter."
+        "prompt": "¿Qué temporizador se ejecuta en BUCLE a intervalos regulares?",
+        "explanation": "`setInterval(callback, ms)` se repite cada ms. Recuerda `clearInterval` para detenerlo."
       },
       "js-043": {
-        "prompt": "Quelle méthode génère un nombre aléatoire entre 0 et 1 ?",
-        "explanation": "`Math.random()`. Pour un entier entre 0 et N : `Math.floor(Math.random() * N)`."
+        "prompt": "¿Qué método genera un número aleatorio entre 0 y 1?",
+        "explanation": "`Math.random()`. Para un entero entre 0 y N: `Math.floor(Math.random() * N)`."
       },
       "js-044": {
-        "prompt": "Que retourne `Math.floor(8.78)` ?",
-        "explanation": "`floor` = arrondi à l'entier INFÉRIEUR. Donc 8."
+        "prompt": "¿Qué devuelve `Math.floor(8.78)`?",
+        "explanation": "`floor` = redondeo al entero INFERIOR. Por tanto 8."
       },
       "js-045": {
-        "prompt": "Que retourne `Math.ceil(12.01)` ?",
-        "explanation": "`ceil` = arrondi à l'entier SUPÉRIEUR. Donc 13."
+        "prompt": "¿Qué devuelve `Math.ceil(12.01)`?",
+        "explanation": "`ceil` = redondeo al entero SUPERIOR. Por tanto 13."
       },
       "js-046": {
-        "prompt": "Quelle est la plage retournée par `Date.getMonth()` ?",
-        "explanation": "0 à 11 (0 = janvier, 11 = décembre). Bug classique : oublier le +1 pour affichage humain."
+        "prompt": "¿Cuál es el rango que devuelve `Date.getMonth()`?",
+        "explanation": "0 a 11 (0 = enero, 11 = diciembre). Bug clásico: olvidar el +1 para mostrar a humanos."
       },
       "js-047": {
-        "prompt": "Quelle est la convention pour les jours de la semaine de `Date.getDay()` ?",
-        "explanation": "0 = dimanche, 1 = lundi, ..., 6 = samedi."
+        "prompt": "¿Cuál es la convención para los días de la semana de `Date.getDay()`?",
+        "explanation": "0 = domingo, 1 = lunes, ..., 6 = sábado."
       },
       "js-048": {
-        "prompt": "Comment sélectionner un élément par son ID ?",
-        "explanation": "`document.getElementById(\"teste\")` (sans le `#`). Méthode rapide, retourne un Element ou null."
+        "prompt": "¿Cómo seleccionar un elemento por su ID?",
+        "explanation": "`document.getElementById(\"teste\")` (sin el `#`). Método rápido, devuelve un Element o null."
       },
       "js-049": {
-        "prompt": "Quelle est la différence entre `querySelector` et `querySelectorAll` ?",
-        "explanation": "`querySelector` retourne le PREMIER match (ou null). `querySelectorAll` retourne une NodeList de tous."
+        "prompt": "¿Cuál es la diferencia entre `querySelector` y `querySelectorAll`?",
+        "explanation": "`querySelector` devuelve la PRIMERA coincidencia (o null). `querySelectorAll` devuelve un NodeList con todas."
       },
       "js-050": {
-        "prompt": "Quelle est la différence entre `innerHTML` et `innerText` ?",
-        "explanation": "`innerHTML` rend/lit le markup HTML. `innerText` ne lit/écrit que le texte sans balises."
+        "prompt": "¿Cuál es la diferencia entre `innerHTML` y `innerText`?",
+        "explanation": "`innerHTML` lee/escribe el markup HTML. `innerText` solo lee/escribe el texto sin etiquetas."
       },
       "js-051": {
-        "prompt": "Comment modifier le `background-color` en JS via la propriété `.style` ?",
-        "explanation": "Les propriétés CSS avec `-` deviennent camelCase en JS. `background-color` → `backgroundColor`. Le bracket notation accepte la version originale."
+        "prompt": "¿Cómo modificar el `background-color` en JS vía `.style`?",
+        "explanation": "Las propiedades CSS con `-` pasan a camelCase en JS. `background-color` → `backgroundColor`. La notación por corchetes acepta la versión original."
       },
       "js-052": {
-        "prompt": "Comment créer un nouvel élément `'<p>'` en JS ?",
-        "explanation": "`document.createElement(\"p\")` crée un élément non attaché. Utiliser ensuite `appendChild` pour l'insérer."
+        "prompt": "¿Cómo crear un nuevo elemento `'<p>'` en JS?",
+        "explanation": "`document.createElement(\"p\")` crea un elemento no insertado. Usa luego `appendChild` para insertarlo."
       },
       "js-053": {
-        "prompt": "Quel événement se déclenche quand le pointeur entre sur un élément ?",
-        "explanation": "`onmouseover` (entrée) et `onmouseout` (sortie). Versions modernes : `mouseenter` / `mouseleave`."
+        "prompt": "¿Qué evento se dispara cuando el puntero entra en un elemento?",
+        "explanation": "`onmouseover` (entrada) y `onmouseout` (salida). Versiones modernas: `mouseenter` / `mouseleave`."
       },
       "js-054": {
-        "prompt": "Quel événement se déclenche à la soumission d'un formulaire ?",
-        "explanation": "`onsubmit` sur le `'<form>'`. Idéal pour la validation. Retourner `false` pour annuler."
+        "prompt": "¿Qué evento se dispara al enviar un formulario?",
+        "explanation": "`onsubmit` en el `'<form>'`. Ideal para validar. Devolver `false` para cancelar."
       },
       "js-055": {
-        "prompt": "Comment empêcher le comportement par défaut d'un événement ?",
-        "explanation": "`event.preventDefault()`. Exemple : empêcher la soumission d'un form ou la navigation d'un lien."
+        "prompt": "¿Cómo impedir el comportamiento por defecto de un evento?",
+        "explanation": "`event.preventDefault()`. Ejemplo: impedir el envío de un form o la navegación de un enlace."
       },
       "js-056": {
-        "prompt": "Dans un handler inline, comment annuler le comportement par défaut ?",
-        "explanation": "`return false` depuis le handler annule l'action. Équivalent à `event.preventDefault()` + `event.stopPropagation()`."
+        "prompt": "¿En un handler inline, cómo cancelar el comportamiento por defecto?",
+        "explanation": "`return false` desde el handler cancela la acción. Equivalente a `event.preventDefault()` + `event.stopPropagation()`."
       },
       "js-057": {
-        "prompt": "Quelle propriété donne accès aux cookies du document ?",
-        "explanation": "`document.cookie` est une string (parsing manuel). Notez les contraintes RGPD pour l'usage de cookies."
+        "prompt": "¿Qué propiedad da acceso a las cookies del documento?",
+        "explanation": "`document.cookie` es un string (parsing manual). Ojo a las normas RGPD para el uso de cookies."
       }
     },
     "noDueCards": "Ninguna tarjeta para repasar hoy. Elige un tema abajo.",
@@ -939,8 +939,8 @@
         "d": "solo item"
       },
       "js-023": {
-        "a": "Creamos 2 variables a partir de las propiedades de morada",
-        "b": "Copiamos todo el objeto morada",
+        "a": "Creamos 2 variables a partir de las propiedades de direccion",
+        "b": "Copiamos todo el objeto direccion",
         "d": "Creamos 2 funciones"
       },
       "js-025": {
@@ -991,12 +991,12 @@
       "transforms": "Transforms",
       "animations": "Animaciones",
       "responsive": "Responsive",
-      "applying": "Application (External/Internal/Inline)",
-      "rules-anatomy": "Anatomie d'une règle",
-      "universal": "Sélecteur universel (*)",
-      "combinators": "Combinateurs (descendant, >, +, ~)",
-      "grouping": "Regroupement (virgule)",
-      "attribute-selectors": "Sélecteurs d'attributs",
+      "applying": "Aplicación (External/Internal/Inline)",
+      "rules-anatomy": "Anatomía de una regla",
+      "universal": "Selector universal (*)",
+      "combinators": "Combinadores (descendiente, >, +, ~)",
+      "grouping": "Agrupamiento (coma)",
+      "attribute-selectors": "Selectores de atributos",
       "margin": "margin",
       "padding": "padding",
       "border": "border",
@@ -1005,18 +1005,18 @@
       "media-types": "Media types",
       "media-queries": "Media queries (@media)",
       "viewport": "Viewport meta",
-      "keyframes": "Animations @keyframes",
+      "keyframes": "Animaciones @keyframes",
       "div-span": "div vs span"
     },
     "js": {
       "var-let-const": "var / let / const",
-      "types": "Types primitifs",
+      "types": "Tipos primitivos",
       "typeof": "typeof",
-      "operators-assign": "Opérateurs d'affectation",
-      "operators-compare": "Comparaison (== vs ===)",
-      "operators-logic": "Logiques (&&, ||, !)",
+      "operators-assign": "Operadores de asignación",
+      "operators-compare": "Comparación (== vs ===)",
+      "operators-logic": "Lógicos (&&, ||, !)",
       "template-literals": "Template literals",
-      "ternary": "Ternaire (?:)",
+      "ternary": "Ternario (?:)",
       "if-else": "if / else if / else",
       "switch": "switch case",
       "for": "for",
@@ -1026,58 +1026,58 @@
       "functions": "function & return",
       "arrow-functions": "Arrow functions",
       "native-functions": "parseInt / parseFloat / isNaN",
-      "objects": "Objets",
+      "objects": "Objetos",
       "destructuring": "Destructuring",
       "spread": "Spread (...)",
       "this": "this",
-      "constructors": "Constructeurs",
+      "constructors": "Constructores",
       "classes": "class / extends",
       "arrays": "Arrays",
       "array-mutators": "push / pop / shift / unshift",
       "array-iteration": "map / filter / reduce",
       "array-join-split": "join / split",
-      "string-methods": "Méthodes String",
+      "string-methods": "Métodos String",
       "window-dialogs": "alert / prompt / confirm",
       "timers": "setTimeout / setInterval",
       "math": "Math",
       "date": "Date",
       "location-navigator": "location / navigator",
-      "dom-selection": "Sélection DOM",
-      "dom-traversing": "Traversée DOM",
+      "dom-selection": "Selección DOM",
+      "dom-traversing": "Recorrido DOM",
       "dom-content": "innerHTML / innerText",
       "dom-attributes": "getAttribute / className",
       "dom-style": "element.style",
       "dom-create-remove": "createElement / appendChild / remove",
-      "events-classic": "Événements (onclick, onsubmit...)",
-      "events-handlers": "Gestionnaires d'événements",
+      "events-classic": "Eventos (onclick, onsubmit...)",
+      "events-handlers": "Manejadores de eventos",
       "events-prevent": "preventDefault / return false",
       "cookies": "document.cookie"
     }
   },
   "topicGroups": {
     "css": {
-      "selectors": "Sélecteurs",
+      "selectors": "Selectores",
       "cascade": "Cascada & herencia",
-      "box": "Modèle de boîte",
+      "box": "Modelo de caja",
       "layout": "Layout",
-      "values": "Valeurs",
-      "styling": "Style visuel",
-      "motion": "Animation",
+      "values": "Valores",
+      "styling": "Estilo visual",
+      "motion": "Animación",
       "adaptive": "Responsive",
-      "fundamentals": "Fondamentaux",
-      "semantics": "Sémantique"
+      "fundamentals": "Fundamentos",
+      "semantics": "Semántica"
     },
     "js": {
       "basics": "Bases",
-      "control": "Contrôle de flux",
-      "functions": "Fonctions",
-      "oop": "Objets & classes",
-      "arrays": "Tableaux",
-      "strings": "Chaînes",
+      "control": "Control de flujo",
+      "functions": "Funciones",
+      "oop": "Objetos & clases",
+      "arrays": "Arrays",
+      "strings": "Strings",
       "bom": "BOM (Browser Object Model)",
       "dom": "DOM (Document)",
-      "events": "Événements",
-      "storage": "Stockage"
+      "events": "Eventos",
+      "storage": "Almacenamiento"
     }
   },
   "dashboard": {
