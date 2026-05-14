@@ -1042,5 +1042,21 @@
     "savedAt": "Dernière sauvegarde il y a {ago}",
     "resume": "Reprendre",
     "restart": "Recommencer"
+  },
+  "exam": {
+    "title": "Mode Examen",
+    "subtitle": "20 questions tirées au hasard. Score séparé de la mastery.",
+    "pickCss": "Examen CSS",
+    "pickJs": "Examen JS",
+    "start": "Démarrer",
+    "cardsAvailable": "{count} cartes disponibles",
+    "pillarLabel": "Examen — {pillar}",
+    "historyTitle": "Ton historique",
+    "bestScore": "Meilleur",
+    "lastScore": "Dernier",
+    "attempts": "{count, plural, one {1 tentative} other {# tentatives}}",
+    "noAttempts": "Aucune tentative",
+    "pickPillar": "Choisis un pilier pour commencer",
+    "backToExam": "Retour à l'examen"
   }
 }

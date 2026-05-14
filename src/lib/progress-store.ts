@@ -5,7 +5,9 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import {
   INITIAL_PROGRESS,
   type CardProgress,
+  type ExamScore,
   type LevelProgress,
+  type Pillar,
   type Progress,
   type TopicId,
   type WeeklyGoal,
@@ -15,8 +17,7 @@ import {
 import { applyReview, initialCardProgress } from './srs';
 
 const STORAGE_KEY = 'recreate:progress';
-const STORAGE_VERSION = 1;
-const MASTERY_EMA_ALPHA = 0.25;
+const STORAGE_VERSION = 2;
 
 function todayKey(d = new Date()): string {
   // YYYY-MM-DD in local time. Date keys are local because the user's "day" is local.
@@ -49,6 +50,9 @@ type ProgressActions = {
 
   // Topic mastery
   bumpTopicMastery: (topic: TopicId, hit01: number) => void;
+
+  // Exam scores (independent from topic mastery)
+  recordExamAttempt: (pillar: Pillar, score: number) => void;
 
   // Goals
   setGoalsForCurrentWeek: (goals: Omit<WeeklyGoal, 'id' | 'weekStart' | 'progress' | 'state' | 'createdAt'>[]) => void;
@@ -156,10 +160,7 @@ export const useProgressStore = create<ProgressStore>()(
         const now = Date.now();
         const sanitized = Math.max(0, Math.min(1, hit01));
         const prev = get().topicMastery[topic];
-        const nextScore =
-          prev == null
-            ? sanitized
-            : prev.score * (1 - MASTERY_EMA_ALPHA) + sanitized * MASTERY_EMA_ALPHA;
+        const nextScore = prev == null ? sanitized : Math.max(prev.score, sanitized);
         set({
           topicMastery: {
             ...get().topicMastery,
@@ -185,6 +186,22 @@ export const useProgressStore = create<ProgressStore>()(
           return g;
         });
         set({ goals: updated });
+      },
+
+      recordExamAttempt: (pillar, score) => {
+        const now = Date.now();
+        const sanitized = Math.max(0, Math.min(100, Math.round(score)));
+        const prev = get().examScores[pillar];
+        const completed = sanitized === 100;
+        const next: ExamScore = {
+          pillar,
+          bestScore: Math.max(prev?.bestScore ?? 0, sanitized),
+          lastScore: sanitized,
+          attempts: (prev?.attempts ?? 0) + 1,
+          lastAttemptAt: now,
+          completedAt: prev?.completedAt ?? (completed ? now : null),
+        };
+        set({ examScores: { ...get().examScores, [pillar]: next } });
       },
 
       setGoalsForCurrentWeek: (specs) => {
@@ -279,7 +296,16 @@ export const useProgressStore = create<ProgressStore>()(
         topicMastery: state.topicMastery,
         sessionsByDay: state.sessionsByDay,
         wip: state.wip,
+        examScores: state.examScores,
       }),
+      // v1 → v2: add `examScores` (defaults to empty). Other fields untouched.
+      migrate: (persisted, fromVersion) => {
+        const s = (persisted ?? {}) as Partial<Progress>;
+        if (fromVersion < 2) {
+          return { ...s, schemaVersion: 2, examScores: {} } as Progress;
+        }
+        return s as Progress;
+      },
     }
   )
 );

@@ -86,10 +86,26 @@ export type CardProgress = {
 // ---------- Topic mastery ----------
 
 export type TopicMastery = {
-  /** EMA score 0..1 of recent attempts on this topic. */
+  /** Best per-session accuracy 0..1 (monotonic non-decreasing). */
   score: number;
   attempts: number;
   lastAttemptAt: number;
+};
+
+// ---------- Exam scores ----------
+
+export type Pillar = 'css' | 'js';
+
+export type ExamScore = {
+  pillar: Pillar;
+  /** Best score 0–100 across all attempts. */
+  bestScore: number;
+  /** Score of the most recent attempt 0–100. */
+  lastScore: number;
+  attempts: number;
+  lastAttemptAt: number;
+  /** First time a user reached 100% on this pillar's exam, null if never. */
+  completedAt: number | null;
 };
 
 // ---------- Weekly SMART goals ----------
@@ -128,7 +144,7 @@ export type Wip = {
 
 export type Progress = {
   /** Bumped on breaking schema changes — migration handled in the store. */
-  schemaVersion: 1;
+  schemaVersion: 2;
   levels: Record<string, LevelProgress>;
   cards: Record<string, CardProgress>;
   goals: WeeklyGoal[];
@@ -137,14 +153,17 @@ export type Progress = {
   sessionsByDay: Record<string, number>; // key = YYYY-MM-DD
   /** Per-level work-in-progress code, auto-saved as the user edits. */
   wip: Record<string, Wip>;
+  /** Best/last exam scores per pillar — independent from topic mastery. */
+  examScores: Partial<Record<Pillar, ExamScore>>;
 };
 
 export const INITIAL_PROGRESS: Progress = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   levels: {},
   cards: {},
   goals: [],
   topicMastery: {},
   sessionsByDay: {},
   wip: {},
+  examScores: {},
 };

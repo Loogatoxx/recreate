@@ -1,8 +1,12 @@
-import type { Card, TopicId } from '../types';
+import type { Card, Pillar, TopicId } from '../types';
 import { CSS_QUIZ_CARDS } from './css';
 import { JS_QUIZ_CARDS } from './js';
 
 export const ALL_CARDS: Card[] = [...CSS_QUIZ_CARDS, ...JS_QUIZ_CARDS];
+
+export function getCardsByPillar(pillar: Pillar): Card[] {
+  return pillar === 'css' ? CSS_QUIZ_CARDS : JS_QUIZ_CARDS;
+}
 
 const CARD_INDEX = new Map(ALL_CARDS.map((c) => [c.id, c]));
 
