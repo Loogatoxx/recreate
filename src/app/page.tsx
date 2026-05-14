@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
-import { ListChecks } from 'lucide-react';
+import { GraduationCap, ListChecks } from 'lucide-react';
 import { CATEGORIES, DIFFICULTIES, LEVELS } from '@/lib/levels';
 import { GenerateButton } from '@/components/home/GenerateButton';
 import { LevelGrid } from '@/components/home/LevelGrid';
@@ -36,7 +36,7 @@ export default async function Home() {
           <MasteryMap />
         </div>
 
-        <div className="mb-6 grid gap-3 sm:grid-cols-[1fr_auto]">
+        <div className="mb-6 grid gap-3 sm:grid-cols-[1fr_auto_auto]">
           <GenerateButton />
           <Link
             href="/quiz"
@@ -44,6 +44,13 @@ export default async function Home() {
           >
             <ListChecks size={16} />
             Quiz
+          </Link>
+          <Link
+            href="/exam"
+            className="flex items-center justify-center gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 px-5 py-5 text-sm font-semibold text-amber-100 transition hover:bg-amber-500/20 sm:px-6"
+          >
+            <GraduationCap size={16} />
+            Exam
           </Link>
         </div>
 

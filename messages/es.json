@@ -1042,5 +1042,21 @@
     "savedAt": "Último guardado hace {ago}",
     "resume": "Continuar",
     "restart": "Reiniciar"
+  },
+  "exam": {
+    "title": "Modo Examen",
+    "subtitle": "20 preguntas aleatorias por pilar. Separado de la maestría por tema.",
+    "pickCss": "Examen CSS",
+    "pickJs": "Examen JS",
+    "start": "Empezar",
+    "cardsAvailable": "{count} cartas disponibles",
+    "pillarLabel": "Examen — {pillar}",
+    "historyTitle": "Tu historial",
+    "bestScore": "Mejor",
+    "lastScore": "Último",
+    "attempts": "{count, plural, one {1 intento} other {# intentos}}",
+    "noAttempts": "Sin intentos",
+    "pickPillar": "Elige un pilar para empezar",
+    "backToExam": "Volver al examen"
   }
 }

@@ -1042,5 +1042,21 @@
     "savedAt": "Última gravação há {ago}",
     "resume": "Continuar",
     "restart": "Recomeçar"
+  },
+  "exam": {
+    "title": "Modo Exame",
+    "subtitle": "20 perguntas aleatórias por pilar. Separado da mastery dos tópicos.",
+    "pickCss": "Exame CSS",
+    "pickJs": "Exame JS",
+    "start": "Começar",
+    "cardsAvailable": "{count} cartas disponíveis",
+    "pillarLabel": "Exame — {pillar}",
+    "historyTitle": "O teu histórico",
+    "bestScore": "Melhor",
+    "lastScore": "Última",
+    "attempts": "{count, plural, one {1 tentativa} other {# tentativas}}",
+    "noAttempts": "Sem tentativas",
+    "pickPillar": "Escolhe um pilar para começar",
+    "backToExam": "Voltar ao exame"
   }
 }

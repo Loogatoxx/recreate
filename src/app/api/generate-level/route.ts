@@ -64,6 +64,62 @@ const SCHEMA = {
   ],
 };
 
+const REVIEW_SCHEMA = {
+  type: Type.OBJECT,
+  properties: {
+    needsFix: { type: Type.BOOLEAN },
+    missingProperties: {
+      type: Type.ARRAY,
+      items: { type: Type.STRING },
+      description: 'List of (selector, property) pairs, e.g. ".title: font-weight".',
+    },
+    correctedTargetCss: {
+      type: Type.STRING,
+      description:
+        'Full corrected CSS. Present only when needsFix=true. Must include all original rules plus the additions.',
+    },
+  },
+  required: ['needsFix', 'missingProperties'],
+  propertyOrdering: ['needsFix', 'missingProperties', 'correctedTargetCss'],
+};
+
+const REVIEW_SYSTEM_PROMPT = `You are a CSS visual-fidelity reviewer.
+
+You receive an HTML snippet and the CSS intended to render its final visual state. Your job: detect CSS declarations that are clearly REQUIRED to produce the visible result but are missing from the CSS.
+
+Common omissions:
+- A title that looks bold without \`font-weight: 700\` declared
+- A heading larger than default body text without \`font-size\` declared
+- A card with a visible shadow but no \`box-shadow\`
+- A circular avatar without \`border-radius: 50%\`
+- A column-stacked layout without \`flex-direction: column\`
+- A coloured background that's missing \`background-color\`
+- A non-default text colour without \`color\`
+- Padding implied by visible whitespace but undeclared
+- A border visible in the design but no \`border\`
+
+Decision:
+- If everything visually observable IS already declared → respond with \`needsFix: false\` and \`missingProperties: []\`.
+- Otherwise → respond with \`needsFix: true\`, list the missing (selector, property) pairs in \`missingProperties\`, AND return \`correctedTargetCss\` containing the FULL corrected CSS — original rules unchanged plus your additions. Do not delete or rewrite existing declarations. Do not rename selectors.
+
+STRICT RULE: only add properties that, if absent, would clearly break the visual match. Do NOT add cosmetic refinements, micro-tweaks, or stylistic preferences. When in doubt, prefer fewer additions.`;
+
+function reviewUserPrompt(targetHtml: string, targetCss: string): string {
+  return [
+    'Review this generated CSS for missing visually-required properties.',
+    '',
+    'HTML:',
+    '```html',
+    targetHtml,
+    '```',
+    '',
+    'CSS:',
+    '```css',
+    targetCss,
+    '```',
+  ].join('\n');
+}
+
 const LOCALE_LANGUAGE: Record<string, string> = {
   fr: 'français',
   en: 'English',
@@ -180,6 +236,41 @@ export async function POST(req: Request) {
     }
 
     const parsed = JSON.parse(text) as Omit<Level, 'id' | 'generated'>;
+
+    // Self-review pass: ask Gemini whether any visually-required CSS properties
+    // are missing from the generated targetCss. If yes, apply the corrected CSS.
+    // Runs at most once. On any error, fall back to the original CSS gracefully.
+    let reviewedTargetCss = parsed.targetCss;
+    try {
+      const reviewResp = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: reviewUserPrompt(parsed.targetHtml, parsed.targetCss),
+        config: {
+          systemInstruction: REVIEW_SYSTEM_PROMPT,
+          responseMimeType: 'application/json',
+          responseSchema: REVIEW_SCHEMA,
+          temperature: 0.2,
+        },
+      });
+      const reviewText = reviewResp.text;
+      if (reviewText) {
+        const review = JSON.parse(reviewText) as {
+          needsFix: boolean;
+          missingProperties: string[];
+          correctedTargetCss?: string;
+        };
+        if (review.needsFix && review.correctedTargetCss) {
+          reviewedTargetCss = review.correctedTargetCss;
+          console.info(
+            '[generate-level] AI self-review applied fix:',
+            review.missingProperties
+          );
+        }
+      }
+    } catch (reviewErr) {
+      console.warn('[generate-level] self-review failed, using original CSS:', reviewErr);
+    }
+
     const level: Level = {
       id: `ai-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
       generated: true,
@@ -187,7 +278,7 @@ export async function POST(req: Request) {
       starterHtml: formatHtml(parsed.starterHtml),
       starterCss: formatCss(parsed.starterCss),
       targetHtml: formatHtml(parsed.targetHtml),
-      targetCss: formatCss(parsed.targetCss),
+      targetCss: formatCss(reviewedTargetCss),
     };
 
     return NextResponse.json({ level });

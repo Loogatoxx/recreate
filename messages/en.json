@@ -1042,5 +1042,21 @@
     "savedAt": "Last save {ago} ago",
     "resume": "Resume",
     "restart": "Restart"
+  },
+  "exam": {
+    "title": "Exam mode",
+    "subtitle": "20 random questions per pillar. Separate from topic mastery.",
+    "pickCss": "CSS exam",
+    "pickJs": "JS exam",
+    "start": "Start",
+    "cardsAvailable": "{count} cards available",
+    "pillarLabel": "Exam — {pillar}",
+    "historyTitle": "Your history",
+    "bestScore": "Best",
+    "lastScore": "Last",
+    "attempts": "{count, plural, one {1 attempt} other {# attempts}}",
+    "noAttempts": "No attempts yet",
+    "pickPillar": "Pick a pillar to start",
+    "backToExam": "Back to exam"
   }
 }
