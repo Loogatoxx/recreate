@@ -59,7 +59,11 @@
     "computing": "Computing...",
     "allMatch": "All matching!",
     "allMatchHint": "Every target declaration is applied. If the gauge isn't at 100%, check you don't have any extra styles.",
-    "hover": "Hover a row to see the matching element. Find the value in the Ingredients bar."
+    "hover": "Hover a row to see the matching element. Find the value in the Ingredients bar.",
+    "revealTooltip": "Reveal the exact answer to paste",
+    "copyDeclaration": "Copy declaration",
+    "notEnoughPoints": "Not enough points to reveal",
+    "revealNotFound": "Value not found in target"
   },
   "manual": {
     "title": "The Manual",

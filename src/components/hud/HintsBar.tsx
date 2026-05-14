@@ -40,7 +40,10 @@ export function HintsBar({ css, onHintHover }: Props) {
   const getContext = (value: string) => findCssContext(css, value);
 
   const hasContent =
-    hints.colors.length > 0 || hints.sizes.length > 0 || hints.fonts.length > 0;
+    hints.colors.length > 0 ||
+    hints.sizes.length > 0 ||
+    hints.fonts.length > 0 ||
+    hints.weights.length > 0;
   if (!hasContent) return null;
 
   return (
@@ -102,6 +105,24 @@ export function HintsBar({ css, onHintHover }: Props) {
           ))}
         </Group>
       )}
+
+      {hints.weights.length > 0 && (
+        <Group label="🅱️">
+          {hints.weights.map((w) => (
+            <Ingredient
+              key={w}
+              value={w}
+              copied={copied === w}
+              hovered={hovered === w}
+              context={getContext(w)}
+              onCopy={() => copy(w)}
+              onEnter={() => enter(w)}
+              onLeave={leave}
+              kind="weight"
+            />
+          ))}
+        </Group>
+      )}
     </div>
   );
 }
@@ -123,7 +144,7 @@ type IngredientProps = {
   onCopy: () => void;
   onEnter: () => void;
   onLeave: () => void;
-  kind: 'color' | 'size' | 'font';
+  kind: 'color' | 'size' | 'font' | 'weight';
 };
 
 function Ingredient({
@@ -137,6 +158,14 @@ function Ingredient({
   kind,
 }: IngredientProps) {
   const display = kind === 'font' ? value.split(',')[0].replace(/['"]/g, '').trim() : value;
+  // Render the weight chip with its own weight (e.g. "700" actually shown bold)
+  // so the learner sees the numeric ↔ visual mapping at a glance.
+  const buttonStyle: React.CSSProperties | undefined =
+    kind === 'font'
+      ? { fontFamily: value }
+      : kind === 'weight'
+        ? { fontWeight: /^\d+$/.test(value) ? Number(value) : value }
+        : undefined;
 
   return (
     <div
@@ -151,7 +180,7 @@ function Ingredient({
         className={`group flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-1.5 py-0.5 transition hover:bg-white/10 ${
           hovered ? 'ring-1 ring-rose-400/50' : ''
         }`}
-        style={kind === 'font' ? { fontFamily: value } : undefined}
+        style={buttonStyle}
       >
         {kind === 'color' && (
           <span

@@ -59,7 +59,11 @@
     "computing": "Calculando...",
     "allMatch": "¡Todo coincide!",
     "allMatchHint": "Todas las declaraciones del objetivo están aplicadas. Si el medidor no está al 100 %, revisa que no tengas estilos de más.",
-    "hover": "Pasa el ratón por una línea para ver el elemento correspondiente. Encuentra el valor en los Ingredientes."
+    "hover": "Pasa el ratón por una línea para ver el elemento correspondiente. Encuentra el valor en los Ingredientes.",
+    "revealTooltip": "Revelar la respuesta exacta para pegar",
+    "copyDeclaration": "Copiar declaración",
+    "notEnoughPoints": "No hay suficientes puntos para revelar",
+    "revealNotFound": "Valor no encontrado en el objetivo"
   },
   "manual": {
     "title": "El Manual",

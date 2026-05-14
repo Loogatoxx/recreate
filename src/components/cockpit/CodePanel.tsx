@@ -38,6 +38,8 @@ type Props = {
   rightPanel: RightPanel;
   onRightPanelChange: (p: RightPanel) => void;
   diffStats: DeclStats | null;
+  /** Target CSS — forwarded to the diff panel so it can reveal exact values on demand. */
+  targetCss: string;
   onSelectorHover: (selector: string | null) => void;
 };
 
@@ -53,6 +55,7 @@ export function CodePanel({
   rightPanel,
   onRightPanelChange,
   diffStats,
+  targetCss,
   onSelectorHover,
 }: Props) {
   const t = useTranslations('tabs');
@@ -167,7 +170,11 @@ export function CodePanel({
             <div className="h-full w-[300px]">
               {rightPanel === 'manual' && <ManualPanel />}
               {rightPanel === 'diff' && (
-                <DiffPanel stats={diffStats} onSelectorHover={onSelectorHover} />
+                <DiffPanel
+                  stats={diffStats}
+                  targetCss={targetCss}
+                  onSelectorHover={onSelectorHover}
+                />
               )}
             </div>
           </motion.div>

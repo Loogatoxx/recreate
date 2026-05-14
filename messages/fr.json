@@ -59,7 +59,11 @@
     "computing": "Calcul en cours...",
     "allMatch": "Tout matche !",
     "allMatchHint": "Toutes les déclarations du target sont appliquées. Si la jauge n'est pas à 100 %, vérifie que tu n'as pas de styles en trop.",
-    "hover": "Survole une ligne pour voir l'élément concerné. Trouve la valeur dans les Ingrédients."
+    "hover": "Survole une ligne pour voir l'élément concerné. Trouve la valeur dans les Ingrédients.",
+    "revealTooltip": "Révéler la réponse exacte à coller",
+    "copyDeclaration": "Copier la déclaration",
+    "notEnoughPoints": "Pas assez de points pour révéler",
+    "revealNotFound": "Valeur non trouvée dans le target"
   },
   "manual": {
     "title": "Le Manuel",

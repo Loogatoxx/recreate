@@ -154,7 +154,7 @@ export function Cockpit({ level }: Props) {
     const targetRoot = targetRef.current?.getRoot();
     if (!userRoot || !targetRoot || !targetReadyRef.current) return;
 
-    const stats = declarationStats(level.targetCss, userRoot, targetRoot);
+    const stats = declarationStats(level.targetCss, css, userRoot, targetRoot);
     setLatestStats(stats);
 
     // Capture baseline the first time we run with valid roots — at this moment the user
@@ -198,7 +198,7 @@ export function Cockpit({ level }: Props) {
         setVictory({ open: true, elapsedMs, pointsEarned, hintsUsedAtWin });
       }, VICTORY_DELAY_MS);
     }
-  }, [level.targetCss, level.id, level.topics, setScore, triggerMilestone, incrementCombo, startedAt]);
+  }, [level.targetCss, level.id, level.topics, css, setScore, triggerMilestone, incrementCombo, startedAt]);
 
   useEffect(() => {
     const t = setTimeout(runDiff, 250);
@@ -305,6 +305,7 @@ export function Cockpit({ level }: Props) {
             rightPanel={rightPanel}
             onRightPanelChange={setRightPanel}
             diffStats={latestStats}
+            targetCss={level.targetCss}
             onSelectorHover={handleSelectorHover}
           />
         </Panel>

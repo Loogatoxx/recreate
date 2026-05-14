@@ -32,6 +32,26 @@ function parseRules(css: string): Rule[] {
   return rules;
 }
 
+function normalizeValue(v: string): string {
+  return v.toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Index the user CSS by `selector|property` → declared value so the diff loop
+ * can look up source-level matches in O(1) per declaration. Used as a fallback
+ * when `getComputedStyle` reports different values for a percentage/relative
+ * unit that resolves against a parent the user hasn't sized yet.
+ */
+function indexUserDeclarations(css: string): Map<string, string> {
+  const map = new Map<string, string>();
+  for (const rule of parseRules(css)) {
+    for (const decl of rule.declarations) {
+      map.set(`${rule.selector}|${decl.property.toLowerCase()}`, normalizeValue(decl.value));
+    }
+  }
+  return map;
+}
+
 export type DeclStats = {
   total: number;
   matched: number;
@@ -40,14 +60,20 @@ export type DeclStats = {
 
 /**
  * For every (selector, property) in `targetCss`, check whether the user's rendering
- * computes the same value as the target's rendering for that same property on the
- * matched element. Returns totals + matched count.
+ * matches the target. A declaration is considered matched when EITHER:
  *
- * "Matched" is rendering equality, not source-string equality — so `padding: 1rem`
- * vs `padding: 16px` both count as a match if the resolved computed value is the same.
+ *   1. Computed styles agree on the matched DOM element (so `1rem` matches `16px`).
+ *   2. The user CSS declares the same source value as the target (so `width: 100%`
+ *      on `.cta` counts even when the parent isn't sized yet, which otherwise makes
+ *      the computed pixel width disagree).
+ *
+ * The source fallback is essential for relative units (%, em, vh…) that resolve
+ * against context the learner has not styled yet — without it, correct answers
+ * silently fail to score.
  */
 export function declarationStats(
   targetCss: string,
+  userCss: string,
   userRoot: Element,
   targetRoot: Element
 ): DeclStats {
@@ -55,6 +81,7 @@ export function declarationStats(
   let matched = 0;
   const unmatched: Array<{ selector: string; property: string }> = [];
   const seenUnmatched = new Set<string>();
+  const userDecls = indexUserDeclarations(userCss);
 
   for (const rule of parseRules(targetCss)) {
     if (rule.declarations.length === 0) continue;
@@ -79,13 +106,25 @@ export function declarationStats(
       const userEl = userEls[i];
       for (const decl of rule.declarations) {
         total++;
-        const isMatch =
+        const computedMatch =
           userEl &&
           (() => {
             const tVal = getComputedStyle(targetEl).getPropertyValue(decl.property);
             const uVal = getComputedStyle(userEl).getPropertyValue(decl.property);
             return tVal !== '' && tVal === uVal;
           })();
+
+        let isMatch = computedMatch;
+        if (!isMatch) {
+          // Source fallback: same declared value in the user's CSS for the same
+          // (selector, property). Handles relative-unit values (%, em, vh) whose
+          // computed pixel value depends on a parent the user hasn't sized yet.
+          const userSrc = userDecls.get(`${rule.selector}|${decl.property.toLowerCase()}`);
+          if (userSrc && userSrc === normalizeValue(decl.value)) {
+            isMatch = true;
+          }
+        }
+
         if (isMatch) {
           matched++;
         } else {
