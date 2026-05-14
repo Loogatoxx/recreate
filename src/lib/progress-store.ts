@@ -10,6 +10,7 @@ import {
   type TopicId,
   type WeeklyGoal,
   type GoalKind,
+  type Wip,
 } from './types';
 import { applyReview, initialCardProgress } from './srs';
 
@@ -57,6 +58,11 @@ type ProgressActions = {
 
   // Sessions
   recordSession: () => void;
+
+  // WIP code per level (auto-saved as the user edits)
+  saveWip: (levelId: string, wip: { html: string; css: string }) => void;
+  getWip: (levelId: string) => Wip | undefined;
+  clearWip: (levelId: string) => void;
 
   // Selectors
   getLevelProgress: (levelId: string) => LevelProgress | undefined;
@@ -237,6 +243,23 @@ export const useProgressStore = create<ProgressStore>()(
         set({ goals: updated });
       },
 
+      saveWip: (levelId, { html, css }) => {
+        set({
+          wip: {
+            ...get().wip,
+            [levelId]: { html, css, savedAt: Date.now() },
+          },
+        });
+      },
+
+      getWip: (levelId) => get().wip[levelId],
+
+      clearWip: (levelId) => {
+        const { [levelId]: _gone, ...rest } = get().wip;
+        void _gone;
+        set({ wip: rest });
+      },
+
       getLevelProgress: (levelId) => get().levels[levelId],
       getCardProgress: (cardId) => get().cards[cardId],
       getCompletedLevelCount: () =>
@@ -255,6 +278,7 @@ export const useProgressStore = create<ProgressStore>()(
         goals: state.goals,
         topicMastery: state.topicMastery,
         sessionsByDay: state.sessionsByDay,
+        wip: state.wip,
       }),
     }
   )

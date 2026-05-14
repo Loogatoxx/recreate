@@ -109,6 +109,15 @@ export type WeeklyGoal = {
   createdAt: number;
 };
 
+// ---------- WIP (work-in-progress) — auto-saved code per level ----------
+
+export type Wip = {
+  html: string;
+  css: string;
+  /** Epoch ms when last saved. */
+  savedAt: number;
+};
+
 // ---------- Root persisted state ----------
 
 export type Progress = {
@@ -120,6 +129,8 @@ export type Progress = {
   topicMastery: Record<TopicId, TopicMastery>;
   /** Track session-count goals — incremented when user starts any practice action that day. */
   sessionsByDay: Record<string, number>; // key = YYYY-MM-DD
+  /** Per-level work-in-progress code, auto-saved as the user edits. */
+  wip: Record<string, Wip>;
 };
 
 export const INITIAL_PROGRESS: Progress = {
@@ -129,4 +140,5 @@ export const INITIAL_PROGRESS: Progress = {
   goals: [],
   topicMastery: {},
   sessionsByDay: {},
+  wip: {},
 };

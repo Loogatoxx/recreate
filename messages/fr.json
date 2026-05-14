@@ -950,5 +950,12 @@
     "sessionCount": {
       "label": "Pratiquer {count} jour{count, plural, one {} other {s}} cette semaine"
     }
+  },
+  "resume": {
+    "title": "Reprendre où tu en étais ?",
+    "subtitle": "On a sauvegardé ton code en cours.",
+    "savedAt": "Dernière sauvegarde il y a {ago}",
+    "resume": "Reprendre",
+    "restart": "Recommencer"
   }
 }

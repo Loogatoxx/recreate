@@ -62,8 +62,13 @@ export function CodePanel({
   return (
     <div className="flex h-full bg-slate-950">
       <div className="flex flex-1 flex-col">
-        <div className="flex items-center justify-between gap-2 border-b border-white/5 px-2 py-1.5">
-          <div className="flex items-center gap-2">
+        {/*
+          Toolbar wraps onto a second row when the code panel is too narrow to fit
+          everything on one line — the Diff and Manual buttons must always stay visible
+          regardless of the user's drag position on the side separator.
+        */}
+        <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5 border-b border-white/5 px-2 py-1.5">
+          <div className="flex min-w-0 items-center gap-2">
             {layout === 'tabs' && (
               <div className="flex gap-1">
                 <TabButton
@@ -91,7 +96,7 @@ export function CodePanel({
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-shrink-0 flex-wrap items-center justify-end gap-2">
             <LayoutToggle layout={layout} onChange={onLayoutChange} />
             <PanelButton
               icon={<ListChecks size={12} />}
