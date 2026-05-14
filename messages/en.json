@@ -192,7 +192,7 @@
         "summary": "Stays in the flow but can be offset via `top`/`left`/`right`/`bottom`. Often used as a REFERENCE POINT for an `absolute` child."
       },
       "positionAbsolute": {
-        "summary": "Out of normal flow. Positioned relative to the nearest positioned parent (relative/absolute/fixed). No positioned parent → relative to `<html>`."
+        "summary": "Out of normal flow. Positioned relative to the nearest positioned parent (relative/absolute/fixed). No positioned parent → relative to `'<html>'`."
       },
       "positionFixed": {
         "summary": "Out of flow. Position relative to the VIEWPORT — stays visible while scrolling. Used for fixed headers/menus."
@@ -217,7 +217,7 @@
         "summary": "Hides the element BUT keeps its place in the flow. The user sees nothing there, but the layout isn't affected."
       },
       "transition": {
-        "summary": "Animates a property change on a trigger (typically `:hover`). Format: `transition: <prop> <duration> <function>`."
+        "summary": "Animates a property change on a trigger (typically `:hover`). Format: `transition: '<prop>' '<duration>' '<function>'`."
       },
       "transitionTiming": {
         "summary": "Acceleration curve of the transition. Affects the feel of motion.",
@@ -367,7 +367,7 @@
         "explanation": "Specificity: id (100) > class (10) > tag (1). `#box` beats everything else."
       },
       "css-012": {
-        "prompt": "Which unit is relative to the root (`<html>`) font size?",
+        "prompt": "Which unit is relative to the root (`'<html>'`) font size?",
         "explanation": "`rem` = root em. `em` is relative to the parent element."
       },
       "css-013": {
@@ -407,8 +407,8 @@
         "explanation": "`text-align: center` acts on text; `justify-content: center` acts on flex children."
       },
       "css-022": {
-        "prompt": "What is the DEFAULT `display` value for a `<div>`?",
-        "explanation": "`<div>`, `<p>`, `<h1>` etc. are `display: block` by default."
+        "prompt": "What is the DEFAULT `display` value for a `'<div>'`?",
+        "explanation": "`'<div>'`, `'<p>'`, `'<h1>'` etc. are `display: block` by default."
       },
       "css-023": {
         "prompt": "How do you HIDE an element AND remove its space in the flow?",
@@ -424,7 +424,7 @@
       },
       "css-058": {
         "prompt": "How do you link an external stylesheet?",
-        "explanation": "Use `<link rel=\"stylesheet\" href=\"...\">` in the `<head>`."
+        "explanation": "Use `'<link rel=\"stylesheet\" href=\"...\">'` in the `'<head>'`."
       },
       "css-059": {
         "prompt": "Which CSS application method is the LEAST recommended for maintenance?",
@@ -447,7 +447,7 @@
         "explanation": "Descendant combinator: `p` inside a `td` inside a `table`, at any nesting level."
       },
       "css-064": {
-        "prompt": "Which selector targets ONLY direct child `<span>`s of `<p>` (not deeper)?",
+        "prompt": "Which selector targets ONLY direct child `'<span>'`s of `'<p>'` (not deeper)?",
         "explanation": "The `>` operator means direct parent-child, not any descendant."
       },
       "css-065": {
@@ -459,7 +459,7 @@
         "explanation": "General sibling: every `p` following an `h1` at the same level, not necessarily adjacent."
       },
       "css-067": {
-        "prompt": "Which syntax targets `<input>` with `type=\"text\"`?",
+        "prompt": "Which syntax targets `'<input>'` with `type=\"text\"`?",
         "explanation": "Attribute selector: `tag[attribute=value]`."
       },
       "css-068": {
@@ -475,11 +475,11 @@
         "explanation": "The `:not(...)` pseudo-class negates."
       },
       "css-071": {
-        "prompt": "Which syntax targets the FIRST `<p>` child of a parent?",
+        "prompt": "Which syntax targets the FIRST `'<p>'` child of a parent?",
         "explanation": "Pseudo-class `:first-child` with ONE colon. Targets a DOM position."
       },
       "css-072": {
-        "prompt": "How do you target the 5th `<p>` child?",
+        "prompt": "How do you target the 5th `'<p>'` child?",
         "explanation": "`:nth-child(N)` accepts an index, keyword (`odd`, `even`) or a formula (`2n+1`)."
       },
       "css-073": {
@@ -536,7 +536,7 @@
       },
       "css-086": {
         "prompt": "Which HTML tag declares the viewport for mobile responsive?",
-        "explanation": "Meta tag `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">` in `<head>`."
+        "explanation": "Meta tag `'<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">'` in `'<head>'`."
       },
       "css-087": {
         "prompt": "Which property controls the ACCELERATION CURVE of a transition?",
@@ -555,8 +555,56 @@
         "explanation": "`var(--variable-name)`. Variables are declared with `--name: value;` often in `:root`."
       },
       "css-091": {
-        "prompt": "What's the semantic difference between `<span>` and `<div>`?",
-        "explanation": "`<div>` = block (line break before/after). `<span>` = inline (flows with text)."
+        "prompt": "What's the semantic difference between `'<span>'` and `'<div>'`?",
+        "explanation": "`'<div>'` = block (line break before/after). `'<span>'` = inline (flows with text)."
+      },
+      "css-092": {
+        "prompt": "Which operator groups multiple selectors that share the same style?",
+        "explanation": "The comma `,` acts as an OR. `p, td, div { ... }` applies the rule to all p OR all td OR all div."
+      },
+      "css-093": {
+        "prompt": "What does this rule do?",
+        "explanation": "Comma = OR. All p, all td and all div get `text-align: center` (no nesting condition)."
+      },
+      "css-094": {
+        "prompt": "Write the operator that groups several selectors with the same style. Example: `h1 ___ h2 { color: red }`.",
+        "explanation": "The comma. `h1, h2 { color: red }` styles every h1 and every h2."
+      },
+      "css-095": {
+        "prompt": "Which property controls what happens when content exceeds the box dimensions?",
+        "explanation": "`overflow` decides visible (default), hidden (clipped), scroll (always scrollbars) or auto (scrollbars only if needed)."
+      },
+      "css-096": {
+        "prompt": "What does this declaration do?",
+        "explanation": "`hidden` clips content beyond the box — no scrollbar, the overflow is simply not displayed."
+      },
+      "css-097": {
+        "prompt": "Which value shows scrollbars ONLY when content actually overflows?",
+        "explanation": "`auto` — the browser adds scrollbars only if needed. `scroll` always shows them, even when not required."
+      },
+      "css-098": {
+        "prompt": "Which property sets the background colour of an element?",
+        "explanation": "`background-color`. `color` only affects the text colour."
+      },
+      "css-099": {
+        "prompt": "Which CSS creates a horizontal red-to-blue gradient background?",
+        "explanation": "`background: linear-gradient(to right, red, blue)`. Example taken straight from the IPT course slides."
+      },
+      "css-100": {
+        "prompt": "Which value of `background-size` makes the image fully cover the box (cropping if needed)?",
+        "explanation": "`cover` stretches the image to cover the whole box, cropping overflow. `contain` does the opposite (always visible, may leave empty space)."
+      },
+      "css-101": {
+        "prompt": "Which property applies a 2D or 3D transformation (rotate, scale, translate)?",
+        "explanation": "`transform`. Combine functions: `transform: rotate(45deg) scale(1.2) translateY(-50%)`."
+      },
+      "css-102": {
+        "prompt": "Which function moves an element vertically?",
+        "explanation": "`translateY(value)`. `translateX` moves horizontally. The course example: `transform: rotateX(120deg) translateY(-50%)`."
+      },
+      "css-103": {
+        "prompt": "What does this transform do?",
+        "explanation": "`rotate(45deg)` rotates the element 45 degrees clockwise around its centre."
       },
       "js-001": {
         "prompt": "Which keyword declares a constant (immutable value) in JS?",
@@ -763,7 +811,7 @@
         "explanation": "CSS properties with `-` become camelCase in JS. `background-color` → `backgroundColor`. Bracket notation accepts the original."
       },
       "js-052": {
-        "prompt": "How do you create a new `<p>` element in JS?",
+        "prompt": "How do you create a new `'<p>'` element in JS?",
         "explanation": "`document.createElement(\"p\")` creates an unattached element. Use `appendChild` to insert it."
       },
       "js-053": {
@@ -772,7 +820,7 @@
       },
       "js-054": {
         "prompt": "Which event fires on form submission?",
-        "explanation": "`onsubmit` on the `<form>`. Ideal for validation. Return `false` to cancel."
+        "explanation": "`onsubmit` on the `'<form>'`. Ideal for validation. Return `false` to cancel."
       },
       "js-055": {
         "prompt": "How do you prevent the default behavior of an event?",
@@ -810,7 +858,7 @@
     "options": {
       "css-059": {
         "a": "External (separate .css file)",
-        "b": "Internal (<style> tag in <head>)"
+        "b": "Internal ('<style>' tag in '<head>')"
       },
       "css-060": {
         "a": "selector + declaration"
@@ -859,6 +907,30 @@
         "b": "span can contain divs",
         "c": "div is inline, span is block",
         "d": "No difference"
+      },
+      "css-092": {
+        "a": "the comma (,)",
+        "b": "the plus (+)",
+        "c": "the chevron (>)",
+        "d": "the tilde (~)"
+      },
+      "css-093": {
+        "a": "Centers p elements that contain a td which contains a div",
+        "b": "Centers every p OR every td OR every div",
+        "c": "Centers only div elements that follow a td",
+        "d": "Syntax error"
+      },
+      "css-096": {
+        "a": "Content beyond the box is clipped (invisible)",
+        "b": "A scrollbar appears",
+        "c": "Content overflows the box",
+        "d": "The element is hidden entirely"
+      },
+      "css-103": {
+        "a": "Rotates the element by 45 degrees",
+        "b": "Shifts the element by 45 pixels",
+        "c": "Scales the element 45 times",
+        "d": "Skews the element by 45 degrees"
       },
       "js-002": {
         "d": "All identical"

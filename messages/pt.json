@@ -192,7 +192,7 @@
         "summary": "O elemento permanece no fluxo mas pode ser deslocado via `top`/`left`/`right`/`bottom`. Frequentemente serve como PONTO DE REFERÊNCIA para um filho `absolute`."
       },
       "positionAbsolute": {
-        "summary": "Sai do fluxo normal. Posiciona-se em relação ao pai posicionado mais próximo (relative/absolute/fixed). Sem pai posicionado → em relação a `<html>`."
+        "summary": "Sai do fluxo normal. Posiciona-se em relação ao pai posicionado mais próximo (relative/absolute/fixed). Sem pai posicionado → em relação a `'<html>'`."
       },
       "positionFixed": {
         "summary": "Sai do fluxo. Posição relativa à JANELA (viewport) — mantém-se visível durante o scroll. Usado para cabeçalhos/menus fixos."
@@ -217,7 +217,7 @@
         "summary": "Esconde o elemento MAS mantém o seu lugar no fluxo. O utilizador não vê nada nesse ponto, mas o layout não é afetado."
       },
       "transition": {
-        "summary": "Anima a mudança de uma propriedade num evento (tipicamente `:hover`). Formato: `transition: <propriedade> <duração> <função>`."
+        "summary": "Anima a mudança de uma propriedade num evento (tipicamente `:hover`). Formato: `transition: '<propriedade>' '<duração>' '<função>'`."
       },
       "transitionTiming": {
         "summary": "Curva de aceleração da transição. Influencia a sensação de movimento.",
@@ -367,7 +367,7 @@
         "explanation": "Especificidade: id (100) > classe (10) > tag (1). `#box` vence tudo o resto."
       },
       "css-012": {
-        "prompt": "Que unidade é relativa ao tamanho da fonte da raiz (`<html>`)?",
+        "prompt": "Que unidade é relativa ao tamanho da fonte da raiz (`'<html>'`)?",
         "explanation": "`rem` = root em. `em` é relativo ao elemento pai."
       },
       "css-013": {
@@ -407,8 +407,8 @@
         "explanation": "`text-align: center` atua no texto; `justify-content: center` atua nos flex children."
       },
       "css-022": {
-        "prompt": "Qual é o valor de `display` PADRÃO para um `<div>`?",
-        "explanation": "`<div>`, `<p>`, `<h1>` etc. são `display: block` por defeito."
+        "prompt": "Qual é o valor de `display` PADRÃO para um `'<div>'`?",
+        "explanation": "`'<div>'`, `'<p>'`, `'<h1>'` etc. são `display: block` por defeito."
       },
       "css-023": {
         "prompt": "Como ESCONDER um elemento E retirar o espaço dele no fluxo?",
@@ -424,7 +424,7 @@
       },
       "css-058": {
         "prompt": "Como ligar uma folha de estilos externa a um documento HTML?",
-        "explanation": "Usa-se `<link rel=\"stylesheet\" href=\"...\">` no `<head>`."
+        "explanation": "Usa-se `'<link rel=\"stylesheet\" href=\"...\">'` no `'<head>'`."
       },
       "css-059": {
         "prompt": "Que método de aplicação CSS é o MENOS recomendado para a manutenção?",
@@ -447,7 +447,7 @@
         "explanation": "Combinador descendente: `p` dentro de um `td` dentro de uma `table`, a qualquer nível."
       },
       "css-064": {
-        "prompt": "Que seletor atinge APENAS os `<span>` que são filhos DIRETOS de um `<p>` (não mais profundo)?",
+        "prompt": "Que seletor atinge APENAS os `'<span>'` que são filhos DIRETOS de um `'<p>'` (não mais profundo)?",
         "explanation": "O operador `>` designa um pai-filho direto, não qualquer descendente."
       },
       "css-065": {
@@ -459,7 +459,7 @@
         "explanation": "Seletor irmão geral: todos os `p` que seguem um `h1` ao mesmo nível, não necessariamente adjacentes."
       },
       "css-067": {
-        "prompt": "Que sintaxe atinge os `<input>` com `type=\"text\"`?",
+        "prompt": "Que sintaxe atinge os `'<input>'` com `type=\"text\"`?",
         "explanation": "Seletor de atributo: `tag[atributo=valor]`."
       },
       "css-068": {
@@ -475,11 +475,11 @@
         "explanation": "A pseudo-classe `:not(...)` nega."
       },
       "css-071": {
-        "prompt": "Que sintaxe atinge o PRIMEIRO `<p>` filho de um pai?",
+        "prompt": "Que sintaxe atinge o PRIMEIRO `'<p>'` filho de um pai?",
         "explanation": "Pseudo-classe `:first-child` com UM só `:`. Atinge uma posição no DOM."
       },
       "css-072": {
-        "prompt": "Como atingir o 5º `<p>` filho?",
+        "prompt": "Como atingir o 5º `'<p>'` filho?",
         "explanation": "`:nth-child(N)` aceita um índice, palavra-chave (`odd`, `even`) ou fórmula (`2n+1`)."
       },
       "css-073": {
@@ -536,7 +536,7 @@
       },
       "css-086": {
         "prompt": "Que tag HTML declara o viewport para responsive móvel?",
-        "explanation": "Meta tag `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">` em `<head>`."
+        "explanation": "Meta tag `'<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">'` em `'<head>'`."
       },
       "css-087": {
         "prompt": "Que propriedade controla a CURVA DE ACELERAÇÃO de uma transição?",
@@ -555,8 +555,56 @@
         "explanation": "`var(--nome-variável)`. As variáveis declaram-se com `--nome: valor;` frequentemente em `:root`."
       },
       "css-091": {
-        "prompt": "Qual é a diferença semântica entre `<span>` e `<div>`?",
-        "explanation": "`<div>` = block (quebra antes/depois). `<span>` = inline (integra-se no fluxo do texto)."
+        "prompt": "Qual é a diferença semântica entre `'<span>'` e `'<div>'`?",
+        "explanation": "`'<div>'` = block (quebra antes/depois). `'<span>'` = inline (integra-se no fluxo do texto)."
+      },
+      "css-092": {
+        "prompt": "Que operador permite agrupar vários seletores que partilham o mesmo estilo?",
+        "explanation": "A vírgula `,` funciona como um OU. `p, td, div { ... }` aplica a regra a todos os p OU td OU div."
+      },
+      "css-093": {
+        "prompt": "O que faz esta regra?",
+        "explanation": "Vírgula = OU. Todos os p, todos os td e todos os div serão centrados (sem condição de aninhamento)."
+      },
+      "css-094": {
+        "prompt": "Escreve o operador que agrupa vários seletores com o mesmo estilo. Exemplo: `h1 ___ h2 { color: red }`.",
+        "explanation": "A vírgula. `h1, h2 { color: red }` aplica vermelho a todos os h1 e todos os h2."
+      },
+      "css-095": {
+        "prompt": "Que propriedade controla o que acontece quando o conteúdo ultrapassa as dimensões da caixa?",
+        "explanation": "`overflow` decide entre visible (default), hidden (cortado), scroll (barras sempre) ou auto (barras só quando precisas)."
+      },
+      "css-096": {
+        "prompt": "O que faz esta declaração?",
+        "explanation": "`hidden` corta o conteúdo que sai da caixa — sem barra de scroll, o excedente fica simplesmente invisível."
+      },
+      "css-097": {
+        "prompt": "Que valor mostra barras de scroll APENAS quando o conteúdo realmente excede a caixa?",
+        "explanation": "`auto` — o browser adiciona scrollbars só quando preciso. `scroll` mostra-as sempre, mesmo desnecessárias."
+      },
+      "css-098": {
+        "prompt": "Que propriedade define a cor de fundo de um elemento?",
+        "explanation": "`background-color`. `color` apenas afeta a cor do texto."
+      },
+      "css-099": {
+        "prompt": "Que CSS cria um fundo com gradiente horizontal vermelho → azul?",
+        "explanation": "`background: linear-gradient(to right, red, blue)`. Exemplo retirado diretamente dos slides do curso IPT."
+      },
+      "css-100": {
+        "prompt": "Que valor de `background-size` faz com que a imagem cubra totalmente a caixa (cortando se necessário)?",
+        "explanation": "`cover` estica a imagem para cobrir toda a caixa, cortando o excedente. `contain` faz o oposto (sempre visível, pode deixar espaço vazio)."
+      },
+      "css-101": {
+        "prompt": "Que propriedade aplica uma transformação 2D ou 3D (rotação, escala, deslocação)?",
+        "explanation": "`transform`. Podem-se combinar funções: `transform: rotate(45deg) scale(1.2) translateY(-50%)`."
+      },
+      "css-102": {
+        "prompt": "Que função desloca um elemento verticalmente?",
+        "explanation": "`translateY(valor)`. `translateX` desloca horizontalmente. Exemplo do curso: `transform: rotateX(120deg) translateY(-50%)`."
+      },
+      "css-103": {
+        "prompt": "O que faz esta transformação?",
+        "explanation": "`rotate(45deg)` roda o elemento 45 graus no sentido horário em torno do seu centro."
       },
       "js-001": {
         "prompt": "Que palavra-chave declara uma constante (valor imutável) em JS?",
@@ -763,7 +811,7 @@
         "explanation": "As propriedades CSS com `-` ficam camelCase em JS. `background-color` → `backgroundColor`. O bracket notation aceita a versão original."
       },
       "js-052": {
-        "prompt": "Como criar um novo elemento `<p>` em JS?",
+        "prompt": "Como criar um novo elemento `'<p>'` em JS?",
         "explanation": "`document.createElement(\"p\")` cria um elemento não ligado. Usar depois `appendChild` para o inserir."
       },
       "js-053": {
@@ -772,7 +820,7 @@
       },
       "js-054": {
         "prompt": "Que evento dispara na submissão de um formulário?",
-        "explanation": "`onsubmit` no `<form>`. Ideal para validação. Retornar `false` para cancelar."
+        "explanation": "`onsubmit` no `'<form>'`. Ideal para validação. Retornar `false` para cancelar."
       },
       "js-055": {
         "prompt": "Como impedir o comportamento por defeito de um evento?",
@@ -810,7 +858,7 @@
     "options": {
       "css-059": {
         "a": "External (ficheiro .css separado)",
-        "b": "Internal (tag <style> em <head>)"
+        "b": "Internal (tag '<style>' em '<head>')"
       },
       "css-060": {
         "a": "seletor + declaração"
@@ -859,6 +907,30 @@
         "b": "span pode conter divs",
         "c": "div é inline, span é block",
         "d": "Nenhuma diferença"
+      },
+      "css-092": {
+        "a": "a vírgula (,)",
+        "b": "o mais (+)",
+        "c": "o sinal de maior (>)",
+        "d": "o til (~)"
+      },
+      "css-093": {
+        "a": "Centra os p que contêm um td que contém um div",
+        "b": "Centra todos os p OU todos os td OU todos os div",
+        "c": "Centra apenas os div que seguem um td",
+        "d": "Erro de sintaxe"
+      },
+      "css-096": {
+        "a": "O conteúdo que sai da caixa é cortado (invisível)",
+        "b": "Aparece uma barra de scroll",
+        "c": "O conteúdo transborda da caixa",
+        "d": "O elemento fica totalmente escondido"
+      },
+      "css-103": {
+        "a": "Roda o elemento 45 graus",
+        "b": "Desloca o elemento 45 pixels",
+        "c": "Aumenta o elemento 45 vezes",
+        "d": "Inclina o elemento 45°"
       },
       "js-002": {
         "d": "Todos idênticos"

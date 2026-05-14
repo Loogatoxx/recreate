@@ -553,6 +553,122 @@ export const CSS_QUIZ_CARDS: Card[] = [
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-091.explanation',
   },
+
+  // ===== Agrupamento de seletores (PDF: "Agrupamento (combinações)") =====
+  {
+    id: 'css-092', kind: 'mcq', topic: 'css.grouping', promptKey: 'quiz.cards.css-092.prompt',
+    options: [
+      { id: 'a', label: 'la virgule (,)', i18nKey: 'quiz.options.css-092.a' },
+      { id: 'b', label: 'le plus (+)', i18nKey: 'quiz.options.css-092.b' },
+      { id: 'c', label: 'le chevron (>)', i18nKey: 'quiz.options.css-092.c' },
+      { id: 'd', label: 'le tilde (~)', i18nKey: 'quiz.options.css-092.d' },
+    ],
+    answer: 'a', explanationKey: 'quiz.cards.css-092.explanation',
+  },
+  {
+    id: 'css-093', kind: 'mcq', topic: 'css.grouping', promptKey: 'quiz.cards.css-093.prompt',
+    context: 'p, td, div { text-align: center; }',
+    options: [
+      { id: 'a', label: 'Centre les p qui contiennent un td qui contient un div', i18nKey: 'quiz.options.css-093.a' },
+      { id: 'b', label: 'Centre les p OU les td OU les div', i18nKey: 'quiz.options.css-093.b' },
+      { id: 'c', label: 'Centre uniquement les div qui suivent un td', i18nKey: 'quiz.options.css-093.c' },
+      { id: 'd', label: 'Erreur de syntaxe', i18nKey: 'quiz.options.css-093.d' },
+    ],
+    answer: 'b', explanationKey: 'quiz.cards.css-093.explanation',
+  },
+  {
+    id: 'css-094', kind: 'fill-blank', topic: 'css.grouping', promptKey: 'quiz.cards.css-094.prompt',
+    answer: [',', 'virgule', 'comma', 'coma', 'vírgula'],
+    explanationKey: 'quiz.cards.css-094.explanation',
+  },
+
+  // ===== Overflow =====
+  {
+    id: 'css-095', kind: 'mcq', topic: 'css.overflow', promptKey: 'quiz.cards.css-095.prompt',
+    options: [
+      { id: 'a', label: 'clip' }, { id: 'b', label: 'overflow' },
+      { id: 'c', label: 'scroll' }, { id: 'd', label: 'visibility' },
+    ],
+    answer: 'b', explanationKey: 'quiz.cards.css-095.explanation',
+  },
+  {
+    id: 'css-096', kind: 'mcq', topic: 'css.overflow', promptKey: 'quiz.cards.css-096.prompt',
+    context: 'overflow: hidden;',
+    options: [
+      { id: 'a', label: 'Le contenu qui dépasse est coupé (invisible)', i18nKey: 'quiz.options.css-096.a' },
+      { id: 'b', label: 'Une barre de défilement apparaît', i18nKey: 'quiz.options.css-096.b' },
+      { id: 'c', label: 'Le contenu déborde de la boîte', i18nKey: 'quiz.options.css-096.c' },
+      { id: 'd', label: 'L\'élément est masqué entièrement', i18nKey: 'quiz.options.css-096.d' },
+    ],
+    answer: 'a', explanationKey: 'quiz.cards.css-096.explanation',
+  },
+  {
+    id: 'css-097', kind: 'mcq', topic: 'css.overflow', promptKey: 'quiz.cards.css-097.prompt',
+    options: [
+      { id: 'a', label: 'overflow: scroll' }, { id: 'b', label: 'overflow: auto' },
+      { id: 'c', label: 'overflow: visible' }, { id: 'd', label: 'overflow: hidden' },
+    ],
+    answer: 'b', explanationKey: 'quiz.cards.css-097.explanation',
+  },
+
+  // ===== Backgrounds & gradients (PDF: exemple linear-gradient(to right, red, blue)) =====
+  {
+    id: 'css-098', kind: 'mcq', topic: 'css.backgrounds', promptKey: 'quiz.cards.css-098.prompt',
+    options: [
+      { id: 'a', label: 'color' }, { id: 'b', label: 'background-color' },
+      { id: 'c', label: 'bg-color' }, { id: 'd', label: 'fill' },
+    ],
+    answer: 'b', explanationKey: 'quiz.cards.css-098.explanation',
+  },
+  {
+    id: 'css-099', kind: 'mcq', topic: 'css.backgrounds', promptKey: 'quiz.cards.css-099.prompt',
+    options: [
+      { id: 'a', label: 'background: gradient(red, blue)' },
+      { id: 'b', label: 'background: linear-gradient(to right, red, blue)' },
+      { id: 'c', label: 'background: red blue horizontal' },
+      { id: 'd', label: 'background-image: red-blue' },
+    ],
+    answer: 'b', explanationKey: 'quiz.cards.css-099.explanation',
+  },
+  {
+    id: 'css-100', kind: 'mcq', topic: 'css.backgrounds', promptKey: 'quiz.cards.css-100.prompt',
+    context: 'background-size: ___;',
+    options: [
+      { id: 'a', label: 'fill' }, { id: 'b', label: 'cover' },
+      { id: 'c', label: 'full' }, { id: 'd', label: '100%' },
+    ],
+    answer: 'b', explanationKey: 'quiz.cards.css-100.explanation',
+  },
+
+  // ===== Transforms (PDF: exemple rotateX(120deg) translateY(-50%)) =====
+  {
+    id: 'css-101', kind: 'mcq', topic: 'css.transforms', promptKey: 'quiz.cards.css-101.prompt',
+    options: [
+      { id: 'a', label: 'animation' }, { id: 'b', label: 'transition' },
+      { id: 'c', label: 'transform' }, { id: 'd', label: 'translate' },
+    ],
+    answer: 'c', explanationKey: 'quiz.cards.css-101.explanation',
+  },
+  {
+    id: 'css-102', kind: 'mcq', topic: 'css.transforms', promptKey: 'quiz.cards.css-102.prompt',
+    context: 'transform: ___(-50%);',
+    options: [
+      { id: 'a', label: 'translateY' }, { id: 'b', label: 'translateX' },
+      { id: 'c', label: 'moveY' }, { id: 'd', label: 'shiftY' },
+    ],
+    answer: 'a', explanationKey: 'quiz.cards.css-102.explanation',
+  },
+  {
+    id: 'css-103', kind: 'mcq', topic: 'css.transforms', promptKey: 'quiz.cards.css-103.prompt',
+    context: 'transform: rotate(45deg);',
+    options: [
+      { id: 'a', label: 'Tourne l\'élément de 45 degrés', i18nKey: 'quiz.options.css-103.a' },
+      { id: 'b', label: 'Décale l\'élément de 45 pixels', i18nKey: 'quiz.options.css-103.b' },
+      { id: 'c', label: 'Agrandit l\'élément 45 fois', i18nKey: 'quiz.options.css-103.c' },
+      { id: 'd', label: 'Incline l\'élément de 45°', i18nKey: 'quiz.options.css-103.d' },
+    ],
+    answer: 'a', explanationKey: 'quiz.cards.css-103.explanation',
+  },
 ];
 
 /** Map cards by topic for filtering. */

@@ -60,7 +60,9 @@ export default function QuizSessionPage() {
 
 function safeT(t: ReturnType<typeof useTranslations>, key: string, fallback: string): string {
   try {
-    return (t as unknown as (k: string) => string)(key) || fallback;
+    const result = (t as unknown as (k: string) => string)(key);
+    if (!result || result === key) return fallback;
+    return result;
   } catch {
     return fallback;
   }

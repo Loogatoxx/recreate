@@ -174,10 +174,22 @@ function isCorrect(card: Card, userAnswer: string): boolean {
 }
 
 // Use `t` with a runtime key — wrap it so we can supply a fallback.
+// next-intl returns the key string itself on missing translations OR on silent
+// parse failures (e.g. when a value contains rich-text markup like `<style>`
+// without a registered handler). Detect that and use the fallback.
 function safeT(t: ReturnType<typeof useTranslations>, key: string, fallback: string): string {
   try {
-    // useTranslations' return is typed-as-strict; cast at call site.
-    return (t as unknown as (k: string) => string)(key) || fallback;
+    // 🔥 LE FIX EST LÀ : on utilise t.raw() !
+    // Ça permet de récupérer le texte brut du JSON sans que next-intl 
+    // n'essaie de lire les balises comme <span> ou <style>.
+    if (typeof (t as any).raw === 'function') {
+      const rawVal = (t as any).raw(key);
+      if (typeof rawVal === 'string') return rawVal;
+    }
+
+    const result = (t as unknown as (k: string) => string)(key);
+    if (!result || result === key) return fallback;
+    return result;
   } catch {
     return fallback;
   }

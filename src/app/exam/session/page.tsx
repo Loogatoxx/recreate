@@ -70,7 +70,9 @@ function safeT(
 ): string {
   try {
     const fn = t as unknown as (k: string, v?: Record<string, string | number>) => string;
-    return fn(key, values) || fallback;
+    const result = fn(key, values);
+    if (!result || result === key) return fallback;
+    return result;
   } catch {
     return fallback;
   }
