@@ -806,7 +806,89 @@
       "fill-blank": "Compléter",
       "predict-output": "Prédire le rendu"
     },
-    "cardsLabel": "cartes"
+    "cardsLabel": "cartes",
+    "options": {
+      "css-059": {
+        "a": "External (fichier .css séparé)",
+        "b": "Internal (balise <style> dans <head>)"
+      },
+      "css-060": {
+        "a": "sélecteur + déclaration"
+      },
+      "css-063": {
+        "a": "Toutes les table, td et p en bold",
+        "b": "Tous les p qui sont à l'intérieur d'un td, qui est dans une table (n'importe quel niveau)",
+        "c": "Seulement les p qui sont enfants directs de td"
+      },
+      "css-065": {
+        "a": "Tous les paragraphes",
+        "b": "Le paragraphe immédiatement après un h1",
+        "c": "Tous les paragraphes après un h1 (pas forcément adjacent)",
+        "d": "Le paragraphe parent du h1"
+      },
+      "css-066": {
+        "a": "Le paragraphe immédiatement après h1",
+        "b": "Tous les paragraphes frères qui suivent un h1",
+        "c": "Tous les paragraphes",
+        "d": "Tous les h1 et p"
+      },
+      "css-077": {
+        "d": "Tous fonctionnent"
+      },
+      "css-078": {
+        "b": "0 à 100",
+        "c": "0% à 100%"
+      },
+      "css-079": {
+        "a": "L'élément avec le z-index LE PLUS BAS",
+        "b": "L'élément avec le z-index LE PLUS HAUT",
+        "c": "Le dernier dans l'ordre HTML",
+        "d": "Le premier dans l'ordre HTML"
+      },
+      "css-080": {
+        "a": "L'élément doit avoir un parent flex",
+        "b": "L'élément doit avoir display: block",
+        "c": "L'élément doit avoir position différent de static"
+      },
+      "css-089": {
+        "d": "a et b sont équivalents"
+      },
+      "css-091": {
+        "b": "span peut contenir des div",
+        "d": "Aucune différence"
+      },
+      "js-002": {
+        "d": "Tous identiques"
+      },
+      "js-016": {
+        "d": "item seulement"
+      },
+      "js-023": {
+        "a": "On crée 2 variables à partir des propriétés de morada",
+        "b": "On copie tout l'objet morada",
+        "d": "On crée 2 fonctions"
+      },
+      "js-025": {
+        "b": "L'objet \"parent\" qui appelle la méthode",
+        "c": "Une nouvelle copie de l'objet"
+      },
+      "js-046": {
+        "a": "0 à 11",
+        "b": "1 à 12",
+        "c": "0 à 12",
+        "d": "1 à 13"
+      },
+      "js-049": {
+        "c": "Aucune différence",
+        "d": "querySelectorAll retourne un Array"
+      },
+      "js-050": {
+        "a": "innerHTML inclut le markup, innerText seulement le texte",
+        "b": "Aucune différence",
+        "c": "innerText inclut le markup",
+        "d": "innerHTML retourne un objet"
+      }
+    }
   },
   "topics": {
     "css": {

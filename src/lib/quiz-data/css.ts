@@ -242,8 +242,8 @@ export const CSS_QUIZ_CARDS: Card[] = [
   {
     id: 'css-059', kind: 'mcq', topic: 'css.applying', promptKey: 'quiz.cards.css-059.prompt',
     options: [
-      { id: 'a', label: 'External (fichier .css séparé)' },
-      { id: 'b', label: 'Internal (balise <style> dans <head>)' },
+      { id: 'a', label: 'External (fichier .css séparé)', i18nKey: 'quiz.options.css-059.a' },
+      { id: 'b', label: 'Internal (balise <style> dans <head>)', i18nKey: 'quiz.options.css-059.b' },
       { id: 'c', label: 'Inline (attribut style="...")' },
       { id: 'd', label: 'CSS-in-JS' },
     ],
@@ -254,7 +254,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
   {
     id: 'css-060', kind: 'mcq', topic: 'css.rules-anatomy', promptKey: 'quiz.cards.css-060.prompt',
     options: [
-      { id: 'a', label: 'sélecteur + déclaration' },
+      { id: 'a', label: 'sélecteur + déclaration', i18nKey: 'quiz.options.css-060.a' },
       { id: 'b', label: 'tag + style' },
       { id: 'c', label: 'classe + valeur' },
       { id: 'd', label: 'attribut + valeur' },
@@ -287,9 +287,9 @@ export const CSS_QUIZ_CARDS: Card[] = [
     id: 'css-063', kind: 'mcq', topic: 'css.combinators', promptKey: 'quiz.cards.css-063.prompt',
     context: 'table td p { font-weight: bold; }',
     options: [
-      { id: 'a', label: 'Toutes les table, td et p en bold' },
+      { id: 'a', label: 'Toutes les table, td et p en bold', i18nKey: 'quiz.options.css-063.a' },
       { id: 'b', label: 'Tous les p qui sont à l\'intérieur d\'un td, qui est dans une table (n\'importe quel niveau)' },
-      { id: 'c', label: 'Seulement les p qui sont enfants directs de td' },
+      { id: 'c', label: 'Seulement les p qui sont enfants directs de td', i18nKey: 'quiz.options.css-063.c' },
       { id: 'd', label: 'Erreur de syntaxe' },
     ],
     answer: 'b', explanationKey: 'quiz.cards.css-063.explanation',
@@ -297,7 +297,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
   {
     id: 'css-064', kind: 'mcq', topic: 'css.combinators', promptKey: 'quiz.cards.css-064.prompt',
     options: [
-      { id: 'a', label: 'p > span' }, { id: 'b', label: 'p span' },
+      { id: 'a', label: 'p > span' }, { id: 'b', label: 'p span', i18nKey: 'quiz.options.css-063.b' },
       { id: 'c', label: 'p + span' }, { id: 'd', label: 'p ~ span' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-064.explanation',
@@ -306,10 +306,10 @@ export const CSS_QUIZ_CARDS: Card[] = [
     id: 'css-065', kind: 'mcq', topic: 'css.combinators', promptKey: 'quiz.cards.css-065.prompt',
     context: 'h1 + p { color: red; }',
     options: [
-      { id: 'a', label: 'Tous les paragraphes' },
-      { id: 'b', label: 'Le paragraphe immédiatement après un h1' },
-      { id: 'c', label: 'Tous les paragraphes après un h1 (pas forcément adjacent)' },
-      { id: 'd', label: 'Le paragraphe parent du h1' },
+      { id: 'a', label: 'Tous les paragraphes', i18nKey: 'quiz.options.css-065.a' },
+      { id: 'b', label: 'Le paragraphe immédiatement après un h1', i18nKey: 'quiz.options.css-065.b' },
+      { id: 'c', label: 'Tous les paragraphes après un h1 (pas forcément adjacent)', i18nKey: 'quiz.options.css-065.c' },
+      { id: 'd', label: 'Le paragraphe parent du h1', i18nKey: 'quiz.options.css-065.d' },
     ],
     answer: 'b', explanationKey: 'quiz.cards.css-065.explanation',
   },
@@ -317,10 +317,10 @@ export const CSS_QUIZ_CARDS: Card[] = [
     id: 'css-066', kind: 'mcq', topic: 'css.combinators', promptKey: 'quiz.cards.css-066.prompt',
     context: 'h1 ~ p { color: red; }',
     options: [
-      { id: 'a', label: 'Le paragraphe immédiatement après h1' },
-      { id: 'b', label: 'Tous les paragraphes frères qui suivent un h1' },
-      { id: 'c', label: 'Tous les paragraphes' },
-      { id: 'd', label: 'Tous les h1 et p' },
+      { id: 'a', label: 'Le paragraphe immédiatement après h1', i18nKey: 'quiz.options.css-066.a' },
+      { id: 'b', label: 'Tous les paragraphes frères qui suivent un h1', i18nKey: 'quiz.options.css-066.b' },
+      { id: 'c', label: 'Tous les paragraphes', i18nKey: 'quiz.options.css-066.c' },
+      { id: 'd', label: 'Tous les h1 et p', i18nKey: 'quiz.options.css-066.d' },
     ],
     answer: 'b', explanationKey: 'quiz.cards.css-066.explanation',
   },
@@ -414,7 +414,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
     id: 'css-077', kind: 'mcq', topic: 'css.border', promptKey: 'quiz.cards.css-077.prompt',
     options: [
       { id: 'a', label: 'border: solid 2px blue' }, { id: 'b', label: 'border: 2px solid blue' },
-      { id: 'c', label: 'border: blue 2px solid' }, { id: 'd', label: 'Tous fonctionnent' },
+      { id: 'c', label: 'border: blue 2px solid' }, { id: 'd', label: 'Tous fonctionnent', i18nKey: 'quiz.options.css-077.d' },
     ],
     answer: 'd', explanationKey: 'quiz.cards.css-077.explanation',
   },
@@ -423,8 +423,8 @@ export const CSS_QUIZ_CARDS: Card[] = [
   {
     id: 'css-078', kind: 'mcq', topic: 'css.visibility-opacity', promptKey: 'quiz.cards.css-078.prompt',
     options: [
-      { id: 'a', label: '0 à 1 (1 = opaque)' }, { id: 'b', label: '0 à 100' },
-      { id: 'c', label: '0% à 100%' }, { id: 'd', label: 'true / false' },
+      { id: 'a', label: '0 à 1 (1 = opaque)' }, { id: 'b', label: '0 à 100', i18nKey: 'quiz.options.css-078.b' },
+      { id: 'c', label: '0% à 100%', i18nKey: 'quiz.options.css-078.c' }, { id: 'd', label: 'true / false' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-078.explanation',
   },
@@ -446,23 +446,23 @@ export const CSS_QUIZ_CARDS: Card[] = [
       { id: 'a', label: 'L\'élément doit avoir un parent flex' },
       { id: 'b', label: 'L\'élément doit avoir display: block' },
       { id: 'c', label: 'L\'élément doit avoir position différent de static' },
-      { id: 'd', label: 'Aucune condition, z-index fonctionne toujours' },
+      { id: 'd', label: 'Aucune condition, z-index fonctionne toujours', i18nKey: 'quiz.options.css-079.d' },
     ],
     answer: 'c', explanationKey: 'quiz.cards.css-080.explanation',
   },
   {
     id: 'css-081', kind: 'mcq', topic: 'css.float', promptKey: 'quiz.cards.css-081.prompt',
     options: [
-      { id: 'a', label: 'left' }, { id: 'b', label: 'right' },
-      { id: 'c', label: 'top' }, { id: 'd', label: 'none' },
+      { id: 'a', label: 'left', i18nKey: 'quiz.options.css-079.a' }, { id: 'b', label: 'right', i18nKey: 'quiz.options.css-079.b' },
+      { id: 'c', label: 'top', i18nKey: 'quiz.options.css-079.c' }, { id: 'd', label: 'none' },
     ],
     answer: 'c', explanationKey: 'quiz.cards.css-081.explanation',
   },
   {
     id: 'css-082', kind: 'mcq', topic: 'css.float', promptKey: 'quiz.cards.css-082.prompt',
     options: [
-      { id: 'a', label: 'clear' }, { id: 'b', label: 'reset-float' },
-      { id: 'c', label: 'float-stop' }, { id: 'd', label: 'no-wrap' },
+      { id: 'a', label: 'clear', i18nKey: 'quiz.options.css-080.a' }, { id: 'b', label: 'reset-float', i18nKey: 'quiz.options.css-080.b' },
+      { id: 'c', label: 'float-stop', i18nKey: 'quiz.options.css-080.c' }, { id: 'd', label: 'no-wrap' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-082.explanation',
   },
@@ -526,7 +526,7 @@ export const CSS_QUIZ_CARDS: Card[] = [
     id: 'css-089', kind: 'mcq', topic: 'css.keyframes', promptKey: 'quiz.cards.css-089.prompt',
     options: [
       { id: 'a', label: 'from / to' }, { id: 'b', label: '0% / 100%' },
-      { id: 'c', label: 'start / end' }, { id: 'd', label: 'a et b sont équivalents' },
+      { id: 'c', label: 'start / end' }, { id: 'd', label: 'a et b sont équivalents', i18nKey: 'quiz.options.css-089.d' },
     ],
     answer: 'd', explanationKey: 'quiz.cards.css-089.explanation',
   },
@@ -547,9 +547,9 @@ export const CSS_QUIZ_CARDS: Card[] = [
     id: 'css-091', kind: 'mcq', topic: 'css.div-span', promptKey: 'quiz.cards.css-091.prompt',
     options: [
       { id: 'a', label: 'span est inline, div est block' },
-      { id: 'b', label: 'span peut contenir des div' },
+      { id: 'b', label: 'span peut contenir des div', i18nKey: 'quiz.options.css-091.b' },
       { id: 'c', label: 'div est inline, span est block' },
-      { id: 'd', label: 'Aucune différence' },
+      { id: 'd', label: 'Aucune différence', i18nKey: 'quiz.options.css-091.d' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.css-091.explanation',
   },

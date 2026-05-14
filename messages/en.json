@@ -806,7 +806,89 @@
       "fill-blank": "Fill in",
       "predict-output": "Predict output"
     },
-    "cardsLabel": "cards"
+    "cardsLabel": "cards",
+    "options": {
+      "css-059": {
+        "a": "External (separate .css file)",
+        "b": "Internal (<style> tag in <head>)"
+      },
+      "css-060": {
+        "a": "selector + declaration"
+      },
+      "css-063": {
+        "a": "All table, td and p in bold",
+        "b": "Every p inside a td inside a table (any nesting level)",
+        "c": "Only p elements that are direct children of td"
+      },
+      "css-065": {
+        "a": "All paragraphs",
+        "b": "The paragraph immediately after an h1",
+        "c": "Every paragraph after an h1 (not necessarily adjacent)",
+        "d": "The parent paragraph of the h1"
+      },
+      "css-066": {
+        "a": "The paragraph immediately after h1",
+        "b": "All sibling paragraphs that follow an h1",
+        "c": "All paragraphs",
+        "d": "All h1 and p"
+      },
+      "css-077": {
+        "d": "All of them work"
+      },
+      "css-078": {
+        "b": "0 to 100",
+        "c": "0% to 100%"
+      },
+      "css-079": {
+        "a": "The element with the LOWEST z-index",
+        "b": "The element with the HIGHEST z-index",
+        "c": "The last one in HTML order",
+        "d": "The first one in HTML order"
+      },
+      "css-080": {
+        "a": "The element must have a flex parent",
+        "b": "The element must have display: block",
+        "c": "The element's position must be different from static"
+      },
+      "css-089": {
+        "d": "a and b are equivalent"
+      },
+      "css-091": {
+        "b": "span can contain divs",
+        "d": "No difference"
+      },
+      "js-002": {
+        "d": "All identical"
+      },
+      "js-016": {
+        "d": "item only"
+      },
+      "js-023": {
+        "a": "We create 2 variables from morada's properties",
+        "b": "We copy the whole morada object",
+        "d": "We create 2 functions"
+      },
+      "js-025": {
+        "b": "The \"parent\" object calling the method",
+        "c": "A new copy of the object"
+      },
+      "js-046": {
+        "a": "0 to 11",
+        "b": "1 to 12",
+        "c": "0 to 12",
+        "d": "1 to 13"
+      },
+      "js-049": {
+        "c": "No difference",
+        "d": "querySelectorAll returns an Array"
+      },
+      "js-050": {
+        "a": "innerHTML includes markup, innerText only the text",
+        "b": "No difference",
+        "c": "innerText includes the markup",
+        "d": "innerHTML returns an object"
+      }
+    }
   },
   "topics": {
     "css": {

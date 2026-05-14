@@ -806,7 +806,89 @@
       "fill-blank": "Completar",
       "predict-output": "Predecir el resultado"
     },
-    "cardsLabel": "tarjetas"
+    "cardsLabel": "tarjetas",
+    "options": {
+      "css-059": {
+        "a": "External (archivo .css separado)",
+        "b": "Internal (etiqueta <style> en <head>)"
+      },
+      "css-060": {
+        "a": "selector + declaración"
+      },
+      "css-063": {
+        "a": "Todos los table, td y p en bold",
+        "b": "Todos los p que están dentro de un td, dentro de un table (cualquier nivel)",
+        "c": "Solo los p que son hijos directos de td"
+      },
+      "css-065": {
+        "a": "Todos los párrafos",
+        "b": "El párrafo inmediatamente después de un h1",
+        "c": "Todos los párrafos después de un h1 (no necesariamente adyacentes)",
+        "d": "El párrafo padre del h1"
+      },
+      "css-066": {
+        "a": "El párrafo inmediatamente después de h1",
+        "b": "Todos los párrafos hermanos que siguen un h1",
+        "c": "Todos los párrafos",
+        "d": "Todos los h1 y p"
+      },
+      "css-077": {
+        "d": "Todos funcionan"
+      },
+      "css-078": {
+        "b": "0 a 100",
+        "c": "0% a 100%"
+      },
+      "css-079": {
+        "a": "El elemento con el z-index MÁS BAJO",
+        "b": "El elemento con el z-index MÁS ALTO",
+        "c": "El último en orden HTML",
+        "d": "El primero en orden HTML"
+      },
+      "css-080": {
+        "a": "El elemento debe tener un padre flex",
+        "b": "El elemento debe tener display: block",
+        "c": "El elemento debe tener position distinto de static"
+      },
+      "css-089": {
+        "d": "a y b son equivalentes"
+      },
+      "css-091": {
+        "b": "span puede contener divs",
+        "d": "Ninguna diferencia"
+      },
+      "js-002": {
+        "d": "Todos idénticos"
+      },
+      "js-016": {
+        "d": "solo item"
+      },
+      "js-023": {
+        "a": "Creamos 2 variables a partir de las propiedades de morada",
+        "b": "Copiamos todo el objeto morada",
+        "d": "Creamos 2 funciones"
+      },
+      "js-025": {
+        "b": "El objeto \"padre\" que llama al método",
+        "c": "Una nueva copia del objeto"
+      },
+      "js-046": {
+        "a": "0 a 11",
+        "b": "1 a 12",
+        "c": "0 a 12",
+        "d": "1 a 13"
+      },
+      "js-049": {
+        "c": "Ninguna diferencia",
+        "d": "querySelectorAll devuelve un Array"
+      },
+      "js-050": {
+        "a": "innerHTML incluye el markup, innerText solo el texto",
+        "b": "Ninguna diferencia",
+        "c": "innerText incluye el markup",
+        "d": "innerHTML devuelve un objeto"
+      }
+    }
   },
   "topics": {
     "css": {

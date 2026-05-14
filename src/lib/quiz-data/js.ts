@@ -23,7 +23,7 @@ export const JS_QUIZ_CARDS: Card[] = [
     id: 'js-002', kind: 'mcq', topic: 'js.var-let-const', promptKey: 'quiz.cards.js-002.prompt',
     options: [
       { id: 'a', label: 'var — scope de fonction' }, { id: 'b', label: 'let — scope de bloc' },
-      { id: 'c', label: 'const — scope de bloc, valeur immuable' }, { id: 'd', label: 'Tous identiques' },
+      { id: 'c', label: 'const — scope de bloc, valeur immuable' }, { id: 'd', label: 'Tous identiques', i18nKey: 'quiz.options.js-002.d' },
     ],
     answer: 'd', explanationKey: 'quiz.cards.js-002.explanation',
   },
@@ -151,7 +151,7 @@ export const JS_QUIZ_CARDS: Card[] = [
     context: '[1,2,3].forEach(function(item, index) { /* ... */ });',
     options: [
       { id: 'a', label: 'item, index' }, { id: 'b', label: 'index, item' },
-      { id: 'c', label: 'value, key' }, { id: 'd', label: 'item seulement' },
+      { id: 'c', label: 'value, key' }, { id: 'd', label: 'item seulement', i18nKey: 'quiz.options.js-016.d' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.js-016.explanation',
   },
@@ -213,17 +213,17 @@ export const JS_QUIZ_CARDS: Card[] = [
     id: 'js-023', kind: 'mcq', topic: 'js.destructuring', promptKey: 'quiz.cards.js-023.prompt',
     context: 'const { cidade, rua } = morada;',
     options: [
-      { id: 'a', label: 'On crée 2 variables à partir des propriétés de morada' },
+      { id: 'a', label: 'On crée 2 variables à partir des propriétés de morada', i18nKey: 'quiz.options.js-023.a' },
       { id: 'b', label: 'On copie tout l\'objet morada' },
       { id: 'c', label: 'Erreur de syntaxe' },
-      { id: 'd', label: 'On crée 2 fonctions' },
+      { id: 'd', label: 'On crée 2 fonctions', i18nKey: 'quiz.options.js-023.d' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.js-023.explanation',
   },
   {
     id: 'js-024', kind: 'mcq', topic: 'js.spread', promptKey: 'quiz.cards.js-024.prompt',
     options: [
-      { id: 'a', label: 'const c = { a, b }' }, { id: 'b', label: 'const c = a + b' },
+      { id: 'a', label: 'const c = { a, b }' }, { id: 'b', label: 'const c = a + b', i18nKey: 'quiz.options.js-023.b' },
       { id: 'c', label: 'const c = { ...a, ...b }' }, { id: 'd', label: 'const c = merge(a, b)' },
     ],
     answer: 'c', explanationKey: 'quiz.cards.js-024.explanation',
@@ -241,8 +241,8 @@ export const JS_QUIZ_CARDS: Card[] = [
   {
     id: 'js-026', kind: 'mcq', topic: 'js.classes', promptKey: 'quiz.cards.js-026.prompt',
     options: [
-      { id: 'a', label: 'init' }, { id: 'b', label: 'create' },
-      { id: 'c', label: 'constructor' }, { id: 'd', label: 'new' },
+      { id: 'a', label: 'init' }, { id: 'b', label: 'create', i18nKey: 'quiz.options.js-025.b' },
+      { id: 'c', label: 'constructor', i18nKey: 'quiz.options.js-025.c' }, { id: 'd', label: 'new' },
     ],
     answer: 'c', explanationKey: 'quiz.cards.js-026.explanation',
   },
@@ -418,8 +418,8 @@ export const JS_QUIZ_CARDS: Card[] = [
   {
     id: 'js-046', kind: 'mcq', topic: 'js.date', promptKey: 'quiz.cards.js-046.prompt',
     options: [
-      { id: 'a', label: '0 à 11' }, { id: 'b', label: '1 à 12' },
-      { id: 'c', label: '0 à 12' }, { id: 'd', label: '1 à 13' },
+      { id: 'a', label: '0 à 11', i18nKey: 'quiz.options.js-046.a' }, { id: 'b', label: '1 à 12', i18nKey: 'quiz.options.js-046.b' },
+      { id: 'c', label: '0 à 12', i18nKey: 'quiz.options.js-046.c' }, { id: 'd', label: '1 à 13', i18nKey: 'quiz.options.js-046.d' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.js-046.explanation',
   },
@@ -448,18 +448,18 @@ export const JS_QUIZ_CARDS: Card[] = [
     options: [
       { id: 'a', label: 'querySelector — premier élément ; querySelectorAll — tous (NodeList)' },
       { id: 'b', label: 'querySelector — tous ; querySelectorAll — premier' },
-      { id: 'c', label: 'Aucune différence' },
-      { id: 'd', label: 'querySelectorAll retourne un Array' },
+      { id: 'c', label: 'Aucune différence', i18nKey: 'quiz.options.js-049.c' },
+      { id: 'd', label: 'querySelectorAll retourne un Array', i18nKey: 'quiz.options.js-049.d' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.js-049.explanation',
   },
   {
     id: 'js-050', kind: 'mcq', topic: 'js.dom-content', promptKey: 'quiz.cards.js-050.prompt',
     options: [
-      { id: 'a', label: 'innerHTML inclut le markup, innerText seulement le texte' },
-      { id: 'b', label: 'Aucune différence' },
-      { id: 'c', label: 'innerText inclut le markup' },
-      { id: 'd', label: 'innerHTML retourne un objet' },
+      { id: 'a', label: 'innerHTML inclut le markup, innerText seulement le texte', i18nKey: 'quiz.options.js-050.a' },
+      { id: 'b', label: 'Aucune différence', i18nKey: 'quiz.options.js-050.b' },
+      { id: 'c', label: 'innerText inclut le markup', i18nKey: 'quiz.options.js-050.c' },
+      { id: 'd', label: 'innerHTML retourne un objet', i18nKey: 'quiz.options.js-050.d' },
     ],
     answer: 'a', explanationKey: 'quiz.cards.js-050.explanation',
   },

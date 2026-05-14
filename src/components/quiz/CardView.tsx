@@ -66,6 +66,13 @@ export function CardView({ card, onAnswered }: Props) {
                   : selected
                     ? 'border-rose-500/60 bg-rose-500/10'
                     : 'border-white/10 bg-white/[0.02] opacity-60';
+              // Resolve the displayed label. Textual options carry an i18nKey so we
+              // localise them (the `label` field is just a sensible FR fallback).
+              // Code-only options (e.g. `display: flex`) keep the raw label.
+              const displayLabel = opt.i18nKey
+                ? safeT(t, opt.i18nKey, opt.label)
+                : opt.label;
+              const renderAsCode = !opt.i18nKey;
               return (
                 <button
                   key={opt.id}
@@ -73,7 +80,11 @@ export function CardView({ card, onAnswered }: Props) {
                   disabled={state.phase !== 'answering'}
                   className={`flex items-center justify-between rounded-lg border px-4 py-3 text-left transition ${cls}`}
                 >
-                  <code className="font-mono text-sm text-slate-100">{opt.label}</code>
+                  {renderAsCode ? (
+                    <code className="font-mono text-sm text-slate-100">{displayLabel}</code>
+                  ) : (
+                    <span className="text-sm text-slate-100">{displayLabel}</span>
+                  )}
                   {showResult && isAnswer && <Check size={16} className="text-emerald-400" />}
                   {showResult && selected && !isAnswer && (
                     <X size={16} className="text-rose-400" />

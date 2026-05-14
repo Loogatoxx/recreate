@@ -86,7 +86,48 @@ Contraintes IMPORTANTES :
 - Le starterHtml doit avoir EXACTEMENT la même structure DOM que le targetHtml (mêmes balises, mêmes classes, mêmes textes).
 - Le starterCss doit déjà déclarer les sélecteurs CSS vides (\`.classe { }\`) pour guider l'apprenant — mais sans aucune propriété à l'intérieur.
 - Pédagogie : un défi enseigne 1-3 concepts CSS (flex, padding, box-shadow, border-radius, etc.). Pas 10 à la fois.
-- Le résultat visuel doit être joli et reconnaissable : une carte, un badge, un avatar, un bouton stylé, une notification, un loader, etc.`;
+- Le résultat visuel doit être joli et reconnaissable : une carte, un badge, un avatar, un bouton stylé, une notification, un loader, etc.
+
+===== EXIGENCE CRITIQUE : EXPLICITER TOUTES LES PROPRIÉTÉS VISIBLES =====
+
+Le moteur de scoring de l'app compare chaque déclaration CSS du targetCss avec le rendu de l'apprenant. Si tu OUBLIES une propriété qui produit une différence visible (ex : un titre en bold sans \`font-weight: 700;\`), l'apprenant ne pourra jamais matcher le rendu — la barre restera bloquée. C'est INACCEPTABLE.
+
+Avant de soumettre, tu DOIS faire une relecture mentale en passant par cette CHECKLIST sur CHAQUE élément de ta cible :
+
+1. **Texte visible** → declare TOUJOURS :
+   - \`font-size\` (sauf si le default 16px est OK et que c'est l'intention)
+   - \`font-weight\` (sauf si normal 400 est l'intention — alors NE le déclare PAS)
+   - \`color\` (sauf si le héritage est l'intention)
+   - \`line-height\` si l'écart entre lignes diffère du default
+   - \`text-align\` si le texte n'est pas left
+
+2. **Boîtes (div, section, button, card)** → s'il y a un effet visuel sur la boîte, déclare :
+   - \`background\` ou \`background-color\` si pas blanc/transparent
+   - \`padding\` si l'élément a un espace intérieur visible
+   - \`border\` si l'élément a une bordure
+   - \`border-radius\` si les coins ne sont PAS carrés
+   - \`box-shadow\` si l'élément a une ombre visible
+   - \`width\` / \`height\` si la taille n'est pas dictée par le contenu
+
+3. **Layout (parents)** → si les enfants sont alignés/répartis :
+   - \`display: flex\` ou \`display: grid\`
+   - \`flex-direction\` (column ou row-reverse si différent du défaut row)
+   - \`justify-content\` / \`align-items\` si pas le default
+   - \`gap\` si l'espace entre enfants n'est pas 0
+
+4. **Positionnement** → si l'élément est décalé :
+   - \`position: relative\` / \`absolute\` / \`fixed\`
+   - \`top\` / \`right\` / \`bottom\` / \`left\` quand position ≠ static
+   - \`z-index\` si l'empilement compte
+
+5. **Cas particuliers** :
+   - Texte en **MAJUSCULES** → \`text-transform: uppercase\`
+   - Texte espacé → \`letter-spacing\`
+   - Coins arrondis sur un seul angle → \`border-top-left-radius\` etc.
+
+ENSUITE, simule mentalement le rendu de ton targetCss. Pour chaque élément, demande-toi : "si l'apprenant retire CETTE déclaration, le rendu change-t-il visiblement ?" Si oui → la déclaration est OBLIGATOIRE dans le target. Sinon → ne la déclare pas (sois minimaliste).
+
+L'apprenant ne doit JAMAIS être bloqué parce qu'une déclaration que tu as oubliée diffère silencieusement entre son rendu et le tien.`;
 }
 
 function userPrompt(difficulty?: string, theme?: string) {
@@ -94,7 +135,7 @@ function userPrompt(difficulty?: string, theme?: string) {
   if (difficulty) parts.push(`Difficulté souhaitée : ${difficulty}.`);
   if (theme) parts.push(`Thème ou inspiration : ${theme}.`);
   parts.push(
-    'Sois créatif. Le composant doit être visuellement intéressant et enseigner des concepts utiles.'
+    'Sois créatif sur le concept du composant. Mais sur le targetCss, sois RIGOUREUX : passe en revue chaque élément avec la checklist du system prompt, et déclare TOUTES les propriétés qui produisent un effet visuel observable. Pas une de moins.'
   );
   return parts.join(' ');
 }
@@ -126,7 +167,10 @@ export async function POST(req: Request) {
         systemInstruction: systemPrompt(locale),
         responseMimeType: 'application/json',
         responseSchema: SCHEMA,
-        temperature: 1.0,
+        // Lower temperature than before: we want creativity in the *concept*
+        // (which theme/component to pick) but rigor in the CSS itself — too
+        // much randomness leads to forgotten declarations.
+        temperature: 0.7,
       },
     });
 

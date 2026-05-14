@@ -41,6 +41,12 @@ export type CardKind = 'mcq' | 'fill-blank' | 'predict-output';
 export type McqOption = {
   id: string;
   label: string;
+  /**
+   * If present, the UI looks up this i18n key and shows the translated string.
+   * Use for textual options (full sentences) that need translation. Pure-code
+   * options like `display: flex` should be left without a key.
+   */
+  i18nKey?: string;
   /** Optional code snippet shown under the label. */
   code?: string;
 };
