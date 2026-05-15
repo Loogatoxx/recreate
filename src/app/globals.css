@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+/*
+ * The app is dark-mode-only by design. The previous `prefers-color-scheme`
+ * media query made the body white on systems set to light mode — and the bare
+ * `body { background: var(--background) }` rule overrode the Tailwind classes
+ * applied in layout.tsx, leaking through on session/exam pages that don't
+ * have their own background wrapper.
+ *
+ * Force everything dark at the root so any future page that forgets a
+ * background wrapper still looks right.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020617; /* slate-950 */
+  --foreground: #f1f5f9; /* slate-100 */
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -12,15 +23,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
